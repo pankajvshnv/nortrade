@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   initImageLoading();
   initAboutScroll();
   initHeroVideoPlaylist();
+  initEdgeButtonsVisibility();
 });
 
 function initSmoothScroll() {
@@ -223,6 +224,44 @@ function applyLanguage(lang) {
   const footerEn = document.getElementById('footer-en');
   if (footerFr) footerFr.classList.toggle('active', lang === 'fr');
   if (footerEn) footerEn.classList.toggle('active', lang === 'en');
+}
+
+let revealTimeline = null;
+
+function setupRevealText(el) {
+  if (typeof gsap === 'undefined') return;
+  
+  if (revealTimeline) revealTimeline.kill();
+  
+  const text = el.textContent || '';
+  el.innerHTML = '';
+  const words = text.split(' ');
+  
+  words.forEach(word => {
+    const span = document.createElement('span');
+    span.textContent = word + ' ';
+    span.style.color = 'var(--color-grey-light)';
+    span.style.transition = 'color 0.1s ease';
+    el.appendChild(span);
+  });
+  
+  const aboutSection = document.querySelector('.new-about-section');
+  if (!aboutSection) return;
+  
+  revealTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: aboutSection,
+      start: 'top 65%',
+      end: 'top 15%',
+      scrub: 1,
+    }
+  });
+  
+  revealTimeline.to(el.querySelectorAll('span'), {
+    color: 'var(--color-black)',
+    stagger: 0.1,
+    ease: 'none'
+  });
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -685,4 +724,48 @@ function initAboutScroll() {
       }
     }
   );
+}
+
+/* ══════════════════════════════════════════════════════════
+   EDGE BUTTONS VISIBILITY
+══════════════════════════════════════════════════════════ */
+function initEdgeButtonsVisibility() {
+  const edgeButtons = document.querySelector('.right-edge-buttons');
+  if (!edgeButtons) return;
+
+  const heroSection = document.getElementById('hero');
+  // Attempt to find footer directly, fallback to placeholder
+  const footerSection = document.querySelector('.unified-footer-section') || document.getElementById('contact');
+  const footerPlaceholder = document.getElementById('footer-placeholder');
+
+  let heroVisible = false;
+  let footerVisible = false;
+
+  const updateVisibility = () => {
+    if (heroVisible || footerVisible) {
+      edgeButtons.classList.remove('hidden');
+    } else {
+      edgeButtons.classList.add('hidden');
+    }
+  };
+
+  // We observe hero section, footer section, and footer placeholder just in case
+  const observer = new IntersectionObserver((entries) => {
+    let changed = false;
+    entries.forEach(entry => {
+      if (entry.target === heroSection) {
+        heroVisible = entry.isIntersecting;
+        changed = true;
+      }
+      if (entry.target === footerSection || entry.target === footerPlaceholder) {
+        footerVisible = entry.isIntersecting;
+        changed = true;
+      }
+    });
+    if (changed) updateVisibility();
+  }, { threshold: 0.05 }); // trigger slightly before it fully comes into view
+
+  if (heroSection) observer.observe(heroSection);
+  if (footerSection) observer.observe(footerSection);
+  if (footerPlaceholder) observer.observe(footerPlaceholder);
 }

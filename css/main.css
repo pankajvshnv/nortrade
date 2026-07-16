@@ -29,7 +29,7 @@
 
   --nav-height:    80px;
   --section-pad:   clamp(80px, 10vw, 140px);
-  --container:     1320px;
+  --container:     100%;
   --gutter:        clamp(24px, 5vw, 80px);
 }
 
@@ -892,6 +892,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 
   .fade-slide {
     height: 50vh;
     flex-direction: column;
+    justify-content: center;
     padding: 2rem 1.5rem;
     gap: 1.5rem;
   }
@@ -1360,7 +1361,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 
     padding-top: 0;
   }
   .uf-image-wrapper {
-    aspect-ratio: 16 / 9;
+    display: none;
   }
 }
 
@@ -1376,6 +1377,13 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 
   flex-direction: column;
   gap: 1px;
   z-index: 900;
+  transition: transform 0.4s var(--ease-out), opacity 0.4s var(--ease-out);
+}
+
+.right-edge-buttons.hidden {
+  transform: translateY(-50%) translateX(100%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .edge-btn {
