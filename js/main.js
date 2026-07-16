@@ -13,7 +13,7 @@ async function loadComponents() {
     ]);
     const headerHtml = await headerRes.text();
     const footerHtml = await footerRes.text();
-    
+
     const headerPh = document.getElementById('header-placeholder');
     const footerPh = document.getElementById('footer-placeholder');
     if (headerPh) headerPh.outerHTML = headerHtml;
@@ -26,7 +26,7 @@ async function loadComponents() {
 /* ── DOM READY ──────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', async () => {
   await loadComponents();
-  
+
   initSmoothScroll();
   initPreloader();
   initCookieBanner();
@@ -49,18 +49,18 @@ document.addEventListener('DOMContentLoaded', async () => {
 function initSmoothScroll() {
   if (typeof Lenis !== 'undefined' && typeof gsap !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
-    
+
     lenis = new Lenis({
       lerp: 0.1,
       smoothWheel: true,
     });
-    
+
     lenis.on('scroll', ScrollTrigger.update);
-    
+
     gsap.ticker.add((time) => {
       lenis.raf(time * 1000);
     });
-    
+
     gsap.ticker.lagSmoothing(0);
   }
 }
@@ -130,9 +130,9 @@ function showCookieBannerDelayed() {
    COOKIE CONSENT BANNER
 ══════════════════════════════════════════════════════════ */
 function initCookieBanner() {
-  const banner  = document.getElementById('cookie-banner');
-  const accept  = document.getElementById('cookie-accept');
-  const deny    = document.getElementById('cookie-deny');
+  const banner = document.getElementById('cookie-banner');
+  const accept = document.getElementById('cookie-accept');
+  const deny = document.getElementById('cookie-deny');
 
   if (!banner) return;
 
@@ -157,7 +157,7 @@ function initCookieBanner() {
   }
 
   if (accept) accept.addEventListener('click', () => closeBanner('accept'));
-  if (deny)   deny.addEventListener('click',   () => closeBanner('deny'));
+  if (deny) deny.addEventListener('click', () => closeBanner('deny'));
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -194,7 +194,7 @@ function applyLanguage(lang) {
       el.textContent = text;
     } else {
       el.innerHTML = text;
-      
+
       // If this is the text reveal element, we need to split it into words for the scroll animation
       if (el.classList.contains('reveal-text')) {
         setupRevealText(el);
@@ -230,13 +230,13 @@ let revealTimeline = null;
 
 function setupRevealText(el) {
   if (typeof gsap === 'undefined') return;
-  
+
   if (revealTimeline) revealTimeline.kill();
-  
+
   const text = el.textContent || '';
   el.innerHTML = '';
   const words = text.split(' ');
-  
+
   words.forEach(word => {
     const span = document.createElement('span');
     span.textContent = word + ' ';
@@ -244,10 +244,10 @@ function setupRevealText(el) {
     span.style.transition = 'color 0.1s ease';
     el.appendChild(span);
   });
-  
+
   const aboutSection = document.querySelector('.new-about-section');
   if (!aboutSection) return;
-  
+
   revealTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: aboutSection,
@@ -256,7 +256,7 @@ function setupRevealText(el) {
       scrub: 1,
     }
   });
-  
+
   revealTimeline.to(el.querySelectorAll('span'), {
     color: 'var(--color-black)',
     stagger: 0.1,
@@ -289,7 +289,7 @@ function initNavigation() {
       const target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
-      
+
       // Use Lenis for smooth scroll if initialized
       if (typeof lenis !== 'undefined' && lenis) {
         lenis.scrollTo(target, { offset: -header.offsetHeight });
@@ -297,7 +297,7 @@ function initNavigation() {
         const top = target.getBoundingClientRect().top + window.scrollY - header.offsetHeight;
         window.scrollTo({ top, behavior: 'smooth' });
       }
-      
+
       closeMobileMenu();
     });
   });
@@ -307,7 +307,7 @@ function initNavigation() {
    MOBILE MENU
 ══════════════════════════════════════════════════════════ */
 function initMobileMenu() {
-  const hamburger  = document.getElementById('hamburger');
+  const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
   if (!hamburger || !mobileMenu) return;
 
@@ -388,11 +388,11 @@ function initHeroVideoPlaylist() {
 function initParallax() {
   const parallaxWrap = document.querySelector('.parallax-wrap');
   if (!parallaxWrap || typeof gsap === 'undefined') return;
-  
+
   const section = parallaxWrap.closest('.fullbleed-image');
   if (!section) return;
 
-  gsap.fromTo(parallaxWrap, 
+  gsap.fromTo(parallaxWrap,
     { yPercent: -10 },
     {
       yPercent: 10,
@@ -447,7 +447,7 @@ function initImageLoading() {
    CUSTOM CURSOR
 ══════════════════════════════════════════════════════════ */
 function initCustomCursor() {
-  const cursor    = document.getElementById('custom-cursor');
+  const cursor = document.getElementById('custom-cursor');
   const cursorDot = document.getElementById('custom-cursor-dot');
   if (!cursor || !cursorDot) return;
 
@@ -464,7 +464,7 @@ function initCustomCursor() {
 
     // Dot follows immediately
     cursorDot.style.left = mouseX + 'px';
-    cursorDot.style.top  = mouseY + 'px';
+    cursorDot.style.top = mouseY + 'px';
 
     cursor.classList.add('active');
     cursorDot.classList.add('active');
@@ -480,7 +480,7 @@ function initCustomCursor() {
     curX += (mouseX - curX) * 0.12;
     curY += (mouseY - curY) * 0.12;
     cursor.style.left = curX + 'px';
-    cursor.style.top  = curY + 'px';
+    cursor.style.top = curY + 'px';
     raf = requestAnimationFrame(animateCursor);
   }
   animateCursor();
@@ -497,15 +497,15 @@ function initCustomCursor() {
    CONTACT FORM
 ══════════════════════════════════════════════════════════ */
 function initContactForm() {
-  const form       = document.getElementById('contact-form');
-  const submitBtn  = document.getElementById('form-submit-btn');
+  const form = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('form-submit-btn');
   const successMsg = document.getElementById('form-success-msg');
   if (!form) return;
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const name    = document.getElementById('name').value.trim();
-    const email   = document.getElementById('email').value.trim();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
 
     if (!name || !email || !message || !isValidEmail(email)) return;
@@ -532,9 +532,9 @@ function isValidEmail(email) {
 ══════════════════════════════════════════════════════════ */
 function initChatbot() {
   const trigger = document.getElementById('chatbot-trigger');
-  const panel   = document.getElementById('chatbot-panel');
+  const panel = document.getElementById('chatbot-panel');
   const sendBtn = document.getElementById('chatbot-send-btn');
-  const input   = document.getElementById('chatbot-input');
+  const input = document.getElementById('chatbot-input');
   if (!trigger || !panel) return;
 
   trigger.addEventListener('click', () => {
@@ -542,7 +542,7 @@ function initChatbot() {
     trigger.classList.toggle('open', chatbotOpen);
     panel.classList.toggle('open', chatbotOpen);
   });
-  
+
   const closeBtn = document.getElementById('chatbot-close-btn');
   if (closeBtn) {
     closeBtn.addEventListener('click', () => {
@@ -553,26 +553,26 @@ function initChatbot() {
   }
 
   if (sendBtn) sendBtn.addEventListener('click', () => sendMessage());
-  if (input)   input.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendMessage(); });
+  if (input) input.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendMessage(); });
 }
 
 const chatbotResponses = {
   fr: {
-    services : 'Nous proposons 4 services : Rendus 3D architecturaux, Animations & cinematiques, Visualisation d\'interieurs, et Visites virtuelles. Chaque service est personnalise selon vos besoins.',
-    devis    : 'Pour un devis, remplissez le formulaire de contact ou ecrivez-nous a contact@nortrade.ch. Nous vous repondrons sous 24h.',
-    delais   : 'Rendu simple : 3-5 jours. Animation : 1-2 semaines. Projet complet : sur devis. Nous respectons toujours les deadlines convenues.',
-    default  : 'Merci pour votre message. Pour toute demande, contactez-nous a contact@nortrade.ch ou via le formulaire de contact.'
+    services: 'Nous proposons 4 services : Rendus 3D architecturaux, Animations & cinematiques, Visualisation d\'interieurs, et Visites virtuelles. Chaque service est personnalise selon vos besoins.',
+    devis: 'Pour un devis, remplissez le formulaire de contact ou ecrivez-nous a contact@nortrade.ch. Nous vous repondrons sous 24h.',
+    delais: 'Rendu simple : 3-5 jours. Animation : 1-2 semaines. Projet complet : sur devis. Nous respectons toujours les deadlines convenues.',
+    default: 'Merci pour votre message. Pour toute demande, contactez-nous a contact@nortrade.ch ou via le formulaire de contact.'
   },
   en: {
-    services : 'We offer 4 services: Architectural 3D Renders, Animations & Cinematics, Interior Visualisation, and Virtual Tours. Each is fully personalised.',
-    devis    : 'To get a quote, fill in the contact form or email contact@nortrade.ch. We reply within 24 hours.',
-    delais   : 'Simple render: 3-5 days. Animation: 1-2 weeks. Full project: on quote. We always meet agreed deadlines.',
-    default  : 'Thank you for your message. Contact us at contact@nortrade.ch or via the contact form for any specific request.'
+    services: 'We offer 4 services: Architectural 3D Renders, Animations & Cinematics, Interior Visualisation, and Virtual Tours. Each is fully personalised.',
+    devis: 'To get a quote, fill in the contact form or email contact@nortrade.ch. We reply within 24 hours.',
+    delais: 'Simple render: 3-5 days. Animation: 1-2 weeks. Full project: on quote. We always meet agreed deadlines.',
+    default: 'Thank you for your message. Contact us at contact@nortrade.ch or via the contact form for any specific request.'
   }
 };
 
 function sendMessage() {
-  const input      = document.getElementById('chatbot-input');
+  const input = document.getElementById('chatbot-input');
   const quickReplies = document.getElementById('quick-replies');
   if (!input) return;
 
@@ -606,7 +606,7 @@ function addChatMessage(text, type) {
 function getBotResponse(text) {
   const lower = text.toLowerCase();
   const r = chatbotResponses[currentLang];
-  if (lower.includes('service') || lower.includes('offre') || lower.includes('offer'))      return r.services;
+  if (lower.includes('service') || lower.includes('offre') || lower.includes('offer')) return r.services;
   if (lower.includes('devis') || lower.includes('prix') || lower.includes('quote') || lower.includes('cost')) return r.devis;
   if (lower.includes('delai') || lower.includes('temps') || lower.includes('time') || lower.includes('delivery')) return r.delais;
   return r.default;
@@ -619,9 +619,9 @@ function getBotResponse(text) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      const el     = entry.target;
-      const raw    = el.textContent;
-      const num    = parseInt(raw.replace(/[^0-9]/g, ''));
+      const el = entry.target;
+      const raw = el.textContent;
+      const num = parseInt(raw.replace(/[^0-9]/g, ''));
       const suffix = raw.replace(/[0-9]/g, '');
       let cur = 0;
       const step = num / 55;
@@ -680,18 +680,18 @@ function initServicesScroll() {
 
     // Animate text crossfade
     tl.to(textSlides[index - 1], { opacity: 0, y: -30, pointerEvents: 'none', duration: 0.5 }, `+=${0.5}`); // Pause before transitioning
-    tl.fromTo(textSlides[index], 
+    tl.fromTo(textSlides[index],
       { opacity: 0, y: 30, pointerEvents: 'none' },
-      { opacity: 1, y: 0, pointerEvents: 'auto', duration: 0.5 }, 
+      { opacity: 1, y: 0, pointerEvents: 'auto', duration: 0.5 },
       "<"
     );
-    
+
     // Explicitly hide image slide initially before animating it in
     gsap.set(slide, { yPercent: 100 });
-    
+
     // Animate image slide coming up from bottom (yPercent 100 -> 0)
-    tl.fromTo(slide, 
-      { yPercent: 100 }, 
+    tl.fromTo(slide,
+      { yPercent: 100 },
       { yPercent: 0, duration: 1, ease: 'none' },
       "<" // Start at the same time as the text fade
     );
@@ -708,10 +708,10 @@ function initServicesScroll() {
 function initAboutScroll() {
   const aboutSection = document.querySelector('.new-about-section');
   const revealText = document.querySelector('.reveal-text');
-  
+
   if (!aboutSection || !revealText || typeof gsap === 'undefined') return;
 
-  gsap.fromTo(revealText, 
+  gsap.fromTo(revealText,
     { '--scroll-progress': 0 },
     {
       '--scroll-progress': 1,
@@ -733,39 +733,37 @@ function initEdgeButtonsVisibility() {
   const edgeButtons = document.querySelector('.right-edge-buttons');
   if (!edgeButtons) return;
 
-  const heroSection = document.getElementById('hero');
-  // Attempt to find footer directly, fallback to placeholder
-  const footerSection = document.querySelector('.unified-footer-section') || document.getElementById('contact');
-  const footerPlaceholder = document.getElementById('footer-placeholder');
-
-  let heroVisible = false;
-  let footerVisible = false;
-
   const updateVisibility = () => {
-    if (heroVisible || footerVisible) {
+    // Hide buttons almost immediately when scrolling starts (e.g., after 50px)
+    const inHero = window.scrollY < 50;
+
+    // Determine if we are at the bottom of the page (footer)
+    const docHeight = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight,
+      document.body.clientHeight, document.documentElement.clientHeight
+    );
+    const scrollBottom = window.scrollY + window.innerHeight;
+    const inFooter = (docHeight - scrollBottom) < 800; // ~footer height
+
+    if (inHero || inFooter) {
       edgeButtons.classList.remove('hidden');
     } else {
       edgeButtons.classList.add('hidden');
     }
   };
 
-  // We observe hero section, footer section, and footer placeholder just in case
-  const observer = new IntersectionObserver((entries) => {
-    let changed = false;
-    entries.forEach(entry => {
-      if (entry.target === heroSection) {
-        heroVisible = entry.isIntersecting;
-        changed = true;
-      }
-      if (entry.target === footerSection || entry.target === footerPlaceholder) {
-        footerVisible = entry.isIntersecting;
-        changed = true;
-      }
-    });
-    if (changed) updateVisibility();
-  }, { threshold: 0.05 }); // trigger slightly before it fully comes into view
+  // Check initially
+  updateVisibility();
 
-  if (heroSection) observer.observe(heroSection);
-  if (footerSection) observer.observe(footerSection);
-  if (footerPlaceholder) observer.observe(footerPlaceholder);
+  // Check on scroll with requestAnimationFrame for performance
+  window.addEventListener('scroll', () => {
+    if (!window._edgeBtnTicking) {
+      window.requestAnimationFrame(() => {
+        updateVisibility();
+        window._edgeBtnTicking = false;
+      });
+      window._edgeBtnTicking = true;
+    }
+  }, { passive: true });
 }
