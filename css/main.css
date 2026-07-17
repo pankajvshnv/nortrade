@@ -854,10 +854,11 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 
 .h-slide-title {
   font-family: var(--font-sans);
   font-size: clamp(1.5rem, 2.5vw, 2.5rem);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
   color: var(--color-charcoal);
+  text-transform: uppercase;
   margin: 0;
 }
 

@@ -674,7 +674,7 @@ function initServicesScroll() {
     // Make sure all text slides start faded out except the first one
     if (index === 0) {
       gsap.set(textSlides[index], { opacity: 1, y: 0, pointerEvents: 'auto' });
-      gsap.set(slide, { yPercent: 0 }); // Make sure first image is fully visible at start
+      gsap.set(slide, { opacity: 1, scale: 1, yPercent: 0 }); // First image fully visible
       return;
     }
 
@@ -687,13 +687,16 @@ function initServicesScroll() {
     );
 
     // Explicitly hide image slide initially before animating it in
-    gsap.set(slide, { yPercent: 100 });
+    gsap.set(slide, { opacity: 0, scale: 1.05 });
 
-    // Animate image slide coming up from bottom (yPercent 100 -> 0)
+    // Fade out and scale down previous image
+    tl.to(imgSlides[index - 1], { opacity: 0, scale: 0.95, duration: 1, ease: 'power2.inOut' }, "<");
+
+    // Fade in and scale normal for new image
     tl.fromTo(slide,
-      { yPercent: 100 },
-      { yPercent: 0, duration: 1, ease: 'none' },
-      "<" // Start at the same time as the text fade
+      { opacity: 0, scale: 1.05 },
+      { opacity: 1, scale: 1, duration: 1, ease: 'power2.inOut' },
+      "<" // Starts at the same time as the text transition
     );
   });
 
