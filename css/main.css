@@ -863,10 +863,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 
 }
 
 .h-slide-title .highlight {
-  text-decoration: underline;
-  text-decoration-color: var(--color-charcoal);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
+  /* text-decoration removed per user request */
 }
 
 .h-slide-right {
