@@ -2110,3 +2110,59 @@ body.is-loading { overflow: hidden; }
   background: var(--color-white);
   color: var(--color-black);
 }
+
+/* Premium CTA Button */
+.cta-premium-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.2rem 3rem;
+  background: var(--color-gold);
+  color: #000;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-premium-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-premium-btn:hover {
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(186, 163, 127, 0.2);
+}
+
+.cta-premium-btn:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.cta-premium-btn svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.4s ease;
+}
+
+.cta-premium-btn:hover svg {
+  transform: translateX(5px);
+}
