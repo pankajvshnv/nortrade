@@ -427,18 +427,39 @@
   </section>
 
   <!-- CTA SECTION -->
-  <section class="cta-section" style="padding: clamp(120px, 15vw, 180px) 0; background: linear-gradient(rgba(13,13,11,0.85), rgba(13,13,11,0.95)), url('assets/images/IMG_20260715_112202_661.webp') center/cover fixed no-repeat; color: var(--color-white); text-align: center; position: relative;">
-    <div class="container" style="max-width: 800px; position: relative; z-index: 2;">
-      <h2 class="reveal-up" style="font-family: var(--font-serif); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 400; text-transform: none; color: var(--color-white); margin-bottom: 2rem; letter-spacing: -0.01em; line-height: 1.1;" data-fr="Parlons de votre projet" data-en="Let's talk about your project">Let's talk about your project</h2>
+  <section class="cta-section" style="padding: clamp(120px, 15vw, 180px) 0; background-color: #0d0d0b; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 60px 60px; color: var(--color-white); text-align: center; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 80vh;">
+    
+    <!-- Floating Images -->
+    <img src="assets/images/IMG_20260715_112200_280.webp" alt="Render" class="reveal-fade d-none-mobile" style="position: absolute; top: 10%; left: 8%; width: clamp(120px, 15vw, 200px); border-radius: 24px; object-fit: cover; aspect-ratio: 1; box-shadow: 0 20px 40px rgba(0,0,0,0.4); z-index: 1;">
+    
+    <img src="assets/images/IMG_20260715_112150_896.webp" alt="Render" class="reveal-fade d-none-mobile" style="position: absolute; bottom: 15%; left: 15%; width: clamp(140px, 18vw, 220px); border-radius: 24px; object-fit: cover; aspect-ratio: 1; box-shadow: 0 20px 40px rgba(0,0,0,0.4); z-index: 1;">
+    
+    <img src="assets/images/IMG_20260715_112157_603.webp" alt="Render" class="reveal-fade d-none-mobile" style="position: absolute; top: 15%; right: 8%; width: clamp(130px, 16vw, 210px); border-radius: 24px; object-fit: cover; aspect-ratio: 1; box-shadow: 0 20px 40px rgba(0,0,0,0.4); z-index: 1;">
+    
+    <img src="assets/images/IMG_20260715_112202_661.webp" alt="Render" class="reveal-fade d-none-mobile" style="position: absolute; bottom: 10%; right: 15%; width: clamp(150px, 20vw, 240px); border-radius: 24px; object-fit: cover; aspect-ratio: 1; box-shadow: 0 20px 40px rgba(0,0,0,0.4); z-index: 1;">
+
+    <div class="container" style="max-width: 650px; position: relative; z-index: 2;">
+      <h2 class="reveal-up" style="font-family: var(--font-sans); font-size: clamp(2.5rem, 4.5vw, 4rem); font-weight: 500; text-transform: none; color: var(--color-white); margin-bottom: 1.5rem; letter-spacing: -0.02em; line-height: 1.1;" data-fr="Parlons de votre projet" data-en="Let's talk about your project">Let's talk about your project</h2>
       
-      <p class="reveal-up" style="font-family: var(--font-sans); font-size: 1.1rem; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.7); margin-bottom: 3.5rem;" data-fr="Notre calendrier de production se remplit rapidement. Sécurisez vos outils de visualisation haut de gamme pour vos prochains projets dès aujourd'hui. Contactez-nous pour garantir votre priorité." data-en="Our production calendar fills up quickly. Secure your high-end visualization tools for upcoming projects today. Contact us to guarantee priority.">Our production calendar fills up quickly. Secure your high-end visualization tools for upcoming projects today. Contact us to guarantee priority.</p>
+      <p class="reveal-up" style="font-family: var(--font-sans); font-size: 1.15rem; font-weight: 300; line-height: 1.6; color: rgba(255,255,255,0.7); margin-bottom: 3rem;" data-fr="Notre calendrier de production se remplit rapidement. Sécurisez vos outils de visualisation haut de gamme pour vos prochains projets dès aujourd'hui. Contactez-nous pour garantir votre priorité." data-en="Our production calendar fills up quickly. Secure your high-end visualization tools for upcoming projects today. Contact us to guarantee priority.">Our production calendar fills up quickly. Secure your high-end visualization tools for upcoming projects today. Contact us to guarantee priority.</p>
       
-      <div class="reveal-up">
-        <a href="#contact" class="cta-premium-btn">
+      <div class="reveal-up" style="display: flex; gap: 30px; justify-content: center; align-items: center; flex-wrap: wrap;">
+        <a href="#contact" class="hover-scale" style="background: white; color: black; border-radius: 50px; padding: 10px 10px 10px 24px; font-weight: 500; display: inline-flex; align-items: center; gap: 15px; text-decoration: none; transition: transform 0.3s; font-size: 0.95rem;">
           <span data-fr="FORMULAIRE DE DEVIS" data-en="QUOTE REQUEST FORM">QUOTE REQUEST FORM</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
+          <span style="background: #0d0d0b; color: #fff; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </a>
+        
+        <a href="https://instagram.com/nortrade.ch" target="_blank" style="color: white; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-weight: 400; font-size: 0.95rem; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
+          <span data-fr="Suivez-nous" data-en="Follow us">Follow us</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 20px; height: 20px;">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
           </svg>
         </a>
       </div>

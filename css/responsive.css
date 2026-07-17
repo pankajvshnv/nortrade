@@ -4,3 +4,7 @@
 ═══════════════════════════════════════════════════════════ */
 
 /* Add mobile-specific layout overrides here */
+
+@media (max-width: 992px) {
+  .d-none-mobile { display: none !important; }
+}
