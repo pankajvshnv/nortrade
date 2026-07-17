@@ -857,8 +857,8 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: var(--color-charcoal);
   text-transform: uppercase;
+  color: var(--color-charcoal);
   margin: 0;
 }
 
