@@ -770,3 +770,92 @@ function initEdgeButtonsVisibility() {
     }
   }, { passive: true });
 }
+
+// ══════════════════════════════════════════════════════════
+// COOKIE CONSENT BANNER
+// ══════════════════════════════════════════════════════════
+function initCookieBanner() {
+  const cookieName = 'nortrade_cookie_consent';
+  if (localStorage.getItem(cookieName)) return;
+
+  // Let translations load first (small delay)
+  setTimeout(() => {
+    const isFr = document.documentElement.getAttribute('data-lang') !== 'en';
+    
+    const text = isFr 
+      ? "Nous utilisons des cookies pour améliorer votre expérience et analyser notre trafic. En continuant à naviguer sur ce site, vous acceptez notre <a href='privacy.html' style='text-decoration: underline; color: var(--color-gold);'>Politique de confidentialité</a>."
+      : "We use cookies to improve your experience and analyze our traffic. By continuing to browse this site, you agree to our <a href='privacy.html' style='text-decoration: underline; color: var(--color-gold);'>Privacy Policy</a>.";
+    
+    const btnText = isFr ? "ACCEPTER" : "ACCEPT";
+
+    const banner = document.createElement('div');
+    banner.id = 'cookie-banner';
+    banner.innerHTML = `
+      <div style="flex: 1; padding-right: 1.5rem; margin-bottom: 0;">
+        <p style="margin: 0; font-family: var(--font-sans); font-size: 0.8rem; font-weight: 300; line-height: 1.5; color: var(--color-white);">${text}</p>
+      </div>
+      <button id="accept-cookies" aria-label="Accept Cookies" style="background: var(--color-gold); color: #000; border: none; padding: 0.8rem 1.5rem; font-family: var(--font-sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; border-radius: 2px; transition: all 0.3s; white-space: nowrap;">${btnText}</button>
+    `;
+
+    Object.assign(banner.style, {
+      position: 'fixed',
+      bottom: '20px',
+      left: '50%',
+      transform: 'translateX(-50%) translateY(100px)',
+      width: '90%',
+      maxWidth: '600px',
+      background: 'rgba(26, 26, 26, 0.95)',
+      backdropFilter: 'blur(10px)',
+      webkitBackdropFilter: 'blur(10px)',
+      border: '1px solid rgba(255,255,255,0.1)',
+      borderRadius: '4px',
+      padding: '1.2rem',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      zIndex: '9999',
+      opacity: '0',
+      transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+      boxShadow: '0 20px 40px rgba(0,0,0,0.4)'
+    });
+
+    // Mobile specific layout
+    if (window.innerWidth < 600) {
+      banner.style.flexDirection = 'column';
+      banner.style.alignItems = 'flex-start';
+      banner.children[0].style.paddingRight = '0';
+      banner.children[0].style.marginBottom = '1rem';
+      banner.children[1].style.width = '100%';
+    }
+
+    document.body.appendChild(banner);
+
+    // Animate in
+    setTimeout(() => {
+      banner.style.transform = 'translateX(-50%) translateY(0)';
+      banner.style.opacity = '1';
+    }, 100);
+
+    // Accept logic
+    const acceptBtn = document.getElementById('accept-cookies');
+    
+    acceptBtn.addEventListener('mouseover', () => {
+      acceptBtn.style.background = '#fff';
+    });
+    acceptBtn.addEventListener('mouseout', () => {
+      acceptBtn.style.background = 'var(--color-gold)';
+    });
+    
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem(cookieName, 'accepted');
+      banner.style.transform = 'translateX(-50%) translateY(100px)';
+      banner.style.opacity = '0';
+      setTimeout(() => {
+        if (banner.parentNode) banner.parentNode.removeChild(banner);
+      }, 600);
+    });
+  }, 2000);
+}
+
+// Ensure it runs after main loads
+window.addEventListener('load', initCookieBanner);
