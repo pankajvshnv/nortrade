@@ -2090,3 +2090,26 @@ body.is-loading { overflow: hidden; }
   to   { transform: translateX(-50%); }
 }
 
+
+.not-found-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  color: var(--color-white);
+  border: 1px solid rgba(255,255,255,0.2);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+}
+.not-found-btn:hover {
+  background: var(--color-white);
+  color: var(--color-black);
+}
