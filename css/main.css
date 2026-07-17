@@ -20,7 +20,7 @@
   --color-gold:        #C9A96E;
   --color-gold-light:  #DFC08E;
 
-  --font-serif:    'Cormorant Garamond', Georgia, serif;
+  --font-serif:    'Inter', sans-serif;
   --font-sans:     'Inter', system-ui, sans-serif;
 
   --ease-out:      cubic-bezier(0.22, 1, 0.36, 1);

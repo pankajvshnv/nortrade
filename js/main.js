@@ -515,15 +515,15 @@ function initChatbot() {
 const chatbotResponses = {
   fr: {
     services: 'Nous proposons 4 services : Rendus 3D architecturaux, Animations & cinematiques, Visualisation d\'interieurs, et Visites virtuelles. Chaque service est personnalise selon vos besoins.',
-    devis: 'Pour un devis, remplissez le formulaire de contact ou ecrivez-nous a contact@nortrade.ch. Nous vous repondrons sous 24h.',
+    devis: 'Pour un devis, remplissez le formulaire de contact, appelez le +41 78 206 59 42 ou ecrivez-nous a contact@nortrade.ch. Nous vous repondrons sous 24h.',
     delais: 'Rendu simple : 3-5 jours. Animation : 1-2 semaines. Projet complet : sur devis. Nous respectons toujours les deadlines convenues.',
-    default: 'Merci pour votre message. Pour toute demande, contactez-nous a contact@nortrade.ch ou via le formulaire de contact.'
+    default: 'Merci pour votre message. Pour toute demande, appelez le +41 78 206 59 42 ou contactez-nous a contact@nortrade.ch.'
   },
   en: {
     services: 'We offer 4 services: Architectural 3D Renders, Animations & Cinematics, Interior Visualisation, and Virtual Tours. Each is fully personalised.',
-    devis: 'To get a quote, fill in the contact form or email contact@nortrade.ch. We reply within 24 hours.',
+    devis: 'To get a quote, fill in the contact form, call +41 78 206 59 42 or email contact@nortrade.ch. We reply within 24 hours.',
     delais: 'Simple render: 3-5 days. Animation: 1-2 weeks. Full project: on quote. We always meet agreed deadlines.',
-    default: 'Thank you for your message. Contact us at contact@nortrade.ch or via the contact form for any specific request.'
+    default: 'Thank you for your message. Contact us at +41 78 206 59 42, contact@nortrade.ch or via the contact form for any specific request.'
   }
 };
 
