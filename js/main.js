@@ -111,53 +111,7 @@ function dismissPreloader(preloader) {
     preloader.classList.add('done');
     document.body.classList.remove('is-loading');
     setHeroAnimations();
-    showCookieBannerDelayed();
   }, 1500);
-}
-
-
-function showCookieBannerDelayed() {
-  // Show cookie banner 1.5s after preloader, if not already consented
-  if (!localStorage.getItem('nortrade-cookie-choice')) {
-    setTimeout(() => {
-      const banner = document.getElementById('cookie-banner');
-      if (banner) banner.classList.add('visible');
-    }, 1500);
-  }
-}
-
-/* ══════════════════════════════════════════════════════════
-   COOKIE CONSENT BANNER
-══════════════════════════════════════════════════════════ */
-function initCookieBanner() {
-  const banner = document.getElementById('cookie-banner');
-  const accept = document.getElementById('cookie-accept');
-  const deny = document.getElementById('cookie-deny');
-
-  if (!banner) return;
-
-  // If already chosen, never show again
-  if (localStorage.getItem('nortrade-cookie-choice')) {
-    banner.style.display = 'none';
-    return;
-  }
-
-  function closeBanner(choice) {
-    localStorage.setItem('nortrade-cookie-choice', choice);
-    banner.classList.remove('visible');
-    setTimeout(() => { banner.style.display = 'none'; }, 700);
-
-    if (choice === 'accept') {
-      // Analytics / tracking cookies could be enabled here
-      console.log('[NORTRADE] Cookies accepted.');
-    } else {
-      // Only essential cookies
-      console.log('[NORTRADE] Only essential cookies active.');
-    }
-  }
-
-  if (accept) accept.addEventListener('click', () => closeBanner('accept'));
-  if (deny) deny.addEventListener('click', () => closeBanner('deny'));
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -856,6 +810,3 @@ function initCookieBanner() {
     });
   }, 2000);
 }
-
-// Ensure it runs after main loads
-window.addEventListener('load', initCookieBanner);
