@@ -767,7 +767,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 
    HORIZONTAL SERVICES (STAYWORK STYLE)
 ══════════════════════════════════════════════════════════ */
 .horizontal-services-section {
-  height: 800vh; /* 6 slides + hold at the end */
+  height: 700vh; /* 5 slides + hold at the end */
   position: relative;
   background: var(--color-white);
   z-index: 10;
