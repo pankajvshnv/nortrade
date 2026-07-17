@@ -10,110 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/responsive.css">
-  
-  <style>
-    .not-found-section {
-      padding: 0;
-      background: var(--color-bg-dark);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      color: var(--color-white);
-    }
-    
-    .not-found-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      opacity: 0.3;
-    }
-    .not-found-bg img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(100%);
-    }
-
-    .not-found-bg::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, rgba(13,13,11,0.2) 0%, rgba(13,13,11,1) 100%);
-    }
-
-    .not-found-content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      max-width: 800px;
-      padding: 2rem;
-    }
-
-    .not-found-code {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(6rem, 15vw, 12rem);
-      font-weight: 300;
-      line-height: 1;
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
-      color: var(--color-gold);
-    }
-
-    .not-found-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin-bottom: 1.5rem;
-      font-weight: 400;
-      font-style: italic;
-    }
-
-    .not-found-desc {
-      font-family: var(--font-sans);
-      font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.7);
-      margin-bottom: 3rem;
-      line-height: 1.6;
-    }
-
-    .not-found-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.2rem 3rem;
-      background: transparent;
-      color: var(--color-white);
-      border: 1px solid rgba(255,255,255,0.2);
-      font-family: var(--font-sans);
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      text-decoration: none;
-      border-radius: 2px;
-      transition: all 0.4s ease;
-      backdrop-filter: blur(5px);
-      cursor: pointer;
-    }
-
-    .not-found-btn:hover {
-      background: var(--color-white);
-      color: var(--color-black);
-    }
-  </style>
 </head>
 <body class="is-loading">
   <!-- LOADING SCREEN -->
   <div class="loading-screen" id="loading-screen">
     <div class="loader-content">
-      <div class="loader-logo">N</div>
+      <div class="loader-logo">404</div>
       <div class="loader-progress">
         <div class="loader-bar" id="loader-bar"></div>
       </div>
@@ -123,22 +25,79 @@
   <div id="header-placeholder"></div>
 
   <main>
-    <section class="not-found-section">
-      <div class="not-found-bg">
-        <img src="assets/images/IMG_20260715_112157_603.webp" alt="Background">
+    <section id="hero" class="hero">
+      <!-- Background video -->
+      <div class="hero-media">
+        <video id="hero-video" class="hero-video" autoplay muted playsinline
+          data-playlist='["assets/videos/VID_20260714_225206_116.webm", "assets/videos/Interior_video.webm", "assets/videos/exterior_video.webm"]'>
+          <source src="assets/videos/VID_20260714_225206_116.webm" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
       </div>
-      
-      <div class="not-found-content">
-        <div class="not-found-code reveal-up">404</div>
-        <h1 class="not-found-title reveal-up" data-fr="Page Introuvable" data-en="Page Not Found">Page Introuvable</h1>
-        <p class="not-found-desc reveal-up" data-fr="L'espace que vous recherchez n'existe pas ou a été déplacé. Retournez à l'accueil pour découvrir nos projets." data-en="The space you are looking for does not exist or has been moved. Return to the homepage to discover our projects.">L'espace que vous recherchez n'existe pas ou a été déplacé. Retournez à l'accueil pour découvrir nos projets.</p>
-        
-        <div class="reveal-up" style="transition-delay: 0.2s;">
-          <a href="index.html" class="not-found-btn" data-fr="RETOUR À L'ACCUEIL" data-en="BACK TO HOME">RETOUR À L'ACCUEIL</a>
+
+      <!-- Centered Content -->
+      <div class="hero-center">
+        <div class="hero-center-left">
+          <!-- Massive brand wordmark -->
+          <h1 class="hero-wordmark reveal-up" style="letter-spacing: -0.05em;">404</h1>
+
+          <div class="hero-subtitle-container">
+            <p class="hero-subtitle reveal-up"
+              data-fr="La page que vous cherchez n'existe pas ou a été déplacée. Retournez à l'accueil pour continuer."
+              data-en="The page you are looking for does not exist or has been moved. Return to the homepage to continue.">
+              La page que vous cherchez n'existe pas ou a été déplacée. Retournez à l'accueil pour continuer.
+            </p>
+          </div>
         </div>
       </div>
+
+      <!-- Bottom strip -->
+      <div class="hero-bottom">
+
+        <div class="hero-bottom-left reveal-up">
+          <div class="hero-socials">
+            <a href="mailto:contact@nortrade.ch" class="social-circle" aria-label="Email">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/nortrade-visualization/" target="_blank" rel="noopener"
+              class="social-circle" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-bottom-right reveal-up">
+          <a href="index.html" class="hero-card-cta">
+            <div class="hero-card-img">
+              <img src="assets/images/IMG_20260715_112150_896.webp" alt="Profile" loading="lazy" decoding="async">
+            </div>
+            <div class="hero-card-content">
+              <p class="hero-card-text" data-fr="Retour à la page d'accueil pour explorer nos réalisations."
+                data-en="Return to the homepage to explore our work.">Retour à la page d'accueil pour explorer nos réalisations.</p>
+              <div class="hero-card-link">
+                <span data-fr="Let's Go" data-en="Let's Go">Let's Go</span>
+                <span class="hero-card-icon">
+                  <svg viewBox="0 0 20 20" fill="none">
+                    <path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
     </section>
   </main>
+
+  <div id="footer-placeholder"></div>
 
   <!-- RIGHT EDGE BUTTONS (Chatbot & WhatsApp) -->
   <div class="right-edge-buttons">
