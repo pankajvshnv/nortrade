@@ -767,7 +767,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 
    HORIZONTAL SERVICES (STAYWORK STYLE)
 ══════════════════════════════════════════════════════════ */
 .horizontal-services-section {
-  height: 800vh; /* 6 slides + hold at the end */
+  height: 700vh; /* 5 slides + hold at the end */
   position: relative;
   background: var(--color-white);
   z-index: 10;
@@ -783,7 +783,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 
 
 .h-img-window {
   position: relative;
-  height: 70vh;
+  height: 78vh;
   width: 100vw;
   overflow: hidden;
 }
@@ -808,7 +808,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 30vh;
+  height: 22vh;
   width: 100vw;
   background: var(--color-white);
   overflow: hidden;
@@ -818,7 +818,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 
   position: absolute;
   top: 0;
   left: 0;
-  height: 30vh;
+  height: 22vh;
   width: 100vw;
   background: var(--color-white);
   display: flex;
@@ -871,7 +871,6 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
 }
 
 .h-slide-right p {
