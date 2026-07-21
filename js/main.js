@@ -280,10 +280,14 @@ function initNavigation() {
 
         // Use Lenis for smooth scroll if initialized
         if (typeof lenis !== 'undefined' && lenis) {
-          lenis.scrollTo(target, { offset: scrollOffset });
+          setTimeout(() => {
+            lenis.scrollTo(target, { offset: scrollOffset });
+          }, 100);
         } else {
-          const top = target.getBoundingClientRect().top + window.scrollY + scrollOffset;
-          window.scrollTo({ top, behavior: 'smooth' });
+          setTimeout(() => {
+            const top = target.getBoundingClientRect().top + window.scrollY + scrollOffset;
+            window.scrollTo({ top, behavior: 'smooth' });
+          }, 100);
         }
 
         closeMobileMenu();
@@ -899,7 +903,7 @@ function getBotResponse(text) {
   const r = chatbotResponses[currentLang];
   if (lower.includes('service') || lower.includes('offre') || lower.includes('offer')) return r.services;
   if (lower.includes('devis') || lower.includes('prix') || lower.includes('quote') || lower.includes('cost')) return r.devis;
-  if (lower.includes('delai') || lower.includes('temps') || lower.includes('time') || lower.includes('delivery')) return r.delais;
+  if (lower.includes('delai') || lower.includes('délai') || lower.includes('temps') || lower.includes('time') || lower.includes('delivery')) return r.delais;
   return r.default;
 }
 
