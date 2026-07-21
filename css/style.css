@@ -783,25 +783,25 @@ p, li, span {
 .new-about-gallery {
   display: flex;
   width: max-content;
-  animation: marquee 45s linear infinite;
+  animation: marquee 75s linear infinite;
 }
 
 .gallery-track {
   display: flex;
   align-items: center; /* Center align staggered images */
-  gap: 2rem;
-  padding-right: 2rem; /* gap between tracks */
+  gap: 1.5rem;
+  padding-right: 1.5rem; /* gap between tracks */
 }
 
 .gallery-img-landscape {
-  height: clamp(220px, 30vh, 350px);
+  height: clamp(180px, 25vh, 280px);
   width: auto;
   object-fit: cover;
   border-radius: 10px;
 }
 
 .gallery-img-portrait {
-  height: clamp(300px, 40vh, 480px);
+  height: clamp(240px, 35vh, 400px);
   width: auto;
   object-fit: cover;
   border-radius: 10px;
