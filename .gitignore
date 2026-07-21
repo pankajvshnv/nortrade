@@ -1,3 +1,4 @@
 node_modules/
 nortrade.db
 .DS_Store
+.env

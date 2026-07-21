@@ -1,70 +1,63 @@
-<section id="contact" class="unified-footer-section">
-  <div class="unified-footer-inner">
-    
-    <!-- Column 1: Brand & Image -->
-    <div class="uf-col-brand">
-      <h3 class="uf-logo-text"><a href="#" style="text-decoration: underline;">NORTRADE</a></h3>
-      <h2 class="uf-main-heading" style="font-family: var(--font-serif); font-size: clamp(1.5rem, 2vw, 1.8rem); line-height: 1.4; text-transform: none; font-weight: 400; color: #1A1A1A;" data-fr="Notre mission est simple :<br>Aider nos clients à communiquer l'architecture avant qu'elle ne soit construite." data-en="Our mission is simple:<br>To help our clients communicate architecture before it is built.">Our mission is simple:<br>To help our clients communicate architecture before it is built.</h2>
-      <div class="uf-image-wrapper">
-        <img src="assets/images/IMG_20260715_112150_896.webp" alt="Exterior Patio Render">
+<footer id="site-footer" class="footer">
+
+  <!-- TOP ROW: Tagline + Empty Box -->
+  <div class="footer-top">
+    <div class="footer-tagline reveal-left">
+      <div style="margin-bottom: 1.5rem;">
+        <span class="why-intro-pill"
+          style="display: inline-block; white-space: nowrap; font-size: 0.75rem; padding: 0.4rem 1.1rem;">
+          <span data-fr="Conseil Suisse en Visualisation Immobilière"
+            data-en="Swiss Real Estate Visualization Consultancy">Swiss Real Estate Visualization Consultancy</span>
+        </span>
+      </div>
+      <p class="footer-tagline-text"
+        data-fr="Nous aidons nos clients à communiquer l'architecture avant qu'elle ne soit construite — avec <strong>précision, élégance</strong> et une attention absolue aux détails."
+        data-en="We help our clients communicate architecture before it is built — with <strong>precision, elegance,</strong> and absolute attention to detail.">
+        We help our clients communicate architecture before it is built — with <strong>precision, elegance,</strong> and
+        absolute attention to detail.</p>
+
+      <div class="footer-contact-block reveal-up">
+        <p class="fcb-phone">+41 78 206 59 42</p>
+        <a href="mailto:contact@nortrade.ch" class="fcb-email">contact@nortrade.ch</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MIDDLE ROW: Nav columns alongside Huge Logo -->
+  <div class="footer-middle">
+    <div class="footer-nav-wrapper">
+      <div class="footer-nav-col reveal-up" style="transition-delay: 0s;">
+        <p class="footer-nav-label" data-fr="Navigation" data-en="Navigation">Navigation</p>
+        <a href="#about" class="footer-nav-link" data-fr="A Propos" data-en="About">About</a>
+        <a href="#services" class="footer-nav-link" data-fr="Services" data-en="Services">Services</a>
+        <a href="#process" class="footer-nav-link" data-fr="Notre Processus" data-en="Our Process">Our Process</a>
+        <a href="#contact-page" class="footer-nav-link" data-fr="Contact" data-en="Contact">Contact</a>
+      </div>
+      <div class="footer-nav-col reveal-up" style="transition-delay: 0.15s;">
+        <p class="footer-nav-label" data-fr="Légal & Social" data-en="Legal & Social">Legal & Social</p>
+        <a href="https://wa.me/41782065942" target="_blank" rel="noopener" class="footer-nav-link">WhatsApp ↗</a>
+        <a href="privacy.html" class="footer-nav-link" data-fr="Confidentialité" data-en="Privacy Policy">Privacy Policy
+          ↗</a>
+        <a href="legal.html" class="footer-nav-link" data-fr="Mentions Légales" data-en="Legal Notice">Legal Notice
+          ↗</a>
+        <a href="cgu.html" class="footer-nav-link" data-fr="CGU" data-en="Terms of Use">Terms of Use ↗</a>
       </div>
     </div>
 
-    <!-- Column 2: Navigation & Details -->
-    <div class="uf-col-links">
-      <div class="uf-link-group">
-        <a href="#about" data-fr="A PROPOS" data-en="ABOUT">ABOUT</a>
-        <a href="#services" data-fr="SERVICES" data-en="SERVICES">SERVICES</a>
-        <!-- <a href="#realisations" data-fr="REALISATIONS" data-en="PORTFOLIO">PORTFOLIO</a> -->
-        <a href="#contact-form" data-fr="CONTACT" data-en="CONTACT">CONTACT</a>
-      </div>
-      
-      <div class="uf-link-group uf-contact-details">
-        <p data-fr="GENEVE, SUISSE" data-en="GENEVA, SWITZERLAND">GENEVE, SUISSE</p>
-        <p style="margin-top: 1rem;"></p>
-        <a href="mailto:contact@nortrade.ch" style="text-transform: lowercase;">contact@nortrade.ch</a>
-        <a href="tel:+41782065942">+41 78 206 59 42</a>
-      </div>
-
-      <div class="uf-link-group uf-legal">
-        <a href="https://wa.me/41782065942?text=Hy%20Nortrade" target="_blank" rel="noopener"><u>WHATSAPP</u></a>
-        <a href="privacy.html"><u data-fr="CONFIDENTIALITE" data-en="PRIVACY POLICY">CONFIDENTIALITE</u></a>
-        <a href="legal.html"><u data-fr="MENTIONS LEGALES" data-en="LEGAL NOTICE">MENTIONS LEGALES</u></a>
-        <a href="cgu.html"><u data-fr="CGU" data-en="TERMS OF USE">CGU</u></a>
-      </div>
+    <div class="footer-huge-logo reveal-up">
+      NORTRADE<sup> </sup>
     </div>
+  </div>
 
-    <!-- Column 3: The Form -->
-    <div class="uf-col-form">
-      <h3 class="uf-form-heading" data-fr="NOUS CONTACTER" data-en="CONTACT US">NOUS CONTACTER</h3>
-      <p class="uf-form-sub" data-fr="Veuillez nous communiquer vos coordonnées ; l'un de nos conseillers commerciaux vous contactera très prochainement." data-en="Please provide your contact details; one of our sales advisors will contact you very shortly.">Veuillez nous communiquer vos coordonnées ; l'un de nos conseillers commerciaux vous contactera très prochainement.</p>
-      
-      <form class="uf-contact-form" id="contact-form" novalidate>
-        <div class="uf-form-group">
-          <input type="text" id="prenom" name="prenom" placeholder="Prénom *" aria-label="Prénom" data-fr="Prénom *" data-en="First Name *" required>
-        </div>
-        <div class="uf-form-group">
-          <input type="text" id="nom" name="nom" placeholder="Nom *" aria-label="Nom" data-fr="Nom *" data-en="Last Name *" required>
-        </div>
-        <div class="uf-form-group">
-          <input type="email" id="email" name="email" placeholder="Email *" aria-label="Adresse Email" data-fr="Email *" data-en="Email *" required>
-        </div>
-        <div class="uf-form-group">
-          <textarea id="message" name="message" rows="3" placeholder="Parlez nous de votre projet" aria-label="Votre message" data-fr="Parlez nous de votre projet" data-en="Tell us about your project" required></textarea>
-        </div>
-        <button type="submit" class="uf-form-submit" id="form-submit-btn" aria-label="Soumettre le formulaire de contact" data-fr="Soumettre" data-en="Submit">Soumettre</button>
-      </form>
+  <!-- COPYRIGHT BAR (Black Bar) -->
+  <div class="footer-copyright-bar">
+    <div class="footer-copyright-inner">
+      <span>&copy; NORTRADE. All Rights Reserved.</span>
+      <span class="footer-copyright-divider d-none-mobile">&nbsp;|&nbsp;</span>
+      <span class="footer-credits"><span data-fr="Design et Développement par"
+          data-en="Design &amp; Development by">Design &amp; Development by</span> <a
+          href="https://www.instagram.com/dreweb.io/" target="_blank" rel="noopener">dreweb.io</a></span>
     </div>
+  </div>
 
-  </div>
-  
-  <!-- Massive Framer-style logotype -->
-  <div class="uf-massive-text" style="width: 100%; text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.1); overflow: hidden; display: flex; justify-content: center; align-items: flex-end;">
-    <h1 style="font-family: 'Cinzel', serif; font-size: clamp(3.5rem, 17.5vw, 38rem); font-weight: 400; line-height: 0.75; text-transform: uppercase; color: #1A1A1A; margin: 0; letter-spacing: -0.02em; white-space: nowrap; user-select: none;">NORTRADE</h1>
-  </div>
-  
-  <!-- Copyright & Credits -->
-  <div class="uf-copyright" style="width: 100%; text-align: center; padding: 2rem 0 1rem; font-family: var(--font-sans); font-size: 0.75rem; color: #8A8882; text-transform: uppercase; letter-spacing: 0.05em; border-top: 1px solid rgba(0,0,0,0.05);">
-    &copy; NORTRADE. All Rights Reserved. Design and develop by <a href="https://www.instagram.com/dreweb.io/" target="_blank" rel="noopener" style="text-decoration: underline; color: inherit;">dreweb.io</a>
-  </div>
-</section>
+</footer>

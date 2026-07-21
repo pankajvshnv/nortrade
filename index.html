@@ -14,10 +14,11 @@
   <title>NORTRADE | Swiss Architectural Visualization Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/style.css?v=1.1">
+  <link rel="stylesheet" href="css/responsive.css?v=8">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 </head>
 
@@ -41,7 +42,7 @@
     <div class="hero-media">
       <video id="hero-video" class="hero-video" autoplay muted playsinline
         data-playlist='["assets/videos/VID_20260714_225206_116.webm", "assets/videos/Interior_video.webm", "assets/videos/exterior_video.webm"]'>
-        <source src="assets/videos/VID_20260714_225206_116.webm" type="video/mp4">
+        <source src="assets/videos/VID_20260714_225206_116.webm" type="video/webm">
       </video>
       <div class="hero-overlay"></div>
     </div>
@@ -49,15 +50,26 @@
     <!-- Centered Content -->
     <div class="hero-center">
       <div class="hero-center-left">
-        <span class="hero-eyebrow reveal-up" style="display: block; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem; opacity: 0.8; color: #fff;">SWISS REAL ESTATE VISUALIZATION CONSULTANCY</span>
-        <h1 class="hero-wordmark reveal-up" style="margin-bottom: 1rem;">Nortrade</h1>
+        <span class="why-intro-pill reveal-up"
+          style="display: inline-block; white-space: nowrap; margin-bottom: 1.25rem; border-color: rgba(255,255,255,0.5); color: #ffffff; font-size: 0.72rem; letter-spacing: 0.08em;"
+          data-fr="CABINET DE CONSEIL SUISSE EN VISUALISATION IMMOBILIÈRE"
+          data-en="SWISS REAL ESTATE VISUALIZATION CONSULTANCY">SWISS REAL ESTATE VISUALIZATION CONSULTANCY</span>
+        <h1 class="hero-wordmark reveal-up">Nortrade</h1>
 
         <div class="hero-subtitle-container">
-          <p class="hero-subtitle reveal-up"
-            data-fr="Nous donnons vie a vos projets architecturaux avec des rendus et animations d'une precision exceptionnelle."
-            data-en="We bring your architectural projects to life with renders and animations of exceptional precision.">
-            Nous donnons vie a vos projets architecturaux avec des rendus et animations d'une precision exceptionnelle.
-          </p>
+          <div style="max-width: 400px; margin-bottom: 1rem;">
+            <p class="hero-subtitle reveal-up"
+              data-fr="Nous donnons vie a vos projets architecturaux avec des rendus et animations d'une precision exceptionnelle."
+              data-en="We bring your architectural projects to life with renders and animations of exceptional precision.">
+              Nous donnons vie a vos projets architecturaux avec des rendus et animations d'une precision
+              exceptionnelle.
+            </p>
+          </div>
+          <div class="hero-cta-container reveal-up" style="margin-top: 2.5rem;">
+            <a href="#contact-page" class="btn-primary"
+              style="background: white; color: black; border-color: white; padding: 0.7rem 1.6rem; font-size: 0.72rem;"
+              data-en="Discuss Your Project" data-fr="Discuter de votre projet">Discuss Your Project</a>
+          </div>
         </div>
       </div>
     </div>
@@ -84,9 +96,9 @@
       </div>
 
       <div class="hero-bottom-right reveal-up">
-        <a href="#contact-form" class="hero-card-cta">
+        <a href="#contact-page" class="hero-card-cta">
           <div class="hero-card-img">
-            <img src="assets/images/IMG_20260715_112150_896.webp" alt="Profile" loading="lazy" decoding="async">
+            <img src="assets/images/cta/1.png" alt="Profile" loading="lazy" decoding="async">
           </div>
           <div class="hero-card-content">
             <p class="hero-card-text" data-fr="Nous concevons des visuels que les gens veulent vraiment regarder."
@@ -115,14 +127,15 @@
     <div class="container">
       <div class="new-about-grid">
         <div class="new-about-text">
-          <div class="intro-label reveal-up" style="margin-bottom: 2rem;">
-            <span class="label-line"></span>
-            <span class="label-text" data-fr="A Propos De Nous" data-en="About Us">About Us</span>
+          <div class="why-intro-block reveal-up" style="margin-bottom: 0.5rem;">
+            <div class="why-intro-pill">
+              <span data-en="About Us" data-fr="À Propos De Nous">About Us</span>
+            </div>
           </div>
-          <h2 class="text-reveal-heading" style="font-size: clamp(1.2rem, 3vw, 2.2rem); line-height: 1.4;">
+          <h2 class="text-reveal-heading" style="font-size: clamp(1.4rem, 2.5vw, 2.2rem); line-height: 1.45;">
             <span class="reveal-text"
-              data-fr="NORTRADE est un studio suisse de visualisation architecturale dédié à aider les promoteurs, architectes, décorateurs d'intérieur et professionnels de l'immobilier à présenter leurs projets avec clarté, émotion et impact. À travers des rendus photoréalistes, des animations cinématiques et du home staging virtuel, nous transformons les concepts en expériences visuelles captivantes qui soutiennent vos décisions marketing, commerciales et d'investissement."
-              data-en="NORTRADE is a Swiss architectural visualization studio dedicated to helping developers, architects, interior designers and real estate professionals present projects with clarity, emotion and impact. Through photorealistic renderings, cinematic animations and virtual staging, we transform concepts into compelling visual experiences that support marketing, sales and investment decisions.">NORTRADE is a Swiss architectural visualization studio dedicated to helping developers, architects, interior designers and real estate professionals present projects with clarity, emotion and impact. Through photorealistic renderings, cinematic animations and virtual staging, we transform concepts into compelling visual experiences that support marketing, sales and investment decisions.</span>
+              data-fr="NORTRADE est une société de conseil suisse spécialisée dans la visualisation architecturale haut de gamme et les solutions de marketing immobilier. Nous collaborons avec des promoteurs, architectes, propriétaires et professionnels de l'immobilier pour transformer des concepts en expériences visuelles percutantes. Grâce à des rendus photoréalistes, du home staging virtuel, des animations architecturales et des expériences numériques immersives, nous créons des ressources visuelles haut de gamme qui renforcent les présentations de projets et maximisent l'impact commercial."
+              data-en="NORTRADE is a Swiss consulting firm specializing in premium architectural visualization and real estate marketing solutions. We partner with developers, architects, property owners, and real estate professionals to transform concepts into visually compelling experiences. Through photorealistic renderings, virtual home staging, architectural animations, and immersive digital experiences, we create high-end visual assets that strengthen project presentations and maximize commercial impact.">NORTRADE is a Swiss consulting firm specializing in premium architectural visualization and real estate marketing solutions. We partner with developers, architects, property owners, and real estate professionals to transform concepts into visually compelling experiences. Through photorealistic renderings, virtual home staging, architectural animations, and immersive digital experiences, we create high-end visual assets that strengthen project presentations and maximize commercial impact.</span>
           </h2>
         </div>
       </div>
@@ -132,112 +145,237 @@
       <div class="new-about-gallery">
         <!-- Track 1 -->
         <div class="gallery-track">
-          <img src="assets/images/IMG_20260715_112157_603.webp" class="gallery-img-landscape" alt="Gallery 1" loading="lazy" decoding="async">
-          <img src="assets/images/IMG_20260715_112150_896.webp" class="gallery-img-portrait" alt="Gallery 2" loading="lazy" decoding="async">
-          <img src="assets/images/IMG_20260715_112153_569.webp" class="gallery-img-landscape" alt="Gallery 3" loading="lazy" decoding="async">
-          <img src="assets/images/IMG_20260715_112200_280.webp" class="gallery-img-portrait" alt="Gallery 4" loading="lazy" decoding="async">
+          <img src="assets/images/about/1.png" class="gallery-img-landscape" alt="Modern Swiss Villa Exterior"
+            loading="lazy" decoding="async">
+          <img src="assets/images/about/2.png" class="gallery-img-portrait" alt="Minimalist Interior Space"
+            loading="lazy" decoding="async">
+          <img src="assets/images/about/3.png" class="gallery-img-landscape" alt="Commercial Office Facade"
+            loading="lazy" decoding="async">
+          <img src="assets/images/about/4.png" class="gallery-img-portrait" alt="Architectural Materials Detail"
+            loading="lazy" decoding="async">
         </div>
         <!-- Track 2 (Duplicate for seamless loop) -->
         <div class="gallery-track">
-          <img src="assets/images/IMG_20260715_112157_603.webp" class="gallery-img-landscape" alt="Gallery 1" loading="lazy" decoding="async">
-          <img src="assets/images/IMG_20260715_112150_896.webp" class="gallery-img-portrait" alt="Gallery 2" loading="lazy" decoding="async">
-          <img src="assets/images/IMG_20260715_112153_569.webp" class="gallery-img-landscape" alt="Gallery 3" loading="lazy" decoding="async">
-          <img src="assets/images/IMG_20260715_112200_280.webp" class="gallery-img-portrait" alt="Gallery 4" loading="lazy" decoding="async">
+          <img src="assets/images/about/1.png" class="gallery-img-landscape" alt="Modern Swiss Villa Exterior"
+            loading="lazy" decoding="async">
+          <img src="assets/images/about/2.png" class="gallery-img-portrait" alt="Minimalist Interior Space"
+            loading="lazy" decoding="async">
+          <img src="assets/images/about/3.png" class="gallery-img-landscape" alt="Commercial Office Facade"
+            loading="lazy" decoding="async">
+          <img src="assets/images/about/4.png" class="gallery-img-portrait" alt="Architectural Materials Detail"
+            loading="lazy" decoding="async">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SPLIT SCROLL SERVICES (STAYWORK STYLE) -->
+  <!-- SPLIT SCROLL SERVICES (STAYWORK STYLE) WITH PREMIUM DESIGN -->
   <section id="services" class="horizontal-services-section">
     <div class="horizontal-sticky">
+
       <!-- TOP IMAGE WINDOW (Stacking) -->
       <div class="h-img-window" id="h-img-window">
-        <div class="h-img-slide stack-slide" style="z-index: 1;"><img src="assets/images/IMG_20260715_112157_603.webp" alt="Exterior Rendering" loading="lazy" decoding="async"></div>
-        <div class="h-img-slide stack-slide" style="z-index: 2;"><img src="assets/images/virtual_tour.webp" alt="Virtual Tours" loading="lazy" decoding="async"></div>
-        <div class="h-img-slide stack-slide" style="z-index: 3;"><img src="assets/images/floorplan.webp" alt="3D Floorplans" loading="lazy" decoding="async"></div>
-        <div class="h-img-slide stack-slide" style="z-index: 4;"><video autoplay muted playsinline loop src="assets/videos/VID_20260714_225206_116.webm" style="width: 100%; height: 100%; object-fit: cover;"></video></div>
-        <div class="h-img-slide stack-slide" style="z-index: 5;"><img src="assets/images/modeling.webp" alt="3D Modeling" loading="lazy" decoding="async"></div>
-        <div class="h-img-slide stack-slide" style="z-index: 6;"><img src="assets/images/IMG_20260715_112202_661.webp" alt="Visualization Consulting" loading="lazy" decoding="async"></div>
+
+        <!-- Image Slide 1: Renderings -->
+        <div class="h-img-slide stack-slide" style="z-index: 1;">
+          <video autoplay muted playsinline loop src="assets/videos/exterior_video.webm"
+            style="width: 100%; height: 100%; object-fit: cover;"></video>
+        </div>
+
+        <!-- Image Slide 2: Virtual Tours -->
+        <div class="h-img-slide stack-slide" style="z-index: 2;">
+          <img src="assets/images/services/2.png" alt="Virtual Tours" loading="lazy" decoding="async">
+        </div>
+
+        <!-- Image Slide 3: 3D Floorplans -->
+        <div class="h-img-slide stack-slide" style="z-index: 3;">
+          <img src="assets/images/services/3.png" alt="3D Floorplans" loading="lazy" decoding="async">
+        </div>
+
+        <!-- Image Slide 4: Animations -->
+        <div class="h-img-slide stack-slide" style="z-index: 4;">
+          <video autoplay muted playsinline loop src="assets/videos/VID_20260714_225206_116.webm"
+            style="width: 100%; height: 100%; object-fit: cover;"></video>
+        </div>
+
+        <!-- Image Slide 5: CGI Marketing -->
+        <div class="h-img-slide stack-slide" style="z-index: 5;">
+          <img src="assets/images/services/4.png" alt="CGI Marketing" loading="lazy" decoding="async">
+        </div>
+
+        <!-- Image Slide 6: Visualization Consulting -->
+        <div class="h-img-slide stack-slide" style="z-index: 6;">
+          <img src="assets/images/services/5.png" alt="Visualization Consulting" loading="lazy" decoding="async">
+        </div>
+
+        <!-- Sticky Gradient Overlay fading out at the bottom of the image window -->
+        <div class="service-gradient-overlay"></div>
       </div>
 
       <!-- BOTTOM TEXT WINDOW (Fade) -->
       <div class="h-text-window" id="h-text-window">
 
-        <!-- Text 1 -->
+        <!-- Slide 1: Photorealistic Renderings -->
         <div class="h-text-slide fade-slide active">
-          <div class="h-slide-left">
-            <div style="text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem; font-weight: 500; margin-bottom: 0.8rem; color: #8A8882;" data-en="SERVICES" data-fr="SERVICES">SERVICES</div>
-            <h2 class="h-slide-title" data-en="<span class='highlight'>Photorealistic</span> Renderings" data-fr="Rendus <span class='highlight'>Photoréalistes</span>"><span class="highlight">Photorealistic</span> Renderings</h2>
-            <span class="h-slide-label" data-en="Interior & Exterior Renderings" data-fr="Rendus Intérieurs & Extérieurs">Interior & Exterior Renderings</span>
-          </div>
-          <div class="h-slide-right">
-            <p data-en="High-end interior and exterior visualizations that bring unbuilt architecture to life with exceptional realism, lighting accuracy, and emotional impact." data-fr="Visualisations intérieures et extérieures haut de gamme qui donnent vie à l'architecture non construite avec un réalisme exceptionnel, une précision d'éclairage et un impact émotionnel.">High-end interior and exterior visualizations that bring unbuilt architecture to life with exceptional realism, lighting accuracy, and emotional impact.</p>
-          </div>
-        </div>
-
-        <!-- Text 2 -->
-        <div class="h-text-slide fade-slide">
-          <div class="h-slide-left">
-            <h2 class="h-slide-title" data-en="<span class='highlight'>Virtual</span> Experiences" data-fr="Expériences <span class='highlight'>Virtuelles</span>"><span class="highlight">Virtual</span> Experiences</h2>
-            <span class="h-slide-label" data-en="Home Staging & 360° Tours" data-fr="Home Staging & Visites 360°">Home Staging & 360° Tours</span>
-          </div>
-          <div class="h-slide-right">
-            <p data-en="Immersive 360° walkthroughs and digital home staging that allow buyers to explore and connect with spaces interactively before construction begins." data-fr="Visites immersives à 360° et home staging numérique qui permettent aux acheteurs d'explorer et de se connecter aux espaces de manière interactive avant le début de la construction.">Immersive 360° walkthroughs and digital home staging that allow buyers to explore and connect with spaces interactively before construction begins.</p>
-          </div>
-        </div>
-
-        <!-- Text 3 -->
-        <div class="h-text-slide fade-slide">
-          <div class="h-slide-left">
-            <h2 class="h-slide-title" data-en="<span class='highlight'>Spatial</span> Planning" data-fr="Planification <span class='highlight'>Spatiale</span>"><span class="highlight">Spatial</span> Planning</h2>
-            <span class="h-slide-label" data-en="3D Floor Plans & Masterplans" data-fr="Plans 3D & Plans Directeurs">3D Floor Plans & Masterplans</span>
-          </div>
-          <div class="h-slide-right">
-            <p data-en="Detailed 3D floor plans and large-scale masterplans that clearly communicate layouts, circulation, and urban integration to investors and buyers." data-fr="Plans 3D détaillés et plans directeurs à grande échelle qui communiquent clairement les agencements, la circulation et l'intégration urbaine aux investisseurs et acheteurs.">Detailed 3D floor plans and large-scale masterplans that clearly communicate layouts, circulation, and urban integration to investors and buyers.</p>
+          <div class="service-text-content">
+            <div class="service-left-col">
+              <span class="why-intro-pill"
+                style="display: inline-block; white-space: nowrap; font-size: 0.75rem; padding: 0.35rem 1rem; margin-bottom: 1.25rem;"
+                data-en="Services" data-fr="Services">Services</span>
+              <h2 class="service-serif-title" data-en="Photorealistic Renderings" data-fr="Rendus Photoréalistes">
+                Photorealistic<br>Renderings
+              </h2>
+              <h3 class="service-subtitle" data-en="Interior & Exterior Renderings"
+                data-fr="Rendus Intérieurs & Extérieurs">
+                Interior & Exterior Renderings
+              </h3>
+            </div>
+            <div class="service-right-col">
+              <p class="service-description"
+                data-en="High-end interior and exterior visualizations that bring unbuilt architecture to life with exceptional realism, lighting accuracy, and emotional impact."
+                data-fr="Visualisations intérieures et extérieures haut de gamme qui donnent vie à l'architecture non construite avec un réalisme exceptionnel, une précision d'éclairage et un impact émotionnel.">
+                High-end interior and exterior visualizations that bring unbuilt architecture to life with exceptional
+                realism, lighting accuracy, and emotional impact.
+              </p>
+            </div>
           </div>
         </div>
 
-        <!-- Text 4 -->
+        <!-- Slide 2: Virtual Experiences -->
         <div class="h-text-slide fade-slide">
-          <div class="h-slide-left">
-            <h2 class="h-slide-title" data-en="<span class='highlight'>Dynamic</span> Perspectives" data-fr="Perspectives <span class='highlight'>Dynamiques</span>"><span class="highlight">Dynamic</span> Perspectives</h2>
-            <span class="h-slide-label" data-en="Animations & Aerials" data-fr="Animations & Rendus Aériens">Animations & Aerials</span>
-          </div>
-          <div class="h-slide-right">
-            <p data-en="Cinematic animations and breathtaking aerial drone renderings that showcase your development's scale, context, and atmosphere in motion." data-fr="Animations cinématiques et rendus aériens époustouflants par drone qui mettent en valeur l'échelle, le contexte et l'atmosphère de votre projet en mouvement.">Cinematic animations and breathtaking aerial drone renderings that showcase your development's scale, context, and atmosphere in motion.</p>
+          <div class="service-text-content">
+            <div class="service-left-col">
+              <span class="why-intro-pill"
+                style="display: inline-block; white-space: nowrap; font-size: 0.75rem; padding: 0.35rem 1rem; margin-bottom: 1.25rem;"
+                data-en="Services" data-fr="Services">Services</span>
+              <h2 class="service-serif-title" data-en="Virtual Experiences" data-fr="Expériences Virtuelles">
+                Virtual<br>Experiences
+              </h2>
+              <h3 class="service-subtitle" data-en="Home Staging & 360° Tours" data-fr="Home Staging & Visites 360°">
+                Home Staging & 360° Tours
+              </h3>
+            </div>
+            <div class="service-right-col">
+              <p class="service-description"
+                data-en="Immersive 360° walkthroughs and digital home staging that allow buyers to explore and connect with spaces interactively before construction begins."
+                data-fr="Visites immersives à 360° et home staging numérique qui permettent aux acheteurs d'explorer et de se connecter aux espaces de manière interactive avant le début de la construction.">
+                Immersive 360° walkthroughs and digital home staging that allow buyers to explore and connect with
+                spaces interactively before construction begins.
+              </p>
+            </div>
           </div>
         </div>
 
-        <!-- Text 5 -->
+        <!-- Slide 3: Spatial Planning -->
         <div class="h-text-slide fade-slide">
-          <div class="h-slide-left">
-            <h2 class="h-slide-title" data-en="<span class='highlight'>CGI</span> Marketing" data-fr="Marketing <span class='highlight'>CGI</span>"><span class="highlight">CGI</span> Marketing</h2>
-            <span class="h-slide-label" data-en="Modelling & CGI for Real Estate" data-fr="Modélisation & CGI pour l'Immobilier">Modelling & CGI for Real Estate</span>
-          </div>
-          <div class="h-slide-right">
-            <p data-en="Precise architectural modeling and bespoke CGI assets tailored to elevate your real estate marketing campaigns across all digital and print platforms." data-fr="Modélisation architecturale précise et actifs CGI sur mesure conçus pour sublimer vos campagnes de marketing immobilier sur toutes les plateformes numériques et imprimées.">Precise architectural modeling and bespoke CGI assets tailored to elevate your real estate marketing campaigns across all digital and print platforms.</p>
+          <div class="service-text-content">
+            <div class="service-left-col">
+              <span class="why-intro-pill"
+                style="display: inline-block; white-space: nowrap; font-size: 0.75rem; padding: 0.35rem 1rem; margin-bottom: 1.25rem;"
+                data-en="Services" data-fr="Services">Services</span>
+              <h2 class="service-serif-title" data-en="Spatial Planning" data-fr="Planification Spatiale">
+                Spatial<br>Planning
+              </h2>
+              <h3 class="service-subtitle" data-en="3D Floor Plans & Masterplan" data-fr="Plans 3D & Plan Directeur">
+                3D Floor Plans & Masterplan
+              </h3>
+            </div>
+            <div class="service-right-col">
+              <p class="service-description"
+                data-en="Detailed 3D floor plans and large-scale masterplans that clearly communicate layouts, circulation, and urban integration to investors and buyers."
+                data-fr="Plans 3D détaillés et plans directeurs à grande échelle qui communiquent clairement les agencements, la circulation et l'intégration urbaine aux investisseurs et acheteurs.">
+                Detailed 3D floor plans and large-scale masterplans that clearly communicate layouts, circulation, and
+                urban integration to investors and buyers.
+              </p>
+            </div>
           </div>
         </div>
 
-        <!-- Text 6 -->
+        <!-- Slide 4: Dynamic Perspectives -->
         <div class="h-text-slide fade-slide">
-          <div class="h-slide-left">
-            <h2 class="h-slide-title" data-en="<span class='highlight'>Visualization</span> Consulting" data-fr="Conseil en <span class='highlight'>Visualisation</span>"><span class="highlight">Visualization</span> Consulting</h2>
-            <span class="h-slide-label" data-en="Project Audit & Visual Strategy" data-fr="Audit de Projet & Stratégie Visuelle">Project Audit & Visual Strategy</span>
-          </div>
-          <div class="h-slide-right">
-            <p data-en="Before production, we review your project to recommend the most effective visual solutions—from renderings and virtual tours to full CGI marketing strategies." data-fr="Avant la production, nous passons en revue votre projet pour recommander les solutions visuelles les plus efficaces — des rendus et visites virtuelles aux stratégies complètes de marketing CGI.">Before production, we review your project to recommend the most effective visual solutions—from renderings and virtual tours to full CGI marketing strategies.</p>
-            <a href="#contact-form" class="btn-outline" style="margin-top: 1.5rem; display: inline-block;" data-en="Request a Consultation" data-fr="Demander une Consultation">Request a Consultation</a>
+          <div class="service-text-content">
+            <div class="service-left-col">
+              <span class="why-intro-pill"
+                style="display: inline-block; white-space: nowrap; font-size: 0.75rem; padding: 0.35rem 1rem; margin-bottom: 1.25rem;"
+                data-en="Services" data-fr="Services">Services</span>
+              <h2 class="service-serif-title" data-en="Dynamic Perspectives" data-fr="Perspectives Dynamiques">
+                Dynamic<br>Perspectives
+              </h2>
+              <h3 class="service-subtitle" data-en="Animations & Aerials" data-fr="Animations & Rendus Aériens">
+                Animations & Aerials
+              </h3>
+            </div>
+            <div class="service-right-col">
+              <p class="service-description"
+                data-en="Cinematic animations and breathtaking aerial drone renderings that showcase your development's scale, context, and atmosphere in motion."
+                data-fr="Animations cinématiques et rendus aériens époustouflants par drone qui mettent en valeur l'échelle, le contexte et l'atmosphère de votre projet en mouvement.">
+                Cinematic animations and breathtaking aerial drone renderings that showcase your development's scale,
+                context, and atmosphere in motion.
+              </p>
+            </div>
           </div>
         </div>
+
+        <!-- Slide 5: CGI Marketing -->
+        <div class="h-text-slide fade-slide">
+          <div class="service-text-content">
+            <div class="service-left-col">
+              <span class="why-intro-pill"
+                style="display: inline-block; white-space: nowrap; font-size: 0.75rem; padding: 0.35rem 1rem; margin-bottom: 1.25rem;"
+                data-en="Services" data-fr="Services">Services</span>
+              <h2 class="service-serif-title" data-en="CGI Marketing" data-fr="Marketing CGI">
+                CGI<br>Marketing
+              </h2>
+              <h3 class="service-subtitle" data-en="Modelling & CGI for Real Estate"
+                data-fr="Modélisation & CGI pour l'Immobilier">
+                Modelling & CGI for Real Estate
+              </h3>
+            </div>
+            <div class="service-right-col">
+              <p class="service-description"
+                data-en="Precise architectural modeling and bespoke CGI assets tailored to elevate your real estate marketing campaigns across all digital and print platforms."
+                data-fr="Modélisation architecturale précise et actifs CGI sur mesure conçus pour sublimer vos campagnes de marketing immobilier sur toutes les plateformes numériques et imprimées.">
+                Precise architectural modeling and bespoke CGI assets tailored to elevate your real estate marketing
+                campaigns across all digital and print platforms.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 6: Visualization Consulting -->
+        <div class="h-text-slide fade-slide">
+          <div class="service-text-content">
+            <div class="service-left-col">
+              <span class="why-intro-pill"
+                style="display: inline-block; white-space: nowrap; font-size: 0.75rem; padding: 0.35rem 1rem; margin-bottom: 1.25rem;"
+                data-en="Services" data-fr="Services">Services</span>
+              <h2 class="service-serif-title" data-en="Visualization Consulting" data-fr="Conseil en Visualisation">
+                Visualization<br>Consulting
+              </h2>
+              <h3 class="service-subtitle" data-en="Project Audit & Visual Strategy"
+                data-fr="Audit de Projet & Stratégie Visuelle">
+                Project Audit & Visual Strategy
+              </h3>
+            </div>
+            <div class="service-right-col">
+              <p class="service-description"
+                data-en="Before production, we review your project to recommend the most effective visual solutions—from renderings and virtual tours to full CGI marketing strategies."
+                data-fr="Avant la production, nous passons en revue votre projet pour recommander les solutions visuelles les plus efficaces — des rendus et visites virtuelles aux stratégies de marketing CGI.">
+                Before production, we review your project to recommend the most effective visual solutions—from
+                renderings and virtual tours to full CGI marketing strategies.
+              </p>
+            </div>
+          </div>
+        </div>
+
       </div>
 
     </div>
   </section>
 
-  <!-- PORTFOLIO -->
-  <!-- <section id="realisations" class="portfolio-section">
+
+  <!-- PORTFOLIO SECTION - HIDDEN FOR NOW
+  <section id="realisations" class="portfolio-section">
     <div class="container">
       <div class="section-header">
         <span class="section-tag reveal-up" data-fr="Notre travail" data-en="Our work">Notre travail</span>
@@ -248,189 +386,446 @@
           portfolio s'enrichit continuellement.</p>
       </div>
       <div class="portfolio-grid">
-        <div class="portfolio-item portfolio-large reveal-up">
-          <div class="portfolio-img-wrap">
-            <img src="assets/images/IMG_20260715_112157_603.webp" alt="Tour Residentielle" loading="lazy" decoding="async">
-            <div class="portfolio-overlay">
-              <div class="portfolio-info">
-                <span class="portfolio-tag" data-fr="Residentiel - Animation"
-                  data-en="Residential - Animation">Residentiel - Animation</span>
-                <h3 data-fr="Tour Residentielle — Rendu Nocturne" data-en="Residential Tower — Night Render">Tour
-                  Residentielle — Rendu Nocturne</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-item reveal-up">
-          <div class="portfolio-img-wrap">
-            <img src="assets/images/IMG_20260715_112150_896.webp" alt="Penthouse vue de nuit" loading="lazy" decoding="async">
-            <div class="portfolio-overlay">
-              <div class="portfolio-info">
-                <span class="portfolio-tag" data-fr="Interieur - Rendu 3D" data-en="Interior - 3D Render">Interieur -
-                  Rendu 3D</span>
-                <h3 data-fr="Penthouse — Vue Aerienne" data-en="Penthouse — Aerial View">Penthouse — Vue Aerienne</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-item reveal-up">
-          <div class="portfolio-img-wrap">
-            <img src="assets/images/IMG_20260715_112153_569.webp" alt="Immeuble architectural" loading="lazy" decoding="async">
-            <div class="portfolio-overlay">
-              <div class="portfolio-info">
-                <span class="portfolio-tag" data-fr="Exterieur - Rendu 3D" data-en="Exterior - 3D Render">Exterieur -
-                  Rendu 3D</span>
-                <h3 data-fr="Immeuble Residentiel — Lumiere du Jour" data-en="Residential Building — Daylight">Immeuble
-                  Residentiel — Lumiere du Jour</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-item reveal-up">
-          <div class="portfolio-img-wrap">
-            <img src="assets/images/IMG_20260715_112200_280.webp" alt="Espace commercial" loading="lazy" decoding="async">
-            <div class="portfolio-overlay">
-              <div class="portfolio-info">
-                <span class="portfolio-tag" data-fr="Interieur - Retail" data-en="Interior - Retail">Interieur -
-                  Retail</span>
-                <h3 data-fr="Espace Commercial — Ambiance Premium" data-en="Commercial Space — Premium Atmosphere">
-                  Espace Commercial — Ambiance Premium</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-item reveal-up">
-          <div class="portfolio-img-wrap">
-            <img src="assets/images/IMG_20260715_112202_661.webp" alt="Showroom interieur" loading="lazy" decoding="async">
-            <div class="portfolio-overlay">
-              <div class="portfolio-info">
-                <span class="portfolio-tag" data-fr="Interieur - Showroom" data-en="Interior - Showroom">Interieur -
-                  Showroom</span>
-                <h3 data-fr="Showroom — Lumiere Naturelle" data-en="Showroom — Natural Light">Showroom — Lumiere
-                  Naturelle</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="portfolio-coming reveal-up">
-        <p class="coming-text" data-fr="Notre portfolio evolue constamment. Nouveaux projets a venir."
-          data-en="Our portfolio is constantly evolving. New projects coming soon.">Notre portfolio evolue constamment.
-          Nouveaux projets a venir.</p>
-        <a href="#contact-form" class="btn-outline" data-fr="Discutons de votre projet"
-          data-en="Let's discuss your project">Let's discuss your project</a>
+        ... (all portfolio items)
       </div>
     </div>
-  </section> -->
+  </section>
+  -->
+
+
 
 
 
   <!-- INDUSTRIES WE SERVE -->
-  <section id="industries" class="industries-section" style="position: relative; z-index: 20; padding: 100px 0; background: #000; color: white; text-align: center;">
+  <section id="industries" class="industries-section">
     <div class="container">
-      <div class="intro-label reveal-up" style="margin-bottom: 2rem; justify-content: center;">
-        <span class="label-text" data-fr="Nos Clients" data-en="Industries We Serve">Industries We Serve</span>
+      <div class="why-intro-block reveal-up"
+        style="margin-bottom: 4rem; text-align: center; display: flex; justify-content: center;">
+        <div class="why-intro-pill">
+          <span data-en="Industries We Serve" data-fr="Secteurs d'activité">Industries We Serve</span>
+        </div>
       </div>
-      <div class="industries-grid" style="display: flex; flex-wrap: wrap; gap: 60px; justify-content: center; margin-top: 4rem;">
-        <div class="industry-item reveal-up" style="display: flex; flex-direction: column; align-items: center; width: 160px;">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
-            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="22" x2="9" y2="22"></line><line x1="15" y1="22" x2="15" y2="22"></line><line x1="9" y1="6" x2="9" y2="6"></line><line x1="15" y1="6" x2="15" y2="6"></line><line x1="9" y1="10" x2="9" y2="10"></line><line x1="15" y1="10" x2="15" y2="10"></line><line x1="9" y1="14" x2="9" y2="14"></line><line x1="15" y1="14" x2="15" y2="14"></line><line x1="9" y1="18" x2="9" y2="18"></line><line x1="15" y1="18" x2="15" y2="18"></line>
+      <div class="industries-grid">
+        <!-- 1. Developers -->
+        <div class="industry-item reveal-scale" style="transition-delay: 0s;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75"
+            stroke-linecap="round" stroke-linejoin="round" class="industry-icon">
+            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+            <line x1="9" y1="22" x2="9" y2="22"></line>
+            <line x1="15" y1="22" x2="15" y2="22"></line>
+            <line x1="9" y1="6" x2="9" y2="6"></line>
+            <line x1="15" y1="6" x2="15" y2="6"></line>
+            <line x1="9" y1="10" x2="9" y2="10"></line>
+            <line x1="15" y1="10" x2="15" y2="10"></line>
+            <line x1="9" y1="14" x2="9" y2="14"></line>
+            <line x1="15" y1="14" x2="15" y2="14"></line>
+            <line x1="9" y1="18" x2="9" y2="18"></line>
+            <line x1="15" y1="18" x2="15" y2="18"></line>
           </svg>
-          <h4 style="margin-top: 1.5rem; font-family: var(--font-sans); font-size: 0.95rem; font-weight: 300; letter-spacing: 0.05em; color: white;" data-en="Property Developers">Property Developers</h4>
-        </div>
-        
-        <div class="industry-item reveal-up" style="display: flex; flex-direction: column; align-items: center; width: 160px;">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
-            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line>
-          </svg>
-          <h4 style="margin-top: 1.5rem; font-family: var(--font-sans); font-size: 0.95rem; font-weight: 300; letter-spacing: 0.05em; color: white;" data-en="Architects">Architects</h4>
-        </div>
-        
-        <div class="industry-item reveal-up" style="display: flex; flex-direction: column; align-items: center; width: 160px;">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
-            <path d="M20 9V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v2"></path><path d="M4 13h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2z"></path><line x1="4" y1="19" x2="4" y2="21"></line><line x1="20" y1="19" x2="20" y2="21"></line>
-          </svg>
-          <h4 style="margin-top: 1.5rem; font-family: var(--font-sans); font-size: 0.95rem; font-weight: 300; letter-spacing: 0.05em; color: white;" data-en="Interior Designers">Interior Designers</h4>
-        </div>
-        
-        <div class="industry-item reveal-up" style="display: flex; flex-direction: column; align-items: center; width: 160px;">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline>
-          </svg>
-          <h4 style="margin-top: 1.5rem; font-family: var(--font-sans); font-size: 0.95rem; font-weight: 300; letter-spacing: 0.05em; color: white;" data-en="Real Estate Agencies">Real Estate Agencies</h4>
-        </div>
-        
-        <div class="industry-item reveal-up" style="display: flex; flex-direction: column; align-items: center; width: 160px;">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
-            <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path>
-          </svg>
-          <h4 style="margin-top: 1.5rem; font-family: var(--font-sans); font-size: 0.95rem; font-weight: 300; letter-spacing: 0.05em; color: white;" data-en="Property Owners">Property Owners</h4>
+          <h4 class="industry-title" data-fr="Promoteurs Immobiliers" data-en="Real Estate Developers">Real Estate
+            Developers</h4>
         </div>
 
-        <div class="industry-item reveal-up" style="display: flex; flex-direction: column; align-items: center; width: 160px;">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
-            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline>
+
+
+        <!-- 2. Architecture firms -->
+        <div class="industry-item reveal-scale" style="transition-delay: 0.1s;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75"
+            stroke-linecap="round" stroke-linejoin="round" class="industry-icon">
+            <path
+              d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+            </path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
           </svg>
-          <h4 style="margin-top: 1.5rem; font-family: var(--font-sans); font-size: 0.95rem; font-weight: 300; letter-spacing: 0.05em; color: white;" data-en="Property Investors">Property Investors</h4>
+          <h4 class="industry-title" data-fr="Cabinets d'Architecture" data-en="Architecture Firms">Architecture Firms
+          </h4>
         </div>
 
-        <div class="industry-item reveal-up" style="display: flex; flex-direction: column; align-items: center; width: 160px;">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
-            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line>
+        <!-- 3. Agencies -->
+        <div class="industry-item reveal-scale" style="transition-delay: 0.2s;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75"
+            stroke-linecap="round" stroke-linejoin="round" class="industry-icon">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
           </svg>
-          <h4 style="margin-top: 1.5rem; font-family: var(--font-sans); font-size: 0.95rem; font-weight: 300; letter-spacing: 0.05em; color: white;" data-en="Hospitality">Hospitality</h4>
+          <h4 class="industry-title" data-fr="Agences Immobilières" data-en="Real Estate Agencies">Real Estate Agencies
+          </h4>
         </div>
 
-        <div class="industry-item reveal-up" style="display: flex; flex-direction: column; align-items: center; width: 160px;">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
-            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle>
+        <!-- 4. Investors -->
+        <div class="industry-item reveal-scale" style="transition-delay: 0.3s;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75"
+            stroke-linecap="round" stroke-linejoin="round" class="industry-icon">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+            <polyline points="17 6 23 6 23 12"></polyline>
           </svg>
-          <h4 style="margin-top: 1.5rem; font-family: var(--font-sans); font-size: 0.95rem; font-weight: 300; letter-spacing: 0.05em; color: white; text-align: center;" data-en="Property Marketing Professionals">Property Marketing Professionals</h4>
+          <h4 class="industry-title" data-fr="Investisseurs" data-en="Investors">Investors</h4>
+        </div>
+
+
+        <!-- 6. Hospitality professionals -->
+        <div class="industry-item reveal-scale" style="transition-delay: 0.4s;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75"
+            stroke-linecap="round" stroke-linejoin="round" class="industry-icon">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+            <line x1="6" y1="1" x2="6" y2="4"></line>
+            <line x1="10" y1="1" x2="10" y2="4"></line>
+            <line x1="14" y1="1" x2="14" y2="4"></line>
+          </svg>
+          <h4 class="industry-title" data-fr="Professionnels de l'Hôtellerie" data-en="Hospitality Professionals">
+            Hospitality Professionals</h4>
+        </div>
+
+        <!-- 7. Interior designers -->
+        <div class="industry-item reveal-scale" style="transition-delay: 0.5s;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75"
+            stroke-linecap="round" stroke-linejoin="round" class="industry-icon">
+            <path d="M20 9V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v2"></path>
+            <path d="M4 13h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2z"></path>
+            <line x1="4" y1="19" x2="4" y2="21"></line>
+            <line x1="20" y1="19" x2="20" y2="21"></line>
+          </svg>
+          <h4 class="industry-title" data-fr="Architectes d'Intérieur" data-en="Interior Designers">Interior Designers
+          </h4>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- WHY US -->
-  <section class="why-section" style="position: relative; overflow: hidden; background: #000; color: white; min-height: 100vh; display: flex; flex-direction: column; justify-content: center;">
-    <video autoplay muted playsinline loop style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.6;">
-      <source src="assets/videos/VID_20260714_225206_116.webm" type="video/webm">
-    </video>
-    <div class="container" style="position: relative; z-index: 1;">
-      <div class="section-header">
-        <span class="section-tag reveal-up" style="background: var(--color-gold); color: #000; padding: 0.3em 0.6em; border-radius: 2px; font-weight: 600; display: inline-block;" data-en="Why Choose Us">Why Choose Us</span>
-        <h2 class="section-title reveal-up" style="color: white;" data-en="Why Choose NORTRADE">Why Choose NORTRADE</h2>
+  <!-- COMBINED WHY CHOOSE US & PROCESS TIMELINE (NEW PREMIUM DESIGN MATCHING MOCKUP) -->
+  <section id="why-process" class="why-process-section">
+    <div class="why-process-container">
+
+      <!-- Top Intro Block -->
+      <div class="why-intro-block reveal-up">
+        <div class="why-intro-pill">
+          <span data-en="Vision" data-fr="Vision">Vision</span>
+        </div>
+        <h2 class="why-intro-title reveal-up" data-en="The journey isn't over" data-fr="L'aventure ne s'arrête pas là">The journey
+          isn't over</h2>
+        <p class="why-intro-sub reveal-up"
+          data-en="Every space tells a story and yours is still unfolding.<br>Dive deeper into our work & explore new inspirations."
+          data-fr="Chaque espace raconte une histoire et la vôtre est en cours d'écriture.<br>Plongez au cœur de nos réalisations et explorez de nouvelles inspirations.">
+          Every space tells a story and yours is still unfolding.<br>Dive deeper into our work & explore new
+          inspirations.
+        </p>
       </div>
-      <div class="why-grid" style="background: transparent; border: none; gap: 20px;">
-        <div class="why-card reveal-up" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; color: white;">
-          <h3 class="why-title" style="color: white; margin-bottom: 1rem;" data-en="Swiss Project Coordination">Swiss Project Coordination</h3>
-          <p class="why-desc" style="color: rgba(255,255,255,0.8);" data-en="Every project is managed through a structured workflow, ensuring clear communication from briefing to final delivery.">Every project is managed through a structured workflow, ensuring clear communication from briefing to final delivery.</p>
+
+      <!-- Split Grid Block -->
+      <div class="why-split-grid">
+
+        <!-- Left: Image Box -->
+        <div class="why-img-col reveal-left">
+          <img src="assets/images/Living_room_with_sectional_sofa_202607160920.webp"
+            alt="Nortrade Premium Visualization" class="why-showcase-img">
         </div>
 
-        <div class="why-card reveal-up" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; color: white;">
-          <h3 class="why-title" style="color: white; margin-bottom: 1rem;" data-en="Premium Visual Quality">Premium Visual Quality</h3>
-          <p class="why-desc" style="color: rgba(255,255,255,0.8);" data-en="High-end visual content created to communicate architecture with realism, precision and emotion.">High-end visual content created to communicate architecture with realism, precision and emotion.</p>
+        <!-- Right: Features List -->
+        <div class="why-text-col reveal-right">
+          <h3 class="why-heading-title" data-en="Why Choose us?" data-fr="Pourquoi nous choisir ?">Why Choose us?</h3>
+          <p class="why-heading-sub" data-en="We help businesses grow by combining strategy with innovative tools"
+            data-fr="Nous aidons les entreprises à se développer en combinant stratégie et outils innovants">We help
+            businesses grow by combining strategy with innovative tools</p>
+
+
+
+          <ul class="why-features-list">
+            <li class="reveal-up">
+              <span class="why-check-wrapper">
+                <svg viewBox="0 0 24 24" class="why-check-svg">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <div class="why-feature-info">
+                <span class="why-feature-title" data-en="Swiss-standard project coordination"
+                  data-fr="Coordination de projet aux standards suisses">Swiss-standard project coordination</span>
+              </div>
+            </li>
+            <li class="reveal-up">
+              <span class="why-check-wrapper">
+                <svg viewBox="0 0 24 24" class="why-check-svg">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <div class="why-feature-info">
+                <span class="why-feature-title" data-en="Photorealistic visual excellence"
+                  data-fr="Excellence visuelle photoréaliste">Photorealistic visual excellence</span>
+              </div>
+            </li>
+            <li class="reveal-up">
+              <span class="why-check-wrapper">
+                <svg viewBox="0 0 24 24" class="why-check-svg">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <div class="why-feature-info">
+                <span class="why-feature-title" data-en="Tailored solutions for every project"
+                  data-fr="Solutions sur mesure pour chaque projet">Tailored solutions for every project</span>
+              </div>
+            </li>
+            <li class="reveal-up">
+              <span class="why-check-wrapper">
+                <svg viewBox="0 0 24 24" class="why-check-svg">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <div class="why-feature-info">
+                <span class="why-feature-title" data-en="Global network of visualization experts"
+                  data-fr="Réseau mondial d'experts en visualisation">Global network of visualization experts</span>
+              </div>
+            </li>
+            <li class="reveal-up">
+              <span class="why-check-wrapper">
+                <svg viewBox="0 0 24 24" class="why-check-svg">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <div class="why-feature-info">
+                <span class="why-feature-title" data-en="Clear and transparent usage rights"
+                  data-fr="Droits d'utilisation clairs et transparents">Clear and transparent usage rights</span>
+              </div>
+            </li>
+          </ul>
+
         </div>
 
-        <div class="why-card reveal-up" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; color: white;">
-          <h3 class="why-title" style="color: white; margin-bottom: 1rem;" data-en="Tailored Visual Solutions">Tailored Visual Solutions</h3>
-          <p class="why-desc" style="color: rgba(255,255,255,0.8);" data-en="Every project receives a customized approach based on its objectives and communication needs.">Every project receives a customized approach based on its objectives and communication needs.</p>
+      </div>
+
+      <!-- Horizontal Process Timeline Timeline Block -->
+      <div class="timeline-container-new">
+        <div class="timeline-line"></div>
+        <div class="timeline-steps">
+
+          <!-- Step 1 -->
+          <div class="timeline-step reveal-up">
+            <div class="timeline-node">
+              <span class="node-number">1</span>
+              <!-- Discovery Icon (Dropper/Pipette) -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" class="node-icon">
+                <path d="M12 22a7 7 0 0 0 5-12.01l-5-4.99-5 4.99a7 7 0 0 0 5 12.01z"></path>
+                <path d="M12 10V6"></path>
+              </svg>
+            </div>
+            <div class="timeline-text-content">
+              <h4 class="step-label" data-en="Discovery & Planning" data-fr="Découverte & Planification">Discovery &
+                Planning</h4>
+              <p class="step-sublabel"
+                data-en="Understanding your project goals, requirements, and preparing a tailored proposal."
+                data-fr="Comprendre les objectifs et exigences de votre projet, et préparer une proposition sur mesure.">
+                Understanding your project goals, requirements, and preparing a tailored proposal.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="timeline-step reveal-up" style="--card-delay: 0.1s;">
+            <div class="timeline-node">
+              <span class="node-number">2</span>
+              <!-- Planning Icon (Atom/Molecule/Grid) -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" class="node-icon">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path
+                  d="M3 12h3M18 12h3M12 3v3M12 18v3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1">
+                </path>
+              </svg>
+            </div>
+            <div class="timeline-text-content">
+              <h4 class="step-label" data-en="Visualization Production" data-fr="Production Visuelle">Visualization
+                Production</h4>
+              <p class="step-sublabel"
+                data-en="Creating high-quality architectural visuals based on the approved scope and brief."
+                data-fr="Création de visuels architecturaux de haute qualité basés sur la portée et le brief approuvés.">
+                Creating high-quality architectural visuals based on the approved scope and brief.</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="timeline-step reveal-up" style="--card-delay: 0.2s;">
+            <div class="timeline-node">
+              <span class="node-number">3</span>
+              <!-- Designing Icon (Image) -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" class="node-icon">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+            </div>
+            <div class="timeline-text-content">
+              <h4 class="step-label" data-en="Review & Refinement" data-fr="Révision & Amélioration">Review & Refinement
+              </h4>
+              <p class="step-sublabel"
+                data-en="Collaborating on draft reviews and implementing agreed revisions to perfect the visuals."
+                data-fr="Collaboration sur les révisions préliminaires et mise en œuvre des modifications convenues pour parfaire les visuels.">
+                Collaborating on draft reviews and implementing agreed revisions to perfect the visuals.</p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="timeline-step reveal-up" style="--card-delay: 0.3s;">
+            <div class="timeline-node">
+              <span class="node-number">4</span>
+              <!-- Delivery Icon (Dotted Check) -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" class="node-icon">
+                <circle cx="12" cy="12" r="10" stroke-dasharray="4 4"></circle>
+                <polyline points="8 12 11 15 16 9"></polyline>
+              </svg>
+            </div>
+            <div class="timeline-text-content">
+              <h4 class="step-label" data-en="Final Delivery" data-fr="Livraison Finale">Final Delivery</h4>
+              <p class="step-sublabel"
+                data-en="Delivering the final files in the required formats, ready for presentations, marketing, and communication."
+                data-fr="Livraison des fichiers finaux dans les formats requis, prêts pour les présentations, le marketing et la communication.">
+                Delivering the final files in the required formats, ready for presentations, marketing, and
+                communication.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULTATION SECTION - HIDDEN FOR NOW
+  <section id="consultation" class="consultation-section">
+    ...
+  </section>
+  -->
+
+  <!-- FAQ -->
+  <section id="faq" class="faq-section">
+    <div class="faq-container-new">
+
+      <!-- Left Column: Title & Description -->
+      <div class="faq-left reveal-left">
+        <div class="why-intro-pill" style="margin-bottom: 1.5rem;">
+          <span data-en="FAQ" data-fr="FAQ">FAQ</span>
+        </div>
+        <h2 class="why-intro-title faq-left-title" style="text-align: left; margin: 0 0 1.5rem;"
+          data-fr="Questions Fréquentes" data-en="Frequently Asked Questions">Frequently Asked Questions</h2>
+        <p class="faq-desc"
+          data-fr="Nous avons compilé une liste de réponses pour répondre à vos questions les plus pressantes concernant nos services."
+          data-en="We compiled a list of answers to address your most pressing questions regarding our Services.">We
+          compiled a list of answers to address your most pressing questions regarding our Services.</p>
+      </div>
+
+      <!-- Right Column: Accordion Items -->
+      <div class="faq-right faq-list reveal-up">
+
+        <div class="faq-item reveal-up">
+          <button class="faq-question" aria-expanded="false">
+            <span data-fr="Avec qui travaillez-vous ?" data-en="Who do you work with?">Who do you work with?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p data-fr="Nous travaillons avec des promoteurs, des architectes, des architectes d'intérieur, des propriétaires, des agences immobilières, des investisseurs et des professionnels de l'hôtellerie."
+                data-en="We work with developers, architects, interior designers, property owners, real estate agencies, investors and hospitality professionals.">
+                We work with developers, architects, interior designers, property owners, real estate agencies,
+                investors and hospitality professionals.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="why-card reveal-up" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; color: white;">
-          <h3 class="why-title" style="color: white; margin-bottom: 1rem;" data-en="Dedicated Project Management">Dedicated Project Management</h3>
-          <p class="why-desc" style="color: rgba(255,255,255,0.8);" data-en="A single point of contact throughout the entire project.">A single point of contact throughout the entire project.</p>
+        <div class="faq-item reveal-up">
+          <button class="faq-question" aria-expanded="false">
+            <span data-fr="Quels services proposez-vous ?" data-en="What services do you provide?">What services do you
+              provide?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p data-fr="NORTRADE propose des rendus photoréalistes, du home staging virtuel, des animations architecturales, des visites virtuelles à 360°, des plans 3D, des plans directeurs, des rendus aériens, de la modélisation architecturale et des solutions CGI pour le marketing immobilier."
+                data-en="NORTRADE provides photorealistic renderings, virtual home staging, architectural animations, 360° virtual tours, 3D floor plans, masterplans, aerial renderings, architectural modelling and CGI solutions for real estate marketing.">
+                NORTRADE provides photorealistic renderings, virtual home staging, architectural animations, 360°
+                virtual tours, 3D floor plans, masterplans, aerial renderings, architectural modelling and CGI solutions
+                for real estate marketing.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="why-card reveal-up" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; color: white;">
-          <h3 class="why-title" style="color: white; margin-bottom: 1rem;" data-en="International Production Network">International Production Network</h3>
-          <p class="why-desc" style="color: rgba(255,255,255,0.8);" data-en="Collaboration with experienced visualization professionals selected according to each project's requirements.">Collaboration with experienced visualization professionals selected according to each project's requirements.</p>
+        <div class="faq-item reveal-up">
+          <button class="faq-question" aria-expanded="false">
+            <span data-fr="Pouvez-vous travailler à partir de plans d'architecture ?"
+              data-en="Can you work from architectural drawings?">Can you work from architectural drawings?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p data-fr="Oui. Nous pouvons travailler à partir de plans d'architecture, de fichiers CAD, de dessins techniques et d'autres documents de projet."
+                data-en="Yes. We can work from architectural plans, CAD files, technical drawings and other project documentation.">
+                Yes. We can work from architectural plans, CAD files, technical drawings and other project
+                documentation.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="why-card reveal-up" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; color: white;">
-          <h3 class="why-title" style="color: white; margin-bottom: 1rem;" data-en="Clearly Defined Commercial Usage Rights">Clearly Defined Commercial Usage Rights</h3>
-          <p class="why-desc" style="color: rgba(255,255,255,0.8);" data-en="Commercial usage rights are clearly specified in every quotation and project agreement.">Commercial usage rights are clearly specified in every quotation and project agreement.</p>
+        <div class="faq-item reveal-up">
+          <button class="faq-question" aria-expanded="false">
+            <span data-fr="Comment les projets sont-ils gérés ?" data-en="How are projects managed?">How are projects
+              managed?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p data-fr="Chaque projet suit un processus structuré comprenant la découverte du projet, une proposition sur mesure, la production, la révision et la livraison finale."
+                data-en="Each project follows a structured workflow including project discovery, tailored proposal, production, review and final delivery.">
+                Each project follows a structured workflow including project discovery, tailored proposal, production,
+                review and final delivery.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal-up">
+          <button class="faq-question" aria-expanded="false">
+            <span data-fr="Comment demander un devis ?" data-en="How do I request a quotation?">How do I request a
+              quotation?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p data-fr="Il vous suffit de nous contacter via le site web et de fournir quelques détails sur votre projet. Nous étudierons vos besoins et préparerons une proposition sur mesure."
+                data-en="Simply contact us through the website and provide a few details about your project. We’ll review your requirements and prepare a tailored proposal.">
+                Simply contact us through the website and provide a few details about your project. We’ll review your
+                requirements and prepare a tailored proposal.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal-up">
+          <button class="faq-question" aria-expanded="false">
+            <span data-fr="Les droits d'utilisation commerciale sont-ils inclus ?"
+              data-en="Are commercial usage rights included?">Are commercial usage rights included?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p data-fr="Les droits d'utilisation commerciale sont clairement définis dans chaque devis et accord de projet."
+                data-en="Commercial usage rights are clearly defined within every quotation and project agreement.">
+                Commercial usage rights are clearly defined within every quotation and project agreement.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal-up">
+          <button class="faq-question" aria-expanded="false">
+            <span data-fr="Les projets confidentiels peuvent-ils rester privés ?"
+              data-en="Can confidential projects remain private?">Can confidential projects remain private?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p data-fr="Absolument. La confidentialité des clients est pleinement respectée et aucun projet n'est jamais publié sans accord écrit préalable."
+                data-en="Absolutely. Client confidentiality is fully respected, and no project is ever published without prior written approval.">
+                Absolutely. Client confidentiality is fully respected, and no project is ever published without prior
+                written approval.</p>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -438,32 +833,148 @@
   </section>
 
   <!-- CTA SECTION -->
-  <section class="cta-section" style="padding: clamp(120px, 15vw, 180px) 0; background-color: #0d0d0b; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 60px 60px; color: var(--color-white); text-align: center; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 80vh;">
-    
-    <!-- Floating Images -->
-    <img src="assets/images/IMG_20260715_112200_280.webp" alt="Render" class="reveal-fade d-none-mobile" style="position: absolute; top: 10%; left: 8%; width: clamp(120px, 15vw, 200px); border-radius: 24px; object-fit: cover; aspect-ratio: 1; box-shadow: 0 20px 40px rgba(0,0,0,0.4); z-index: 1;">
-    
-    <img src="assets/images/IMG_20260715_112150_896.webp" alt="Render" class="reveal-fade d-none-mobile" style="position: absolute; bottom: 15%; left: 15%; width: clamp(140px, 18vw, 220px); border-radius: 24px; object-fit: cover; aspect-ratio: 1; box-shadow: 0 20px 40px rgba(0,0,0,0.4); z-index: 1;">
-    
-    <img src="assets/images/IMG_20260715_112157_603.webp" alt="Render" class="reveal-fade d-none-mobile" style="position: absolute; top: 15%; right: 8%; width: clamp(130px, 16vw, 210px); border-radius: 24px; object-fit: cover; aspect-ratio: 1; box-shadow: 0 20px 40px rgba(0,0,0,0.4); z-index: 1;">
-    
-    <img src="assets/images/IMG_20260715_112202_661.webp" alt="Render" class="reveal-fade d-none-mobile" style="position: absolute; bottom: 10%; right: 15%; width: clamp(150px, 20vw, 240px); border-radius: 24px; object-fit: cover; aspect-ratio: 1; box-shadow: 0 20px 40px rgba(0,0,0,0.4); z-index: 1;">
+  <section class="cta-section">
 
-    <div class="container" style="max-width: 650px; position: relative; z-index: 2;">
-      <h2 class="reveal-up" style="font-family: var(--font-sans); font-size: clamp(2.5rem, 4.5vw, 4rem); font-weight: 500; text-transform: none; color: var(--color-white); margin-bottom: 1.5rem; letter-spacing: -0.02em; line-height: 1.1;" data-fr="Parlons de votre projet" data-en="Let's talk about your project">Let's talk about your project</h2>
-      
-      <p class="reveal-up" style="font-family: var(--font-sans); font-size: 1.15rem; font-weight: 300; line-height: 1.6; color: rgba(255,255,255,0.7); margin-bottom: 3rem;" data-fr="Notre calendrier de production se remplit rapidement. Sécurisez vos outils de visualisation haut de gamme pour vos prochains projets dès aujourd'hui. Contactez-nous pour garantir votre priorité." data-en="Our production calendar fills up quickly. Secure your high-end visualization tools for upcoming projects today. Contact us to guarantee priority.">Our production calendar fills up quickly. Secure your high-end visualization tools for upcoming projects today. Contact us to guarantee priority.</p>
-      
-      <div class="reveal-up" style="display: flex; gap: 30px; justify-content: center; align-items: center; flex-wrap: wrap;">
-        <a href="#contact-form" class="hover-scale" style="background: white; color: black; border-radius: 50px; padding: 10px 10px 10px 24px; font-weight: 500; display: inline-flex; align-items: center; gap: 15px; text-decoration: none; transition: transform 0.3s; font-size: 0.95rem;">
+    <!-- Floating Images -->
+    <img src="assets/images/cta/1.png" alt="Marble and Brass Detail"
+      class="reveal-fade d-none-mobile cta-floating-img cta-img-1">
+
+    <img src="assets/images/cta/2.png" alt="Light and Shadow"
+      class="reveal-fade d-none-mobile cta-floating-img cta-img-2">
+
+    <img src="assets/images/cta/3.png" alt="Minimalist Stairs"
+      class="reveal-fade d-none-mobile cta-floating-img cta-img-3">
+
+    <img src="assets/images/cta/4.png" alt="Glass Facade" class="reveal-fade d-none-mobile cta-floating-img cta-img-4">
+
+    <div class="container cta-container">
+      <h2 class="reveal-scale cta-heading" data-fr="Parlons de votre projet" data-en="Let's talk about your project">Let's
+        talk about your project</h2>
+
+      <p class="reveal-up cta-subheading"
+        data-fr="Notre calendrier de production se remplit rapidement. Sécurisez vos outils de visualisation haut de gamme pour vos prochains projets dès aujourd'hui. Contactez-nous pour garantir votre priorité."
+        data-en="Our production calendar fills up quickly. Secure your high-end visualization tools for upcoming projects today. Contact us to guarantee priority.">
+        Our production calendar fills up quickly. Secure your high-end visualization tools for upcoming projects today.
+        Contact us to guarantee priority.</p>
+
+      <div class="reveal-up cta-buttons">
+        <a href="#contact-page" class="hover-scale cta-btn">
           <span data-fr="FORMULAIRE DE DEVIS" data-en="QUOTE REQUEST FORM">QUOTE REQUEST FORM</span>
-          <span style="background: #0d0d0b; color: #fff; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;">
+          <span class="cta-btn-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="cta-btn-svg">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </span>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact-page" class="contact-section-new">
+    <div class="contact-container-new container">
+      <div class="contact-card-outer">
+
+        <!-- Left Column: Get in touch -->
+        <div class="contact-left-col reveal-up">
+          <div>
+            <div class="why-intro-pill" style="margin-bottom: 1.25rem;">
+              <span data-en="Contact Us" data-fr="Contactez-nous">Contact Us</span>
+            </div>
+            <h2 class="contact-left-title" data-en="Let's Discuss Your Project" data-fr="Parlons de votre projet">Let's
+              Discuss Your Project</h2>
+            <p class="contact-left-sub"
+              data-en="Whether you're developing a new project, marketing a property or preparing an architectural presentation, we'd be delighted to discuss how NORTRADE can help you present your project with clarity, quality and confidence."
+              data-fr="Que vous développiez un nouveau projet, commercialisiez un bien ou prépariez une présentation architecturale, nous serions ravis de discuter de la manière dont NORTRADE peut vous aider à présenter votre projet avec clarté, qualité et confiance.">
+              Whether you're developing a new project, marketing a property or preparing an architectural presentation,
+              we'd be delighted to discuss how NORTRADE can help you present your project with clarity, quality and
+              confidence.
+            </p>
+
+          </div>
+
+          <!-- Social Icons Row -->
+          <div class="contact-icon-row">
+            <a href="mailto:contact@nortrade.ch" class="contact-circle-btn" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </a>
+            <a href="tel:+41782065942" class="contact-circle-btn" aria-label="Phone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+            </a>
+            <a href="https://wa.me/41782065942?text=Hi%20Nortrade" class="contact-circle-btn" target="_blank"
+              rel="noopener" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                </path>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Form -->
+        <div class="contact-right-col reveal-up">
+          <div class="contact-form-inner">
+
+            <div id="form-success-msg" class="form-success-msg hidden" role="status" aria-live="polite">
+              <p data-fr="Merci pour votre message ! Nous vous contacterons très bientôt."
+                data-en="Thank you for your message! We will be in touch with you soon.">Thank you for your message! We
+                will be in touch with you soon.</p>
+            </div>
+            <div id="form-error-msg" class="form-submit-error hidden" role="alert" aria-live="assertive">
+              <p data-fr="Veuillez corriger les erreurs." data-en="Please correct the errors.">Please correct the
+                errors.</p>
+            </div>
+
+            <form class="contact-modern-form" id="contact-form" novalidate>
+              <div class="form-row-2">
+                <div class="form-group-modern">
+                  <label for="prenom" data-fr="Prénom" data-en="First Name">First Name</label>
+                  <input type="text" id="prenom" name="prenom" placeholder="Jane" required>
+                </div>
+                <div class="form-group-modern">
+                  <label for="nom" data-fr="Nom de famille" data-en="Last Name">Last Name</label>
+                  <input type="text" id="nom" name="nom" placeholder="Smith" required>
+                </div>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group-modern">
+                  <label for="email" data-fr="Adresse e-mail" data-en="Email Address">Email Address</label>
+                  <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+                </div>
+                <div class="form-group-modern">
+                  <label for="company" data-fr="Nom de l'entreprise (Optionnel)" data-en="Company (Optional)">Company
+                    (Optional)</label>
+                  <input type="text" id="company" name="company" placeholder="e.g. Nortrade AG">
+                </div>
+              </div>
+
+              <div class="form-group-modern">
+                <label for="message" data-fr="Détails du projet" data-en="Project Details">Project Details</label>
+                <textarea id="message" name="message" rows="4" placeholder="Tell us about your project..."
+                  required></textarea>
+              </div>
+
+              <button type="submit" class="contact-submit-btn-new" id="form-submit-btn" aria-label="Submit Form"
+                data-fr="Envoyer le formulaire" data-en="Submit your form">Submit your form</button>
+            </form>
+
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -478,7 +989,8 @@
     <button class="edge-btn chatbot-trigger" id="chatbot-trigger" aria-label="Ouvrir le chat">
       <span class="edge-text" data-fr="ASSISTANT" data-en="ASSISTANT">ASSISTANT</span>
     </button>
-    <a href="https://wa.me/41782065942?text=Hy%20Nortrade" class="edge-btn whatsapp-float" id="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp NORTRADE">
+    <a href="https://wa.me/41782065942?text=Hi%20Nortrade" class="edge-btn whatsapp-float" id="whatsapp-float"
+      target="_blank" rel="noopener" aria-label="WhatsApp NORTRADE">
       <span class="edge-text" data-fr="WHATSAPP" data-en="WHATSAPP">WHATSAPP</span>
     </a>
   </div>
@@ -527,7 +1039,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=8"></script>
 </body>
 
 </html>
