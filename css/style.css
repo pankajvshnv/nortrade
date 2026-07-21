@@ -811,7 +811,7 @@ p, li, span {
 .new-about-gallery {
   display: flex;
   width: max-content;
-  animation: marquee 25s linear infinite;
+  animation: marquee 45s linear infinite;
 }
 
 .gallery-track {
@@ -822,14 +822,14 @@ p, li, span {
 }
 
 .gallery-img-landscape {
-  height: clamp(250px, 35vh, 400px);
+  height: clamp(220px, 30vh, 350px);
   width: auto;
   object-fit: cover;
   border-radius: 10px;
 }
 
 .gallery-img-portrait {
-  height: clamp(350px, 45vh, 550px);
+  height: clamp(300px, 40vh, 480px);
   width: auto;
   object-fit: cover;
   border-radius: 10px;
@@ -1531,7 +1531,7 @@ p, li, span {
 }
 
 .footer-credits {
-  font-size: 0.85em; /* Make credits slightly smaller than copyright */
+  font-size: inherit;
 }
 
 .footer-copyright-inner span {
@@ -1570,7 +1570,7 @@ p, li, span {
     background: transparent;
     padding: 0 0 80px 0; /* Clear sticky buttons */
     margin-top: 1rem;
-    font-size: 0.65rem;
+    font-size: 0.6rem;
   }
   .footer-copyright-inner {
     flex-direction: column;
