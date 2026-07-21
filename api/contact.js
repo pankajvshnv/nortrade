@@ -46,15 +46,13 @@ export default async function handler(req, res) {
     const adminMailOptions = {
       from: process.env.FROM_EMAIL,
       to: process.env.RECIPIENT_EMAIL,
-      subject: `New Lead: ${name} - ${service || 'General Inquiry'}`,
+      subject: `New Lead: ${name} - General Inquiry`,
       text: `
         You have received a new contact form submission from NORTRADE website:
         
         Name: ${name}
         Email: ${email}
         Company: ${company || 'N/A'}
-        Service Requested: ${service || 'N/A'}
-        Budget: ${budget || 'N/A'}
         
         Message:
         ${message}
@@ -65,8 +63,6 @@ export default async function handler(req, res) {
           <tr><td><strong>Name</strong></td><td>${name}</td></tr>
           <tr><td><strong>Email</strong></td><td>${email}</td></tr>
           <tr><td><strong>Company</strong></td><td>${company || 'N/A'}</td></tr>
-          <tr><td><strong>Service Requested</strong></td><td>${service || 'N/A'}</td></tr>
-          <tr><td><strong>Budget</strong></td><td>${budget || 'N/A'}</td></tr>
         </table>
         <br/>
         <h4>Message:</h4>
