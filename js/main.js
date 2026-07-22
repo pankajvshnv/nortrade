@@ -1086,7 +1086,7 @@ function initCookieBanner() {
       <div style="flex: 1; padding-right: 1.5rem; margin-bottom: 0;">
         <p style="margin: 0; font-family: var(--font-sans); font-size: 0.8rem; font-weight: 300; line-height: 1.5; color: var(--color-white);">${text}</p>
       </div>
-      <button id="accept-cookies" aria-label="Accept Cookies" style="background: #ffffff; color: #000; border: none; padding: 0.8rem 1.5rem; font-family: var(--font-sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; border-radius: 2px; transition: all 0.3s; white-space: nowrap;">${btnText}</button>
+      <button id="accept-cookies" aria-label="Accept Cookies" style="background: transparent; color: #ffffff; border: 1px solid #ffffff; padding: 0.7rem 1.4rem; font-family: var(--font-sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; border-radius: 2px; transition: all 0.3s; white-space: nowrap;">${btnText}</button>
     `;
 
     Object.assign(banner.style, {
