@@ -174,15 +174,48 @@ function applyLanguage(lang) {
     document.title = titleEl.dataset[lang];
   }
 
+  // Update Chatbot elements
   const chatbotInput = document.getElementById('chatbot-input');
   if (chatbotInput) {
-    chatbotInput.placeholder = lang === 'fr' ? 'Ecrire un message...' : 'Write a message...';
+    chatbotInput.placeholder = lang === 'fr' ? 'Écrire un message...' : 'Write a message...';
+  }
+
+  const chatbotStatusText = document.querySelector('.chatbot-status-text');
+  if (chatbotStatusText) {
+    chatbotStatusText.textContent = lang === 'fr' ? 'En ligne' : 'Online';
+  }
+
+  const chatbotName = document.querySelector('.chatbot-name');
+  if (chatbotName) {
+    chatbotName.textContent = lang === 'fr' ? 'Assistant NORTRADE' : 'NORTRADE Assistant';
+  }
+
+  const initialBotMsg = document.querySelector('#chatbot-messages .chat-msg.bot');
+  if (initialBotMsg && !initialBotMsg.dataset.userResponded) {
+    initialBotMsg.textContent = lang === 'fr' 
+      ? 'Bonjour ! Je suis l\'assistant NORTRADE. Comment puis-je vous aider ?' 
+      : 'Hi! I\'m the NORTRADE assistant. How can I help you?';
   }
 
   document.querySelectorAll('.quick-reply').forEach(btn => {
     const key = 'reply' + lang.charAt(0).toUpperCase() + lang.slice(1);
     if (btn.dataset[key]) btn.textContent = btn.dataset[key];
   });
+
+  // Update Cookie Banner if present
+  const cookieBanner = document.getElementById('cookie-banner');
+  if (cookieBanner) {
+    const p = cookieBanner.querySelector('p');
+    if (p) {
+      p.innerHTML = lang === 'fr'
+        ? "Nous utilisons des cookies pour améliorer votre expérience et analyser notre trafic. En continuant à naviguer sur ce site, vous acceptez notre <a href='privacy.html' style='text-decoration: underline; color: #ffffff;'>Politique de confidentialité</a>."
+        : "We use cookies to improve your experience and analyze our traffic. By continuing to browse this site, you agree to our <a href='privacy.html' style='text-decoration: underline; color: #ffffff;'>Privacy Policy</a>.";
+    }
+    const btn = document.getElementById('accept-cookies');
+    if (btn) {
+      btn.textContent = lang === 'fr' ? "ACCEPTER" : "ACCEPT";
+    }
+  }
 
   document.documentElement.lang = lang;
   document.documentElement.dataset.lang = lang;
@@ -666,7 +699,7 @@ function initMainContactForm() {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, company, message })
+        body: JSON.stringify({ name, email, company, message, lang: currentLang })
       });
 
       if (response.ok) {
@@ -793,7 +826,7 @@ function initFooterContactForm() {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: 'Footer Quick Contact', email, message })
+        body: JSON.stringify({ name: 'Footer Quick Contact', email, message, lang: currentLang })
       });
 
       if (response.ok) {
