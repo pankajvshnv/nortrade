@@ -4043,7 +4043,7 @@ a.detail-value:hover {
 }
 
 .service-right-col .service-description {
-  max-width: none;
+  max-width: 42ch;
   width: 100%;
   font-size: clamp(0.9rem, 1.2vw, 1.05rem);
   line-height: 1.7;
