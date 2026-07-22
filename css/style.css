@@ -3170,6 +3170,7 @@ body.is-loading { overflow: hidden; }
 .faq-left {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .faq-tag {
