@@ -3596,59 +3596,100 @@ body.is-loading { overflow: hidden; }
 /* CTA Section */
 .cta-section {
   padding: clamp(80px, 8vw, 120px) 0;
-  background-color: #0d0d0b;
-  background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
+  background-color: #0b0b0a;
   color: var(--color-white);
-  text-align: center;
   position: relative;
   z-index: 10;
-  overflow: hidden;
-  display: flex;
+}
+
+.cta-framed-card {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: clamp(2.5rem, 5vw, 4.5rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
   align-items: center;
-  justify-content: center;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
 }
-.cta-floating-img {
-  position: absolute;
-  border-radius: 10px;
-  object-fit: cover;
-  aspect-ratio: 1;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  z-index: 1;
+
+.cta-framed-text {
+  text-align: left;
 }
-.cta-img-1 { top: 10%; left: 8%; width: clamp(80px, 10vw, 130px); }
-.cta-img-2 { bottom: 15%; left: 15%; width: clamp(90px, 12vw, 150px); }
-.cta-img-3 { top: 15%; right: 8%; width: clamp(90px, 11vw, 140px); }
-.cta-img-4 { bottom: 10%; right: 15%; width: clamp(100px, 14vw, 160px); }
-.cta-container {
-  max-width: 650px;
-  position: relative;
-  z-index: 2;
+
+.cta-framed-text .why-intro-pill {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  background: transparent !important;
 }
-.cta-heading {
+
+.cta-framed-text .cta-heading {
   font-family: var(--font-secondary);
-  font-size: clamp(2.2rem, 5vw, 3.8rem); /* Matched to FAQ heading size */
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
   font-weight: 500;
   text-transform: none;
   color: var(--color-white);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   letter-spacing: -0.02em;
-  line-height: 1.1;
+  line-height: 1.15;
 }
-.cta-subheading {
+
+.cta-framed-text .cta-subheading {
   font-family: var(--font-secondary);
-  font-size: 1rem; /* Matched to FAQ description size */
+  font-size: 1.05rem;
   font-weight: 300;
-  line-height: 1.6;
-  color: rgba(255,255,255,0.7);
-  margin-bottom: 3rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 2.5rem;
+  max-width: 45ch;
 }
-.cta-buttons {
+
+.cta-framed-text .cta-buttons {
   display: flex;
-  gap: 30px;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  flex-wrap: wrap;
+}
+
+.cta-house-frame {
+  position: relative;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+  aspect-ratio: 4 / 3;
+}
+
+.cta-house-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.cta-house-frame:hover .cta-house-img {
+  transform: scale(1.03);
+}
+
+@media (max-width: 992px) {
+  .cta-framed-card {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .cta-framed-text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cta-framed-text .cta-subheading {
+    max-width: 100%;
+  }
+  .cta-framed-text .cta-buttons {
+    justify-content: center;
+  }
 }
 .cta-btn {
   background: white;
