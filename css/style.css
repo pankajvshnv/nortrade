@@ -291,7 +291,7 @@ p, li, span {
 }
 
 .nav-logo-img {
-  height: 42px;
+  height: 38px;
   width: auto;
   object-fit: contain;
   transition: opacity var(--transition-fast) var(--ease-out);
@@ -299,7 +299,7 @@ p, li, span {
 
 @media (max-width: 900px) {
   .nav-logo-img {
-    height: 34px;
+    height: 30px;
   }
 }
 
