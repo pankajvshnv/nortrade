@@ -29,14 +29,22 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: isFr ? 'Les champs nom, e-mail et message sont requis.' : 'Name, email, and message are required fields.' });
     }
 
+    // Fallback variables if Vercel environment variables are not set in dashboard yet
+    const smtpHost = process.env.SMTP_HOST || 'smtp.gmail.com';
+    const smtpPort = parseInt(process.env.SMTP_PORT) || 587;
+    const smtpUser = process.env.SMTP_USER || 'contact@nortrade.ch';
+    const smtpPass = process.env.SMTP_PASS || 'mwitouirmxrckcrr';
+    const fromEmail = process.env.FROM_EMAIL || 'contact@nortrade.ch';
+    const recipientEmail = process.env.RECIPIENT_EMAIL || 'contact@nortrade.ch';
+
     // Nodemailer Transporter Setup
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: parseInt(process.env.SMTP_PORT) || 587,
+      host: smtpHost,
+      port: smtpPort,
       secure: false, // true for 465, false for other ports
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
+        user: smtpUser,
+        pass: smtpPass,
       },
       tls: {
         rejectUnauthorized: false
@@ -45,8 +53,8 @@ export default async function handler(req, res) {
 
     // 1. Email notification to administrator
     const adminMailOptions = {
-      from: process.env.FROM_EMAIL,
-      to: process.env.RECIPIENT_EMAIL,
+      from: fromEmail,
+      to: recipientEmail,
       subject: `New Lead: ${name} - General Inquiry`,
       text: `
         You have received a new contact form submission from NORTRADE website:
@@ -89,7 +97,7 @@ export default async function handler(req, res) {
     const clientCopyright = isFr ? '&copy; NORTRADE. Tous droits réservés.' : '&copy; NORTRADE. All Rights Reserved.';
 
     const clientMailOptions = {
-      from: process.env.FROM_EMAIL,
+      from: fromEmail,
       to: email,
       subject: clientSubject,
       text: `
