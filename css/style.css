@@ -3385,11 +3385,17 @@ body.is-loading { overflow: hidden; }
 
 .contact-left-sub {
   font-family: var(--font-secondary);
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #666666;
-  max-width: 35ch;
-  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #333333;
+  max-width: 42ch;
+  margin: 0 0 2rem;
+}
+
+.contact-left-sub strong {
+  font-weight: 600;
+  color: #111111;
 }
 
 .contact-icon-row {
