@@ -531,7 +531,7 @@ p, li, span {
 
 .hero-subtitle {
   font-family: var(--font-secondary);
-  font-size: 1rem;
+  font-size: 12px;
   font-weight: 500;
   color: var(--color-white);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
@@ -549,7 +549,7 @@ p, li, span {
     max-width: 100%;
     width: 100%;
     text-align: left;
-    font-size: 0.72rem;
+    font-size: 11px;
     line-height: 1.55;
   }
   .hero-subtitle br {
