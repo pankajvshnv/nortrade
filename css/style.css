@@ -549,7 +549,7 @@ p, li, span {
     max-width: 100%;
     width: 100%;
     text-align: left;
-    font-size: 0.82rem;
+    font-size: 0.72rem;
     line-height: 1.55;
   }
   .hero-subtitle br {
@@ -4199,6 +4199,22 @@ a.detail-value:hover {
   color: #666666;
   margin: 0;
   max-width: 55ch;
+}
+
+@media (max-width: 768px) {
+  .service-eyebrow span:not(.service-eyebrow-line) {
+    font-size: 0.87rem;
+  }
+  .service-serif-title {
+    font-size: clamp(2.9rem, 8vw, 3.4rem) !important;
+  }
+  .service-subtitle {
+    font-size: clamp(1.5rem, 4.5vw, 1.8rem) !important;
+  }
+  .service-description {
+    font-size: 0.98rem !important;
+    line-height: 1.55 !important;
+  }
 }
 
 /* Two-column layout for service text content */
