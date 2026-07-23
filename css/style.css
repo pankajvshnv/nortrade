@@ -863,14 +863,14 @@ p, li, span {
 }
 
 .services-intro-title {
-  font-family: 'Moneta', 'Moneta-Regular', 'Playfair Display', Georgia, serif;
-  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-family: 'Inter', var(--font-secondary), sans-serif;
+  font-size: 54px;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.15;
   color: #111111;
   letter-spacing: -0.02em;
   margin: 0;
-  max-width: 780px;
+  max-width: 900px;
 }
 
 @media (max-width: 768px) {
@@ -878,7 +878,7 @@ p, li, span {
     padding: 3.5rem var(--gutter) 2.5rem;
   }
   .services-intro-title {
-    font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+    font-size: 30px;
   }
 }
 
@@ -899,7 +899,7 @@ p, li, span {
 
 .h-img-window {
   position: relative;
-  height: 55vh;
+  height: 45vh;
   width: 100%;
   overflow: hidden;
 }
@@ -947,7 +947,7 @@ p, li, span {
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 45vh;
+  height: 55vh;
   width: 100%;
   background: var(--color-white);
   overflow: hidden;
@@ -957,7 +957,7 @@ p, li, span {
   position: absolute;
   top: 0;
   left: 0;
-  height: 45vh;
+  height: 55vh;
   width: 100%;
   display: flex;
   align-items: center;
