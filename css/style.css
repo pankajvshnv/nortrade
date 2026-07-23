@@ -4232,9 +4232,9 @@ a.detail-value:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-end;
-  padding-top: 9.5rem;
-  padding-right: 2rem; /* Keeps it away from the extreme right edge */
+  justify-content: flex-start;
+  padding-top: 4.5rem;
+  padding-right: 2rem;
 }
 
 .service-right-col .service-intro-tagline {
