@@ -2471,7 +2471,6 @@ body.is-loading { overflow: hidden; }
 @media (max-width: 992px) {
   .industry-item {
     width: 25%;
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
     margin-bottom: 2rem;
   }
 }
@@ -2483,8 +2482,8 @@ body.is-loading { overflow: hidden; }
   .industry-item {
     width: 50% !important;
     padding: 20px 10px 24px;
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-right: none !important;
+    border-bottom: none !important;
   }
   .industry-item:nth-child(2n) {
     border-right: none;
