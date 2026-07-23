@@ -266,7 +266,6 @@ p, li, span {
   pointer-events: none;
   transition: transform 0.4s ease, opacity 0.4s ease, background var(--transition-fast);
 }
-.site-header.over-services .logo-text,
 .site-header.over-services .nav-link,
 .site-header.over-services .lang-toggle {
   color: var(--color-white) !important;
@@ -291,23 +290,43 @@ p, li, span {
   text-decoration: none;
 }
 
-.logo-text {
-  font-family: 'Cinzel', serif;
-  font-weight: 500;
-  font-size: 1.6rem;
-  letter-spacing: 0.1em;
-  color: var(--color-white);
-  transition: color var(--transition-fast) var(--ease-out);
+.nav-logo-img {
+  height: 26px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity var(--transition-fast) var(--ease-out);
 }
 
 @media (max-width: 900px) {
-  .logo-text {
-    font-size: 1.45rem; /* Reduced by ~2.5px */
+  .nav-logo-img {
+    height: 22px;
   }
 }
 
-.site-header.scrolled .logo-text {
-  color: var(--color-charcoal);
+.nav-logo-img.logo-white {
+  display: block;
+}
+
+.nav-logo-img.logo-black {
+  display: none;
+}
+
+.site-header.scrolled .nav-logo-img.logo-white,
+.site-header.header-light .nav-logo-img.logo-white {
+  display: none;
+}
+
+.site-header.scrolled .nav-logo-img.logo-black,
+.site-header.header-light .nav-logo-img.logo-black {
+  display: block;
+}
+
+.site-header.over-services .nav-logo-img.logo-white {
+  display: block !important;
+}
+
+.site-header.over-services .nav-logo-img.logo-black {
+  display: none !important;
 }
 
 .nav-links {
