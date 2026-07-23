@@ -1396,6 +1396,7 @@ p, li, span {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  transform: translateX(-12%);
 }
 
 .footer-emblem-img {
