@@ -2441,6 +2441,25 @@ body.is-loading { overflow: hidden; }
   transform: translateY(-2px);
 }
 
+.industry-icon {
+  opacity: 0.9;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  stroke: url(#industry-icon-gradient) !important;
+}
+
+.industry-icon path,
+.industry-icon circle,
+.industry-icon line,
+.industry-icon rect,
+.industry-icon polygon,
+.industry-icon polyline {
+  stroke: url(#industry-icon-gradient) !important;
+}
+
+.industry-icon circle[fill] {
+  fill: url(#industry-icon-gradient) !important;
+}
+
 .industry-item h4 {
   margin-top: 0;
   font-family: var(--font-secondary);
