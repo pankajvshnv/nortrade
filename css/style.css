@@ -3400,31 +3400,34 @@ body.is-loading { overflow: hidden; }
 
 .contact-icon-row {
   display: flex;
-  gap: 1.25rem;
+  gap: 1.1rem;
+  margin-top: auto;
+  padding-top: 2.5rem;
 }
 
 .contact-circle-btn {
-  width: 54px;
-  height: 54px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: #f5f5f7; /* Soft light grey background */
+  background: #f0f0f4;
   color: #111111;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s var(--ease-out), background-color 0.3s var(--ease-out);
+  transition: transform 0.25s var(--ease-out), background-color 0.25s var(--ease-out);
   text-decoration: none;
 }
 
 .contact-circle-btn:hover {
-  transform: scale(1.08);
-  background: #e5e5ea;
+  transform: translateY(-2px);
+  background: #e2e2e8;
 }
 
 .contact-circle-btn svg {
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   stroke: #111111;
+  stroke-width: 1.6;
 }
 
 .contact-location-card {
