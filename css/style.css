@@ -540,6 +540,23 @@ p, li, span {
   transition-delay: var(--transition-fast);
 }
 
+@media (max-width: 768px) {
+  .hero-subtitle-container {
+    max-width: 100%;
+    width: 100%;
+  }
+  .hero-subtitle {
+    max-width: 100%;
+    width: 100%;
+    text-align: left;
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+  .hero-subtitle br {
+    display: none;
+  }
+}
+
 .hero-socials {
   display: flex;
   gap: 0.85rem;
