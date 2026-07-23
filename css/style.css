@@ -1385,6 +1385,38 @@ p, li, span {
 .footer-top {
   max-width: 1400px;
   margin: 0 auto clamp(4rem, 8vw, 6rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+
+.footer-emblem-col {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.footer-emblem-img {
+  width: clamp(240px, 24vw, 360px);
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5rem;
+  }
+  .footer-emblem-col {
+    width: 100%;
+    justify-content: center;
+  }
+  .footer-emblem-img {
+    width: clamp(200px, 60vw, 280px);
+  }
 }
 
 .footer-tagline {
