@@ -1396,11 +1396,10 @@ p, li, span {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  transform: translateX(-12%);
 }
 
 .footer-emblem-img {
-  width: clamp(240px, 24vw, 360px);
+  width: clamp(340px, 35vw, 540px);
   height: auto;
   object-fit: contain;
 }
