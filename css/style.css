@@ -1483,16 +1483,18 @@ p, li, span {
 }
 
 .footer-copyright-bar {
-  background: #111111 !important;
+  background: #000000 !important;
   color: #ffffff !important;
-  padding: 1rem var(--gutter);
+  padding: 1.2rem var(--gutter);
   font-family: var(--font-secondary);
   font-size: 0.8rem;
   font-weight: 400;
-  margin-left: calc(-1 * var(--gutter));
-  margin-right: calc(-1 * var(--gutter));
-  width: calc(100% + 2 * var(--gutter));
+  width: 100vw;
   position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   z-index: 10;
 }
 
