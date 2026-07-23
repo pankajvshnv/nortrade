@@ -3651,6 +3651,7 @@ body.is-loading { overflow: hidden; }
   color: #ffffff !important;
   border-color: rgba(255, 255, 255, 0.5) !important;
   background: transparent !important;
+  text-transform: none !important;
 }
 
 .cta-framed-text .cta-heading {
