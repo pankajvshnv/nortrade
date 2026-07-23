@@ -1533,24 +1533,25 @@ p, li, span {
   .footer-grid-container {
     flex-direction: column;
     align-items: flex-start;
-    gap: 3rem;
+    gap: 2rem;
+    margin-bottom: 0.5rem !important;
   }
   .footer-left-content {
     width: 100%;
     max-width: none;
-    gap: 2.5rem;
+    gap: 2rem;
   }
   .footer-logo-col {
     width: 100%;
     justify-content: center;
-    margin: 1rem 0 2rem;
+    margin: 0.5rem 0 0;
   }
   .footer-logo-img {
-    width: clamp(260px, 75vw, 360px);
+    width: clamp(240px, 75vw, 340px);
   }
   .footer-copyright-bar {
     background: transparent !important;
-    padding: 1rem var(--gutter) 85px !important;
+    padding: 0.75rem var(--gutter) 85px !important;
   }
   .footer-copyright-inner {
     flex-direction: column;
@@ -1559,10 +1560,11 @@ p, li, span {
   }
   .footer-copyright-inner .footer-copyright-text {
     font-size: 0.78rem !important;
-    font-weight: 400 !important;
+    font-weight: 500 !important;
     color: #111111 !important;
   }
   .footer-copyright-inner .footer-credits,
+  .footer-copyright-inner .footer-credits span,
   .footer-copyright-inner .footer-credits a {
     font-size: 0.60rem !important;
     font-weight: 400 !important;
