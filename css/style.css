@@ -3618,9 +3618,10 @@ body.is-loading { overflow: hidden; }
   text-align: left;
 }
 
-.cta-framed-text .why-intro-pill {
+.cta-framed-text .why-intro-pill,
+.cta-framed-text .why-intro-pill span {
   color: #ffffff !important;
-  border-color: rgba(255, 255, 255, 0.4) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
   background: transparent !important;
 }
 
