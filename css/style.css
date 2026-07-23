@@ -850,6 +850,38 @@ p, li, span {
   100% { transform: translateX(-50%); }
 }
 
+/* Services Intro Section (between About and Services) */
+.services-intro-section {
+  background: #ffffff;
+  padding: 5rem var(--gutter) 4rem;
+  position: relative;
+  z-index: 10;
+}
+
+.services-intro-inner {
+  max-width: 820px;
+}
+
+.services-intro-title {
+  font-family: 'Moneta', 'Moneta-Regular', 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #111111;
+  letter-spacing: -0.02em;
+  margin: 0;
+  max-width: 780px;
+}
+
+@media (max-width: 768px) {
+  .services-intro-section {
+    padding: 3.5rem var(--gutter) 2.5rem;
+  }
+  .services-intro-title {
+    font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+  }
+}
+
 .horizontal-services-section {
   height: 800vh; /* 6 slides + hold at the end */
   position: relative;
@@ -1545,16 +1577,11 @@ p, li, span {
   }
   .footer-logo-col {
     width: 100%;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 1rem auto 0;
-    text-align: center;
+    margin: 0.5rem 0 0;
   }
   .footer-logo-img {
     width: clamp(240px, 75vw, 340px);
-    display: block;
-    margin: 0 auto;
   }
   .footer-copyright-bar {
     background: transparent !important;
