@@ -703,9 +703,13 @@ function initMainContactForm() {
       });
 
       if (response.ok) {
-        form.classList.add('hidden');
         if (successMsg) {
           successMsg.classList.remove('hidden');
+        }
+        form.reset();
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = currentLang === 'fr' ? 'Envoyer le formulaire' : 'Submit your form';
         }
       } else {
         throw new Error('Server returned error status');
@@ -721,7 +725,7 @@ function initMainContactForm() {
       }
       if (submitBtn) {
         submitBtn.disabled = false;
-        submitBtn.textContent = currentLang === 'fr' ? 'Envoyer le message' : 'Send Message';
+        submitBtn.textContent = currentLang === 'fr' ? 'Envoyer le formulaire' : 'Submit your form';
       }
     }
   });
