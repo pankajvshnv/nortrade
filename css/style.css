@@ -555,6 +555,10 @@ p, li, span {
   .hero-subtitle br {
     display: none;
   }
+  .hero-cta-container .btn-primary {
+    font-size: 0.55rem !important;
+    padding: 0.5rem 1.2rem !important;
+  }
 }
 
 .hero-socials {
