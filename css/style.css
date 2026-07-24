@@ -492,7 +492,7 @@ p, li, span {
   margin: 0;
   margin-bottom: 0.5rem;
   margin-left: -0.04em; /* Optical alignment for the 'N' */
-  transform: translateX(-2px); /* Precise alignment with subtitle */
+  transform: translateX(-6px); /* Precise alignment with subtitle */
   transition-delay: var(--transition-fast);
 }
 
@@ -531,13 +531,18 @@ p, li, span {
 
 .hero-subtitle {
   font-family: var(--font-secondary);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--color-white);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   line-height: 1.6;
   max-width: 700px;
   transition-delay: var(--transition-fast);
+}
+
+.hero-btn-discuss {
+  padding: 0.7rem 1.6rem;
+  font-size: 0.72rem;
 }
 
 @media (max-width: 768px) {
@@ -556,8 +561,8 @@ p, li, span {
     display: none;
   }
   .hero-cta-container .btn-primary {
-    font-size: 0.55rem !important;
-    padding: 0.5rem 1.2rem !important;
+    font-size: 10px !important;
+    padding: 6px 14px !important;
   }
 }
 
@@ -1970,7 +1975,7 @@ p, li, span {
     padding-bottom: 150px; /* Pushed further up to avoid overlapping the taller action bar */
   }
 
-  .hero-wordmark { font-size: 20vw; padding: 0 1vw; }
+  .hero-wordmark { font-size: 20vw; padding: 0; margin-left: -2px; }
   
   .hero-eyebrow { 
     font-size: 2.5vw !important; 
@@ -1979,10 +1984,7 @@ p, li, span {
     margin-bottom: 1rem !important; 
   }
 
-  .hero-cta-container .btn-primary { 
-    font-size: 3.2vw !important; 
-    padding: 2.5vw 5vw !important; 
-  }
+
 
   .btn-primary, .btn-ghost, .btn-outline { width: fit-content; }
 
@@ -4319,7 +4321,7 @@ a.detail-value:hover {
     letter-spacing: -0.01em;
   }
   .hero-center-left .why-intro-pill {
-    font-size: 0.52rem !important;
+    font-size: 0.7rem !important;
     letter-spacing: 0.04em !important;
     white-space: nowrap !important;
     padding: 0.35rem 0.7rem !important;
