@@ -312,15 +312,24 @@ p, li, span {
 }
 
 .portfolio-grid-new {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
   gap: 1.5rem;
   width: 100%;
+  padding-bottom: 2rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.portfolio-grid-new::-webkit-scrollbar {
+  display: none;
 }
 
 .portfolio-card {
+  flex: 0 0 calc(33.333% - 1rem);
+  scroll-snap-align: start;
   position: relative;
-  width: 100%;
   aspect-ratio: 3 / 4;
   overflow: hidden;
   border-radius: 4px;
@@ -345,7 +354,7 @@ p, li, span {
   left: 0;
   width: 100%;
   padding: 3rem 1.5rem 2rem 1.5rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+  background: transparent;
   color: white;
   display: flex;
   flex-direction: column;

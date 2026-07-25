@@ -7,14 +7,14 @@
 }
 
 @media (max-width: 900px) {
-  .portfolio-grid-new {
-    grid-template-columns: repeat(2, 1fr);
+  .portfolio-card {
+    flex: 0 0 calc(50% - 0.75rem);
   }
 }
 
 @media (max-width: 600px) {
-  .portfolio-grid-new {
-    grid-template-columns: 1fr;
+  .portfolio-card {
+    flex: 0 0 calc(85%);
   }
   .portfolio-card-title {
     font-size: 1.25rem;
