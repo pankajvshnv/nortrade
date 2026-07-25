@@ -5,3 +5,21 @@
 @media (max-width: 992px) {
   .d-none-mobile { display: none !important; }
 }
+
+@media (max-width: 900px) {
+  .portfolio-grid-new {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-grid-new {
+    grid-template-columns: 1fr;
+  }
+  .portfolio-card-title {
+    font-size: 1.25rem;
+  }
+  .portfolio-card-desc {
+    font-size: 0.85rem;
+  }
+}
