@@ -23,3 +23,33 @@
     font-size: 0.85rem;
   }
 }
+
+@media (max-width: 900px) {
+  /* On mobile, change the portfolio grid from a slider to a vertical stack */
+  .portfolio-grid-new {
+    flex-direction: column;
+    overflow-x: hidden;
+    gap: 2rem;
+  }
+  
+  .portfolio-card-v2 {
+    flex: 0 0 100%;
+  }
+
+  /* Hide cards beyond the first 3 on mobile (only on homepage) */
+  .home-page .portfolio-card-v2:nth-child(n+4) {
+    display: none !important;
+  }
+
+  /* Adjust the header layout for mobile */
+  .portfolio-header-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  /* Make the portfolio button full width on mobile */
+  .portfolio-btn {
+    width: 100% !important;
+  }
+}

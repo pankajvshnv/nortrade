@@ -4,7 +4,7 @@
 
 /* ---  --- */
 :root {
-  --color-bg:          #F7F5F2;
+  --color-bg:          #FFFFFF;
   --color-bg-dark:     #0D0D0B;
   --color-white:       #FFFFFF;
   --color-offwhite:    #F4F2EE;
@@ -330,7 +330,7 @@ p, li, span {
   flex: 0 0 calc(33.333% - 1rem);
   scroll-snap-align: start;
   position: relative;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: 4px;
   cursor: pointer;
@@ -354,7 +354,7 @@ p, li, span {
   left: 0;
   width: 100%;
   padding: 3rem 1.5rem 2rem 1.5rem;
-  background: transparent;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
   color: white;
   display: flex;
   flex-direction: column;
@@ -369,6 +369,7 @@ p, li, span {
   font-weight: 500;
   margin-bottom: 0.5rem;
   line-height: 1.2;
+  color: #fff;
 }
 
 .portfolio-card-desc {
@@ -386,11 +387,14 @@ p, li, span {
   left: 0;
   opacity: 0;
   z-index: 1;
-  transition: opacity 0.5s ease, transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+  /* Smooth, slow fade-out with a slight delay when hover ends */
+  transition: opacity 1.5s ease 0.6s, transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .virtual-staging-card:hover .vs-before {
   opacity: 1;
+  /* Faster fade-in when hover starts */
+  transition: opacity 0.4s ease 0s, transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .virtual-staging-card .vs-after {
@@ -2135,93 +2139,52 @@ p, li, span {
 body.is-loading { overflow: hidden; }
 
 /* Invisible container — just a stacking context */
+/* ══════════════════════════════════════
+   CURTAIN PRELOADER
+══════════════════════════════════════ */
 .preloader {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: 999999;
   pointer-events: all;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
 }
 
-/* LEFT white panel */
 .preloader-panel-left,
 .preloader-panel-right {
   position: absolute;
   top: 0;
   bottom: 0;
   width: 50%;
-  background: #FFFFFF;
-  z-index: 1;
+  background: #111111;
   will-change: transform;
 }
 
 .preloader-panel-left  { left: 0; }
 .preloader-panel-right { right: 0; }
 
-/* Central content floats above panels */
+/* Logo sits above the panels */
 .preloader-inner {
   position: relative;
   z-index: 2;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 1.75rem;
+  justify-content: center;
   pointer-events: none;
 }
 
-/* Logo fades in on dark background before panels exist — 
-   filter:invert flips it white when on white panel */
 .preloader-logo-img {
-  height: 48px;
+  height: 52px;
   width: auto;
   opacity: 0;
-  transform: translateY(14px);
-  filter: invert(1);           /* shows dark logo on white panels */
-  animation: preloaderLogoIn var(--transition-slow) cubic-bezier(0.22, 1, 0.36, 1) var(--transition-fast) forwards;
+  display: block;
 }
 
-@keyframes preloaderLogoIn {
-  to { opacity: 1; transform: translateY(0); }
+.preloader.done {
+  display: none;
 }
-
-
-
-/* ── EXIT: panels slide out, content fades ── */
-
-/* Inner content fades out first */
-.preloader.exit .preloader-inner {
-  animation: preloaderContentOut 0.35s cubic-bezier(0.55, 0, 1, 0.45) 0.05s both;
-}
-
-@keyframes preloaderContentOut {
-  0%   { opacity: 1; transform: scale(1); }
-  100% { opacity: 0; transform: scale(0.92); }
-}
-
-/* LEFT panel slides left */
-.preloader.exit .preloader-panel-left {
-  animation: panelSlideLeft var(--transition-slow) cubic-bezier(0.76, 0, 0.24, 1) var(--transition-fast) both;
-}
-
-@keyframes panelSlideLeft {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
-
-/* RIGHT panel slides right */
-.preloader.exit .preloader-panel-right {
-  animation: panelSlideRight var(--transition-slow) cubic-bezier(0.76, 0, 0.24, 1) var(--transition-fast) both;
-}
-
-@keyframes panelSlideRight {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(100%); }
-}
-
-.preloader.done { display: none; }
 
 .cookie-banner {
   position: fixed;
@@ -4428,4 +4391,189 @@ a.detail-value:hover {
     white-space: nowrap !important;
     padding: 0.35rem 0.7rem !important;
   }
+}
+
+/* ====== NEW PORTFOLIO STYLES (WHITE THEME & TEXT BELOW) ====== */
+.bg-white {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.portfolio-header-flex {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding: 0 4%;
+}
+
+.view-all-link {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.view-all-link:hover {
+  opacity: 0.7;
+}
+
+.portfolio-card-v2 {
+  flex: 0 0 calc(50% - 1rem); /* 2 cards side-by-side */
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.portfolio-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.portfolio-card-v2:hover .portfolio-img-wrap img {
+  transform: scale(1.04);
+}
+
+.portfolio-content-v2 {
+  padding: 0.5rem 0.5rem 2rem 0.5rem;
+  text-align: left;
+}
+
+.portfolio-card-title-v2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.portfolio-card-desc-v2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Virtual staging hover for new layout */
+.portfolio-img-wrap.virtual-staging-card .vs-before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 1.5s ease 0.6s, transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.portfolio-img-wrap.virtual-staging-card:hover .vs-before {
+  opacity: 1;
+  transition: opacity 0.4s ease 0s, transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.portfolio-img-wrap.virtual-staging-card .vs-after {
+  position: relative;
+  z-index: 0;
+}
+
+.portfolio-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  background-color: #000;
+  color: #fff !important;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  border-radius: 100px;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  width: auto;
+  min-width: 200px;
+  border: 1px solid #000;
+}
+.portfolio-btn:hover {
+  background-color: #fff;
+  color: #000 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* ====== PORTFOLIO FILTER ====== */
+.portfolio-filter {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.2rem;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.filter-btn:hover {
+  background-color: #444;
+}
+
+.filter-btn.active {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.portfolio-card-v2 {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.portfolio-card-v2.hide {
+  display: none !important;
+}
+
+/* ── PAGE TRANSITION (ENTER) ── */
+.preloader.enter {
+  display: flex !important;
+  z-index: 999999;
+}
+.preloader.enter .preloader-panel-left {
+  animation: panelSlideInLeft 0.6s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+.preloader.enter .preloader-panel-right {
+  animation: panelSlideInRight 0.6s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+@keyframes panelSlideInLeft {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+@keyframes panelSlideInRight {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(0); }
 }

@@ -70,47 +70,48 @@ function initPreloader() {
   const preloader = document.getElementById('preloader');
   if (!preloader) return;
 
-
-
-  // Short pause so panels are visible, then split open
-  const go = () => setTimeout(() => dismissPreloader(preloader), 600);
-
-  if (document.readyState === 'complete') {
-    go();
-  } else {
-    window.addEventListener('load', go, { once: true });
-    // Fallback max 2.5s
-    setTimeout(() => dismissPreloader(preloader), 2500);
-  }
-}
-
-
-function dismissPreloader(preloader) {
-  preloader.classList.add('exit');
-
-  // Listen on right panel (last to start, so marks end of reveal)
+  const leftPanel  = document.getElementById('preloader-left');
   const rightPanel = document.getElementById('preloader-right');
-  const onDone = () => {
-    preloader.classList.add('done');
-    document.body.classList.remove('is-loading');
-    setTimeout(setHeroAnimations, 80);
-    showCookieBannerDelayed();
+  const logoImg    = preloader.querySelector('.preloader-logo-img');
+
+  // Make sure panels fully cover the screen (start position)
+  gsap.set(leftPanel,  { xPercent: 0 });
+  gsap.set(rightPanel, { xPercent: 0 });
+
+  // Step 1: fade in the logo
+  if (logoImg) {
+    gsap.to(logoImg, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.2 });
+  }
+
+  // Step 2: after 1.4s, slide panels open (curtain reveal)
+  const openCurtain = () => {
+    const tl = gsap.timeline({
+      onComplete: () => {
+        preloader.classList.add('done');
+        document.body.classList.remove('is-loading');
+        setTimeout(setHeroAnimations, 80);
+        showCookieBannerDelayed();
+      }
+    });
+
+    // Fade out logo first
+    if (logoImg) {
+      tl.to(logoImg, { opacity: 0, duration: 0.25, ease: 'power2.in' });
+    }
+
+    // Then slide panels apart
+    tl.to(leftPanel,  { xPercent: -100, duration: 0.9, ease: 'power4.inOut' }, '-=0.05');
+    tl.to(rightPanel, { xPercent: 100,  duration: 0.9, ease: 'power4.inOut' }, '<');
   };
 
-  if (rightPanel) {
-    rightPanel.addEventListener('animationend', onDone, { once: true });
-    setTimeout(onDone, 1000); // Fallback in case animation event fails
+  if (document.readyState === 'complete') {
+    setTimeout(openCurtain, 1400);
   } else {
-    onDone();
+    window.addEventListener('load', () => setTimeout(openCurtain, 1400), { once: true });
+    setTimeout(openCurtain, 3500); // max fallback
   }
-
-  // Fallback: force after 1.5s
-  setTimeout(() => {
-    preloader.classList.add('done');
-    document.body.classList.remove('is-loading');
-    setHeroAnimations();
-  }, 1500);
 }
+
 
 function initLanguage() {
   applyLanguage(currentLang);
@@ -1218,3 +1219,96 @@ function initFAQ() {
     });
   });
 }
+
+
+
+// Initialize Portfolio Swiper
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof Swiper !== 'undefined') {
+    new Swiper('.portfolio-swiper', {
+      slidesPerView: 'auto',
+      spaceBetween: 24,
+      freeMode: true,
+      grabCursor: true,
+      keyboard: {
+        enabled: true,
+      },
+      mousewheel: {
+        forceToAxis: true,
+      },
+    });
+  }
+});
+
+// PORTFOLIO FILTER LOGIC
+document.addEventListener("DOMContentLoaded", () => {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const portfolioCards = document.querySelectorAll('.portfolio-card-v2');
+
+  if (filterBtns.length > 0) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all
+        filterBtns.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        portfolioCards.forEach(card => {
+          if (filterValue === 'all') {
+            card.classList.remove('hide');
+          } else {
+            const categories = card.getAttribute('data-category');
+            if (categories && categories.includes(filterValue)) {
+              card.classList.remove('hide');
+            } else {
+              card.classList.add('hide');
+            }
+          }
+        });
+        
+        // Refresh ScrollTrigger so layout doesn't break
+        if(typeof ScrollTrigger !== 'undefined') {
+          setTimeout(() => {
+            ScrollTrigger.refresh();
+          }, 450);
+        }
+      });
+    });
+  }
+
+  // PAGE TRANSITION INTERCEPTOR
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const targetUrl = this.getAttribute('href');
+      
+      // Ignore empty, anchors, external, mailto, tel, whatsapp, etc.
+      if (!targetUrl || 
+          targetUrl.startsWith('#') || 
+          targetUrl.startsWith('mailto:') || 
+          targetUrl.startsWith('tel:') || 
+          this.getAttribute('target') === '_blank' || 
+          targetUrl.includes('whatsapp.com')) {
+        return;
+      }
+      
+      // Intercept local page navigation
+      e.preventDefault();
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        // Bring preloader back and slide panels in
+        preloader.classList.remove('done');
+        preloader.classList.remove('exit');
+        preloader.classList.add('enter');
+        
+        // Wait for animation to finish before navigating
+        setTimeout(() => {
+          window.location.href = targetUrl;
+        }, 700);
+      } else {
+        window.location.href = targetUrl;
+      }
+    });
+  });
+});
