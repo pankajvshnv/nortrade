@@ -42,7 +42,44 @@
   </div>
 
   <!-- NAVIGATION -->
-  <div id="header-placeholder"></div>
+  <header id="site-header" class="site-header">
+    <nav class="nav-container">
+      <a href="index.html#hero" class="nav-logo" id="nav-logo" aria-label="NORTRADE">
+        <img src="assets/logo/nortrade_logo_white.webp" alt="NORTRADE" class="nav-logo-img logo-white">
+        <img src="assets/logo/nortrade_logo_black.webp" alt="NORTRADE" class="nav-logo-img logo-black">
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#hero" class="nav-link" data-fr="Accueil" data-en="Home">Accueil</a></li>
+        <li><a href="index.html#about" class="nav-link" data-fr="À propos" data-en="About Us">À propos</a></li>
+        <li><a href="index.html#services" class="nav-link" data-fr="Services" data-en="Services">Services</a></li>
+        <li><a href="index.html#contact-page" class="nav-link" data-fr="Contact" data-en="Contact Us">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="custom-lang-dropdown" id="lang-dropdown">
+          <button class="lang-dropdown-toggle" id="lang-dropdown-toggle" aria-expanded="false" aria-label="Select Language">
+            <span id="lang-current-label">FR</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <ul class="lang-dropdown-menu" id="lang-dropdown-menu">
+            <li><button class="lang-dropdown-item" id="lang-inactive-btn" data-lang-switch="en">EN</button></li>
+          </ul>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html#hero" class="mobile-nav-link" data-fr="Accueil" data-en="Home">Accueil</a></li>
+        <li><a href="index.html#about" class="mobile-nav-link" data-fr="À propos" data-en="About Us">À propos</a></li>
+        <li><a href="index.html#services" class="mobile-nav-link" data-fr="Services" data-en="Services">Services</a></li>
+        <li><a href="index.html#contact-page" class="mobile-nav-link" data-fr="Contact" data-en="Contact Us">Contact</a></li>
+      </ul>
+    </div>
+  </header>
 
   <!-- PORTFOLIO SECTION -->
   <section id="portfolio" class="new-portfolio-section bg-white" style="padding-top: 150px; padding-bottom: 100px;">
@@ -365,7 +402,71 @@
   </section>
 
   <!-- FOOTER -->
-  <div id="footer-placeholder"></div>
+<footer id="site-footer" class="footer">
+  <div class="footer-grid-container">
+
+    <!-- Left Column: Tagline, Contact & Navigation -->
+    <div class="footer-left-content reveal-left">
+      <div class="footer-tagline-block">
+        <div style="margin-bottom: 1.5rem;">
+          <span class="why-intro-pill"
+            style="display: inline-block; white-space: nowrap; font-size: 0.75rem; padding: 0.4rem 1.1rem;">
+            <span data-fr="Conseil Suisse en Valorisation Immobilière"
+              data-en="Swiss Real Estate Enhancement Firm">Conseil Suisse en Valorisation Immobilière</span>
+          </span>
+        </div>
+        <p class="footer-tagline-text"
+          data-fr="<strong>NORTRADE accompagne les professionnels de l'immobilier</strong> en Suisse et à l'international dans la <strong>valorisation et la commercialisation</strong> de leurs projets."
+          data-en="<strong>NORTRADE supports real estate professionals</strong> in Switzerland and internationally in <strong>enhancing and commercializing</strong> their projects.">
+          <strong>NORTRADE accompagne les professionnels de l'immobilier</strong> en Suisse et à l'international dans la <strong>valorisation et la commercialisation</strong> de leurs projets.</p>
+
+        <div class="footer-contact-block">
+          <p class="fcb-phone">+41 78 206 59 42</p>
+          <a href="mailto:contact@nortrade.ch" class="fcb-email">contact@nortrade.ch</a>
+        </div>
+      </div>
+
+      <div class="footer-nav-wrapper">
+        <div class="footer-nav-col">
+          <p class="footer-nav-label" data-fr="Navigation" data-en="Navigation">Navigation</p>
+          <a href="index.html#about" class="footer-nav-link" data-fr="À propos" data-en="About Us">À propos</a>
+          <a href="index.html#services" class="footer-nav-link" data-fr="Services" data-en="Services">Services</a>
+          <a href="index.html#process" class="footer-nav-link" data-fr="Notre Processus" data-en="Our Process">Notre Processus</a>
+          <a href="index.html#contact-page" class="footer-nav-link" data-fr="Contact" data-en="Contact">Contact</a>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-label" data-fr="Mentions légales & Social" data-en="Legal & Social">Mentions légales &
+            Social</p>
+          <a href="https://wa.me/41782065942" target="_blank" rel="noopener" class="footer-nav-link">WhatsApp ↗</a>
+          <a href="privacy.html" class="footer-nav-link" data-fr="Politique de confidentialité"
+            data-en="Privacy Policy">Politique de confidentialité ↗</a>
+          <a href="legal.html" class="footer-nav-link" data-fr="Mentions Légales" data-en="Legal Notice">Mentions Légales
+            ↗</a>
+          <a href="cgu.html" class="footer-nav-link" data-fr="CGU" data-en="Terms of Use">CGU ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column (Bottom Middle on Mobile): Architectural Logo Image -->
+    <div class="footer-logo-col reveal-right">
+      <img src="assets/logo/footer_logo_transparent.png" alt="NORTRADE Architectural Logo" class="footer-logo-img">
+    </div>
+
+  </div>
+
+  <!-- COPYRIGHT BAR (Black Bar) -->
+  <div class="footer-copyright-bar">
+    <div class="footer-copyright-inner">
+      <span class="footer-copyright-text" data-fr="&copy; NORTRADE. Tous droits réservés." data-en="&copy; NORTRADE. All Rights Reserved.">&copy;
+        NORTRADE. Tous droits réservés.</span>
+      <span class="footer-copyright-divider d-none-mobile">&nbsp;|&nbsp;</span>
+      <span class="footer-credits"><span data-fr="Design et Développement par"
+          data-en="Design &amp; Development by">Design et Développement par</span> <a
+          href="https://www.instagram.com/dreweb.io/" target="_blank" rel="noopener">dreweb.io</a></span>
+    </div>
+  </div>
+
+</footer>
 
   <!-- RIGHT EDGE BUTTONS -->
   <div class="right-edge-buttons">
@@ -423,6 +524,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
 
-  <script src="js/main.js?v=13"></script>
+  <script src="js/main.js?v=14"></script>
 </body>
 </html>

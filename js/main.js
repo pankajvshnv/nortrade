@@ -6,6 +6,10 @@ let chatbotOpen = false;
 let lenis;
 
 async function loadComponents() {
+  const headerPh = document.getElementById('header-placeholder');
+  const footerPh = document.getElementById('footer-placeholder');
+  if (!headerPh && !footerPh) return; // Already inlined
+
   try {
     const [headerRes, footerRes] = await Promise.all([
       fetch('components/header.html?v=3'),
@@ -14,8 +18,6 @@ async function loadComponents() {
     const headerHtml = await headerRes.text();
     const footerHtml = await footerRes.text();
 
-    const headerPh = document.getElementById('header-placeholder');
-    const footerPh = document.getElementById('footer-placeholder');
     if (headerPh) headerPh.outerHTML = headerHtml;
     if (footerPh) footerPh.outerHTML = footerHtml;
   } catch (err) {
@@ -24,8 +26,9 @@ async function loadComponents() {
 }
 
 /* ---  --- */
-document.addEventListener('DOMContentLoaded', async () => {
-  await loadComponents();
+document.addEventListener('DOMContentLoaded', () => {
+  // Fire component loading in background if needed (non-blocking)
+  loadComponents();
 
   initSmoothScroll();
   initPreloader();
@@ -80,35 +83,39 @@ function initPreloader() {
 
   // Step 1: fade in the logo
   if (logoImg) {
-    gsap.to(logoImg, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.2 });
+    gsap.to(logoImg, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out', delay: 0.1 });
   }
 
-  // Step 2: after 1.4s, slide panels open (curtain reveal)
+  // Step 2: slide panels open (curtain reveal)
   const openCurtain = () => {
     const tl = gsap.timeline({
       onComplete: () => {
         preloader.classList.add('done');
         document.body.classList.remove('is-loading');
-        setTimeout(setHeroAnimations, 80);
+        setTimeout(setHeroAnimations, 50);
         showCookieBannerDelayed();
+        if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+        if (typeof lenis !== 'undefined' && lenis) lenis.resize();
       }
     });
 
     // Fade out logo first
     if (logoImg) {
-      tl.to(logoImg, { opacity: 0, duration: 0.25, ease: 'power2.in' });
+      tl.to(logoImg, { opacity: 0, duration: 0.2, ease: 'power2.in' });
     }
 
     // Then slide panels apart
-    tl.to(leftPanel,  { xPercent: -100, duration: 0.9, ease: 'power4.inOut' }, '-=0.05');
-    tl.to(rightPanel, { xPercent: 100,  duration: 0.9, ease: 'power4.inOut' }, '<');
+    tl.to(leftPanel,  { xPercent: -100, duration: 0.7, ease: 'power4.inOut' }, '-=0.05');
+    tl.to(rightPanel, { xPercent: 100,  duration: 0.7, ease: 'power4.inOut' }, '<');
   };
 
+  const waitTime = (performance.now() < 800) ? 350 : 150;
+
   if (document.readyState === 'complete') {
-    setTimeout(openCurtain, 1400);
+    setTimeout(openCurtain, waitTime);
   } else {
-    window.addEventListener('load', () => setTimeout(openCurtain, 1400), { once: true });
-    setTimeout(openCurtain, 3500); // max fallback
+    window.addEventListener('load', () => setTimeout(openCurtain, waitTime), { once: true });
+    setTimeout(openCurtain, 2000); // max fallback
   }
 }
 
@@ -1283,9 +1290,10 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener('click', function(e) {
       const targetUrl = this.getAttribute('href');
       
-      // Ignore empty, anchors, external, mailto, tel, whatsapp, etc.
+      // Ignore empty, anchors, hash links, external, mailto, tel, whatsapp, etc.
       if (!targetUrl || 
           targetUrl.startsWith('#') || 
+          targetUrl.includes('#') ||
           targetUrl.startsWith('mailto:') || 
           targetUrl.startsWith('tel:') || 
           this.getAttribute('target') === '_blank' || 
@@ -1305,7 +1313,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Wait for animation to finish before navigating
         setTimeout(() => {
           window.location.href = targetUrl;
-        }, 700);
+        }, 450);
       } else {
         window.location.href = targetUrl;
       }
