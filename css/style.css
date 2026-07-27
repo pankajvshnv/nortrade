@@ -4536,7 +4536,7 @@ a.detail-value:hover {
   font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  border-radius: 2px;
+  border-radius: 30px;
 }
 
 .filter-btn:hover {
