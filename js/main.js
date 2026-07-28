@@ -1433,8 +1433,9 @@ function initBeforeAfterSliders() {
     }
 
     if (range) {
-      range.addEventListener('input', (e) => setPosition(parseFloat(e.target.value)));
-      range.addEventListener('change', (e) => setPosition(parseFloat(e.target.value)));
+      ['input', 'change'].forEach(evt => {
+        range.addEventListener(evt, (e) => setPosition(parseFloat(e.target.value)));
+      });
     }
 
     let isDragging = false;
@@ -1446,6 +1447,7 @@ function initBeforeAfterSliders() {
       return (x / rect.width) * 100;
     }
 
+    // Mouse drag & click
     slider.addEventListener('mousedown', (e) => {
       isDragging = true;
       setPosition(getPercentage(e.clientX));
@@ -1461,6 +1463,7 @@ function initBeforeAfterSliders() {
       isDragging = false;
     });
 
+    // Touch drag & tap for mobile
     let touchActive = false;
 
     slider.addEventListener('touchstart', (e) => {
@@ -1476,12 +1479,10 @@ function initBeforeAfterSliders() {
       }
     }, { passive: true });
 
-    slider.addEventListener('touchend', () => {
-      touchActive = false;
-    });
-
-    slider.addEventListener('touchcancel', () => {
-      touchActive = false;
+    ['touchend', 'touchcancel'].forEach(evt => {
+      slider.addEventListener(evt, () => {
+        touchActive = false;
+      });
     });
 
     window.addEventListener('resize', () => {
@@ -1489,10 +1490,19 @@ function initBeforeAfterSliders() {
       setPosition(currentPct);
     });
 
+    if (typeof ResizeObserver !== 'undefined') {
+      const ro = new ResizeObserver(() => {
+        const currentPct = range ? parseFloat(range.value) : 50;
+        setPosition(currentPct);
+      });
+      ro.observe(slider);
+    }
+
     // Initialize at 50%
     setPosition(50);
-    setTimeout(() => setPosition(50), 200);
-    setTimeout(() => setPosition(50), 600);
+    setTimeout(() => setPosition(50), 100);
+    setTimeout(() => setPosition(50), 300);
+    setTimeout(() => setPosition(50), 800);
   });
 }
 

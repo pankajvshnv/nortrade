@@ -4647,6 +4647,7 @@ a.detail-value:hover {
   height: 100%;
   object-fit: cover;
   display: block;
+}
 .day-night-card .img-night {
   position: absolute;
   top: 0;
