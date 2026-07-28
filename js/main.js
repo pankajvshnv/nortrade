@@ -1449,6 +1449,7 @@ function initBeforeAfterSliders() {
 
     // Mouse drag & click
     slider.addEventListener('mousedown', (e) => {
+      e.preventDefault();
       isDragging = true;
       setPosition(getPercentage(e.clientX));
     });

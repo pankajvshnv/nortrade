@@ -4737,20 +4737,49 @@ a.detail-value:hover {
   opacity: 1;
 }
 
-/* ── PREVENT BLUE HIGHLIGHT & SELECTION OVERLAY ON MOBILE ── */
+/* ── PREVENT BLUE HIGHLIGHT & SELECTION OVERLAY ON MOBILE & CLICK ── */
 .ba-slider-wrap,
 .ba-slider,
 .ba-range,
 .day-night-card,
+.portfolio-card-v2,
+.portfolio-item-v2,
+.portfolio-content-v2,
+.ba-slider-wrap *,
 .ba-slider *,
-.day-night-card * {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+.ba-range *,
+.day-night-card *,
+.portfolio-card-v2 *,
+.portfolio-item-v2 *,
+.portfolio-content-v2 * {
+  -webkit-tap-highlight-color: transparent !important;
   -webkit-touch-callout: none !important;
   -webkit-user-select: none !important;
   -moz-user-select: none !important;
   -ms-user-select: none !important;
   user-select: none !important;
   outline: none !important;
+}
+
+.ba-slider-wrap ::selection,
+.ba-slider ::selection,
+.day-night-card ::selection,
+.portfolio-card-v2 ::selection,
+.portfolio-item-v2 ::selection,
+.portfolio-content-v2 ::selection {
+  background: transparent !important;
+  color: inherit !important;
+}
+
+.portfolio-card-v2:focus,
+.portfolio-card-v2:active,
+.portfolio-card-v2:focus-within,
+.day-night-card:focus,
+.day-night-card:active,
+.ba-slider:focus,
+.ba-slider:active {
+  outline: none !important;
+  background-color: transparent !important;
 }
 
 /* ── BEFORE / AFTER COMPARISON SLIDER ── */
