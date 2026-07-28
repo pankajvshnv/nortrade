@@ -1326,9 +1326,10 @@ document.addEventListener("DOMContentLoaded", () => {
 /* ── DAY / NIGHT CARD INTERACTION ── */
 function initDayNightCards() {
   document.querySelectorAll('.day-night-card').forEach(card => {
-    let startX = 0, startY = 0, startTime = 0;
+    let startX = 0, startY = 0, startTime = 0, isTouch = false;
 
     card.addEventListener('touchstart', (e) => {
+      isTouch = true;
       if (e.touches.length > 0) {
         startX = e.touches[0].clientX;
         startY = e.touches[0].clientY;
@@ -1342,11 +1343,20 @@ function initDayNightCards() {
         const distY = Math.abs(e.changedTouches[0].clientY - startY);
         const timeElapsed = Date.now() - startTime;
 
-        if (distX < 12 && distY < 12 && timeElapsed < 350) {
+        // Intentional tap (minimal movement & quick tap)
+        if (distX < 15 && distY < 15 && timeElapsed < 400) {
           card.classList.toggle('active-night');
         }
       }
-    }, { passive: true });
+    });
+
+    card.addEventListener('click', (e) => {
+      // If it wasn't triggered by a touch gesture already
+      if (!isTouch) {
+        card.classList.toggle('active-night');
+      }
+      isTouch = false;
+    });
   });
 }
 

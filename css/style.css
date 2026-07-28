@@ -4647,7 +4647,6 @@ a.detail-value:hover {
   height: 100%;
   object-fit: cover;
   display: block;
-}
 .day-night-card .img-night {
   position: absolute;
   top: 0;
@@ -4656,7 +4655,23 @@ a.detail-value:hover {
   transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   pointer-events: none;
 }
-.day-night-card:hover .img-night,
+
+@media (hover: hover) and (pointer: fine) {
+  .day-night-card:hover .img-night {
+    opacity: 1;
+  }
+  .day-night-card:hover .day-night-badge .dn-day {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+    opacity: 0.7;
+  }
+  .day-night-card:hover .day-night-badge .dn-night {
+    color: #ffffff;
+    font-weight: 600;
+    opacity: 1;
+  }
+}
+
 .day-night-card.active-night .img-night {
   opacity: 1;
 }
@@ -4709,14 +4724,12 @@ a.detail-value:hover {
 }
 
 /* Active Night state: Night is active (on hover or tap) */
-.day-night-card:hover .day-night-badge .dn-day,
 .day-night-card.active-night .day-night-badge .dn-day {
   color: rgba(255, 255, 255, 0.5);
   font-weight: 400;
   opacity: 0.7;
 }
 
-.day-night-card:hover .day-night-badge .dn-night,
 .day-night-card.active-night .day-night-badge .dn-night {
   color: #ffffff;
   font-weight: 600;
