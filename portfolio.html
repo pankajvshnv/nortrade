@@ -52,6 +52,7 @@
         <li><a href="index.html#hero" class="nav-link" data-fr="Accueil" data-en="Home">Accueil</a></li>
         <li><a href="index.html#about" class="nav-link" data-fr="À propos" data-en="About Us">À propos</a></li>
         <li><a href="index.html#services" class="nav-link" data-fr="Services" data-en="Services">Services</a></li>
+        <li><a href="portfolio.html" class="nav-link active" data-fr="Portfolio" data-en="Portfolio">Portfolio</a></li>
         <li><a href="index.html#contact-page" class="nav-link" data-fr="Contact" data-en="Contact Us">Contact</a></li>
       </ul>
       <div class="nav-actions">
@@ -76,6 +77,7 @@
         <li><a href="index.html#hero" class="mobile-nav-link" data-fr="Accueil" data-en="Home">Accueil</a></li>
         <li><a href="index.html#about" class="mobile-nav-link" data-fr="À propos" data-en="About Us">À propos</a></li>
         <li><a href="index.html#services" class="mobile-nav-link" data-fr="Services" data-en="Services">Services</a></li>
+        <li><a href="portfolio.html" class="mobile-nav-link active" data-fr="Portfolio" data-en="Portfolio">Portfolio</a></li>
         <li><a href="index.html#contact-page" class="mobile-nav-link" data-fr="Contact" data-en="Contact Us">Contact</a></li>
       </ul>
     </div>
@@ -84,25 +86,10 @@
   <!-- PORTFOLIO SECTION -->
   <section id="portfolio" class="new-portfolio-section bg-white" style="padding-top: 150px; padding-bottom: 100px;">
     <div class="container">
-      <div class="why-intro-block reveal-up" style="margin-bottom: 3.5rem; text-align: center;">
-        <div class="why-intro-pill reveal-up" style="margin-bottom: 1.5rem; display: inline-block;">
-          <span data-en="Projects" data-fr="Projets">Projects</span>
-        </div>
-        <h1 class="reveal-up text-black" style="color:#000 !important; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1.25rem; max-width: 700px; margin-left: auto; margin-right: auto;"
-          data-en="A closer and detailed look<br>at our recent work"
-          data-fr="Un regard plus proche<br>sur nos réalisations récentes">
-          A closer and detailed look<br>at our recent work
-        </h1>
-        <p class="reveal-up text-black" style="color:#666 !important; margin: 0 auto; max-width: 560px; font-size: 1rem; line-height: 1.7; font-weight: 300;"
-          data-en="Explore a curated selection of spaces we've designed — each project a reflection of our process."
-          data-fr="Explorez une sélection d'espaces que nous avons conçus — chaque projet est le reflet de notre processus.">
-          Explore a curated selection of spaces we've designed — each project a reflection of our process.
-        </p>
-      </div>
 
-      <!-- SHOWREEL VIDEO -->
+      <!-- 1. SHOWREEL VIDEO -->
       <div class="reveal-up" style="
-        margin: 0 auto 4rem;
+        margin: 0 auto 3.5rem;
         width: 100%;
         border-radius: 16px;
         overflow: hidden;
@@ -113,9 +100,10 @@
         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
           <video
             autoplay
-            muted
             loop
+            muted
             playsinline
+            preload="auto"
             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;"
           >
             <source src="assets/videos/NORTRADE_Video_showreel.webm" type="video/webm">
@@ -123,245 +111,271 @@
         </div>
       </div>
 
-      <!-- WHY US SECTION -->
-      <div style="padding: 5rem 0 4rem; text-align: center;">
-
-        <h2 class="reveal-up" style="font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 600; color: #000; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;"
-          data-en="The reason behind every<br>successful project"
-          data-fr="La raison derrière chaque<br>projet réussi">
-          The reason behind every<br>successful project
-        </h2>
-
-        <div class="reveal-up" style="margin-bottom: 3rem;">
-          <a href="index.html#contact-page" class="hover-scale cta-btn" style="display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.85rem 2rem; font-size: 0.8rem; letter-spacing: 0.12em;">
-            <span data-en="CONTACT US" data-fr="NOUS CONTACTER">CONTACT US</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
+      <!-- 2. PORTFOLIO INTRODUCTION -->
+      <div class="why-intro-block reveal-up" style="margin-bottom: 3.5rem; text-align: center;">
+        <div class="why-intro-pill reveal-up" style="margin-bottom: 1.5rem; display: inline-block;">
+          <span data-en="PORTFOLIO" data-fr="PORTFOLIO">PORTFOLIO</span>
         </div>
-
-        <!-- 3 Feature Cards -->
-        <div class="reveal-up" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; max-width: 960px; margin: 0 auto; text-align: left;">
-
-          <!-- Card 1 -->
-          <div style="background: #f8f8f7; border-radius: 12px; padding: 2.5rem 2rem; border: 1px solid #ebebeb;">
-            <div style="width: 48px; height: 48px; background: #111; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" style="width: 22px; height: 22px;">
-                <path d="M12 20h9"></path>
-                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
-              </svg>
-            </div>
-            <h3 style="font-size: 1.05rem; font-weight: 600; color: #000; margin-bottom: 0.75rem; letter-spacing: -0.01em;"
-              data-en="Personalized designs" data-fr="Designs personnalisés">Personalized designs</h3>
-            <p style="font-size: 0.9rem; color: #666; line-height: 1.7; font-weight: 300;"
-              data-en="We take the time to understand your style and needs, creating custom spaces tailored to your vision."
-              data-fr="Nous prenons le temps de comprendre votre style et vos besoins, en créant des espaces personnalisés.">
-              We take the time to understand your style and needs, creating custom spaces tailored to your vision.
-            </p>
-          </div>
-
-          <!-- Card 2 -->
-          <div style="background: #f8f8f7; border-radius: 12px; padding: 2.5rem 2rem; border: 1px solid #ebebeb;">
-            <div style="width: 48px; height: 48px; background: #111; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" style="width: 22px; height: 22px;">
-                <circle cx="12" cy="8" r="4"></circle>
-                <path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"></path>
-              </svg>
-            </div>
-            <h3 style="font-size: 1.05rem; font-weight: 600; color: #000; margin-bottom: 0.75rem; letter-spacing: -0.01em;"
-              data-en="Experienced team" data-fr="Équipe expérimentée">Experienced team</h3>
-            <p style="font-size: 0.9rem; color: #666; line-height: 1.7; font-weight: 300;"
-              data-en="Our expert designers bring years of experience to every project, refining every minor detail with precision."
-              data-fr="Nos designers experts apportent des années d'expérience à chaque projet, en affinant chaque détail.">
-              Our expert designers bring years of experience to every project, refining every minor detail with precision.
-            </p>
-          </div>
-
-          <!-- Card 3 -->
-          <div style="background: #f8f8f7; border-radius: 12px; padding: 2.5rem 2rem; border: 1px solid #ebebeb;">
-            <div style="width: 48px; height: 48px; background: #111; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" style="width: 22px; height: 22px;">
-                <polyline points="9 11 12 14 22 4"></polyline>
-                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-              </svg>
-            </div>
-            <h3 style="font-size: 1.05rem; font-weight: 600; color: #000; margin-bottom: 0.75rem; letter-spacing: -0.01em;"
-              data-en="Simple process" data-fr="Processus simple">Simple process</h3>
-            <p style="font-size: 0.9rem; color: #666; line-height: 1.7; font-weight: 300;"
-              data-en="From concept to completion, we manage every step, making sure the process stays smooth and stress-free."
-              data-fr="Du concept à la réalisation, nous gérons chaque étape pour que le processus reste fluide et sans stress.">
-              From concept to completion, we manage every step, making sure the process stays smooth and stress-free.
-            </p>
-          </div>
-
-        </div>
+        <h1 class="reveal-up text-black" style="color:#000 !important; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1.25rem; max-width: 750px; margin-left: auto; margin-right: auto;"
+          data-en="A closer and detailed look at our recent work"
+          data-fr="Un regard plus proche sur nos réalisations récentes">
+          Un regard plus proche sur nos réalisations récentes
+        </h1>
+        <p class="reveal-up text-black" style="color:#666 !important; margin: 0 auto; max-width: 600px; font-size: 1rem; line-height: 1.7; font-weight: 300;"
+          data-en="Explore a curated selection of spaces we've designed — each project a reflection of our process."
+          data-fr="Explorez une sélection d'espaces que nous avons conçus — chaque projet est le reflet de notre processus.">
+          Explorez une sélection d'espaces que nous avons conçus — chaque projet est le reflet de notre processus.
+        </p>
       </div>
 
-      <!-- PORTFOLIO FILTER -->
-      <div class="portfolio-filter text-center reveal-up" style="margin-bottom: 3rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+      <!-- 3. PORTFOLIO FILTERS -->
+      <div class="portfolio-filter text-center reveal-up" style="margin-bottom: 4rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
         <button class="filter-btn active" data-filter="all" data-fr="Tous" data-en="All">Tous</button>
-        <button class="filter-btn" data-filter="exterior" data-fr="Extérieur" data-en="Exterior">Extérieur</button>
-        <button class="filter-btn" data-filter="interior" data-fr="Intérieur" data-en="Interior">Intérieur</button>
-        <button class="filter-btn" data-filter="building" data-fr="Bâtiment" data-en="Building">Bâtiment</button>
-        <button class="filter-btn" data-filter="bedrooms" data-fr="Chambres" data-en="Bedrooms">Chambres</button>
+        <button class="filter-btn" data-filter="exteriors" data-fr="Extérieurs" data-en="Exteriors">Extérieurs</button>
+        <button class="filter-btn" data-filter="interiors" data-fr="Intérieurs" data-en="Interiors">Intérieurs</button>
+        <button class="filter-btn" data-filter="homestaging" data-fr="Home Staging" data-en="Home Staging">Home Staging</button>
+        <button class="filter-btn" data-filter="lifestyle" data-fr="Environnement & Lifestyle" data-en="Environment & Lifestyle">Environnement & Lifestyle</button>
       </div>
 
-      <div class="portfolio-grid-new" style="flex-wrap: wrap;">
 
-        <!-- 1 -->
-        <div class="portfolio-card-v2 reveal-up" data-category="exterior building">
-          <div class="portfolio-img-wrap">
-            <img src="assets/images/portfolio/NORTRADE_01_Exterior_Hero_Dusk.webp" alt="The Arrival of Evening" loading="lazy">
-          </div>
-          <div class="portfolio-content-v2">
-            <h3 class="portfolio-card-title-v2 text-black" data-fr="L'Arrivée du Soir" data-en="The Arrival of Evening">L'Arrivée du Soir</h3>
-            <p class="portfolio-card-desc-v2"
-               data-fr="Une villa contemporaine révélée par les dernières lueurs du jour, mettant en valeur l’architecture, les matériaux nobles et son intégration dans le paysage."
-               data-en="A contemporary villa revealed by the last light of day, highlighting the architecture, noble materials, and its integration into the landscape.">
-              Une villa contemporaine révélée par les dernières lueurs du jour, mettant en valeur l’architecture, les matériaux nobles et son intégration dans le paysage.
-            </p>
-          </div>
+      <!-- 4. RESIDENTIAL VISUAL STUDY — RÉSIDENCE HORIZON -->
+      <div class="portfolio-project-block reveal-up" style="margin-bottom: 6rem;">
+        <div style="margin-bottom: 2.5rem; text-align: left;">
+          <span style="font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #888; display: block; margin-bottom: 0.5rem; font-weight: 500;"
+                data-fr="Étude visuelle résidentielle" data-en="Residential Visual Study">Étude visuelle résidentielle</span>
+          <h2 style="font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 600; color: #000; letter-spacing: -0.02em; margin-bottom: 0.8rem;"
+              data-fr="Résidence Horizon" data-en="Horizon Residence">Résidence Horizon</h2>
+          <p style="font-size: 1rem; color: #555; max-width: 720px; line-height: 1.7; font-weight: 300; margin-bottom: 0.75rem;"
+             data-fr="Une exploration d’une résidence contemporaine à travers ses extérieurs, ses espaces de vie, ses ambiances lumineuses et ses détails architecturaux."
+             data-en="An exploration of a contemporary residence through its exterior views, living spaces, lighting atmospheres and architectural details.">
+            Une exploration d’une résidence contemporaine à travers ses extérieurs, ses espaces de vie, ses ambiances lumineuses et ses détails architecturaux.
+          </p>
+          <p style="font-size: 0.82rem; color: #888; font-weight: 400; line-height: 1.6; max-width: 720px;"
+             data-fr="Projet conceptuel développé pour le portfolio NORTRADE. Direction et coordination par NORTRADE, production visuelle réalisée avec un studio partenaire spécialisé."
+             data-en="Concept project developed for the NORTRADE portfolio. Directed and coordinated by NORTRADE, with visual production completed by a specialised partner studio.">
+            Projet conceptuel développé pour le portfolio NORTRADE. Direction et coordination par NORTRADE, production visuelle réalisée avec un studio partenaire spécialisé.
+          </p>
         </div>
 
-        <!-- 2 -->
-        <div class="portfolio-card-v2 reveal-up" data-category="exterior building">
-          <div class="portfolio-img-wrap">
-            <img src="assets/images/portfolio/NORTRADE_08_Lifestyle_Arrival.webp" alt="Approach" loading="lazy">
-          </div>
-          <div class="portfolio-content-v2">
-            <h3 class="portfolio-card-title-v2 text-black" data-fr="L'Approche" data-en="Approach">L'Approche</h3>
-            <p class="portfolio-card-desc-v2"
-               data-fr="La découverte progressive de la propriété à travers son entrée principale, son aménagement paysager et son architecture contemporaine."
-               data-en="The progressive discovery of the property through its main entrance, landscaping, and contemporary architecture.">
-              La découverte progressive de la propriété à travers son entrée principale, son aménagement paysager et son architecture contemporaine.
-            </p>
-          </div>
-        </div>
+        <div class="portfolio-grid-new" style="flex-wrap: wrap;">
 
-        <!-- 3 -->
-        <div class="portfolio-card-v2 reveal-up" data-category="exterior">
-          <div class="portfolio-img-wrap">
-            <img src="assets/images/portfolio/NORTRADE_07_Lifestyle_Pool_Evening.webp" alt="Evenings" loading="lazy">
+          <!-- Visual 1: Main exterior -->
+          <div class="portfolio-card-v2 reveal-up" data-category="exteriors">
+            <div class="portfolio-img-wrap">
+              <img src="assets/images/portfolio/NORTRADE_01_Exterior_Hero_Dusk.webp" alt="At Dusk" loading="lazy">
+            </div>
+            <div class="portfolio-content-v2">
+              <h3 class="portfolio-card-title-v2 text-black" data-fr="À la tombée du jour" data-en="At Dusk">À la tombée du jour</h3>
+              <p class="portfolio-card-desc-v2"
+                 data-fr="La lumière du soir révèle les lignes de la résidence, la transparence des façades et son dialogue avec le paysage."
+                 data-en="The evening light reveals the lines of the residence, the transparency of its façades and its relationship with the landscape.">
+                La lumière du soir révèle les lignes de la résidence, la transparence des façades et son dialogue avec le paysage.
+              </p>
+            </div>
           </div>
-          <div class="portfolio-content-v2">
-            <h3 class="portfolio-card-title-v2 text-black" data-fr="Lueurs du Soir" data-en="Evenings">Lueurs du Soir</h3>
-            <p class="portfolio-card-desc-v2"
-               data-fr="Les espaces extérieurs prennent vie au coucher du soleil, offrant une atmosphère chaleureuse et une parfaite continuité entre l’intérieur et l’extérieur."
-               data-en="Outdoor spaces come to life at sunset, offering a warm atmosphere and a seamless continuity between indoors and outdoors.">
-              Les espaces extérieurs prennent vie au coucher du soleil, offrant une atmosphère chaleureuse et une parfaite continuité entre l’intérieur et l’extérieur.
-            </p>
-          </div>
-        </div>
 
-        <!-- 4 -->
-        <div class="portfolio-card-v2 reveal-up" data-category="exterior building">
-          <div class="portfolio-img-wrap">
-            <img src="assets/images/portfolio/NORTRADE_02_Exterior_Golden_Hour.webp" alt="Homecoming" loading="lazy">
+          <!-- Visual 2: Approach -->
+          <div class="portfolio-card-v2 reveal-up" data-category="exteriors">
+            <div class="portfolio-img-wrap">
+              <img src="assets/images/portfolio/NORTRADE_08_Lifestyle_Arrival.webp" alt="The Approach" loading="lazy">
+            </div>
+            <div class="portfolio-content-v2">
+              <h3 class="portfolio-card-title-v2 text-black" data-fr="L’Arrivée" data-en="The Arrival">L’Arrivée</h3>
+              <p class="portfolio-card-desc-v2"
+                 data-fr="Une découverte progressive de la propriété où l’architecture se dévoile naturellement dès les premiers instants."
+                 data-en="A progressive approach revealing the contemporary architecture and spatial elegance from the very first moment.">
+                Une découverte progressive de la propriété où l’architecture se dévoile naturellement dès les premiers instants.
+              </p>
+            </div>
           </div>
-          <div class="portfolio-content-v2">
-            <h3 class="portfolio-card-title-v2 text-black" data-fr="Le Retour à la Maison" data-en="Homecoming">Le Retour à la Maison</h3>
-            <p class="portfolio-card-desc-v2"
-               data-fr="Une scène illustrant le retour à la maison, où l’architecture devient le cadre d’un véritable art de vivre."
-               data-en="A scene illustrating the return home, where architecture becomes the setting for a true art of living.">
-              Une scène illustrant le retour à la maison, où l’architecture devient le cadre d’un véritable art de vivre.
-            </p>
-          </div>
-        </div>
 
-        <!-- 5 -->
-        <div class="portfolio-card-v2 reveal-up" data-category="interior">
-          <div class="portfolio-img-wrap">
-            <img src="assets/images/portfolio/NORTRADE_03_Living_Room_Dusk.webp" alt="The Great Room" loading="lazy">
+          <!-- Visual 3: Exterior atmosphere -->
+          <div class="portfolio-card-v2 reveal-up" data-category="exteriors">
+            <div class="portfolio-img-wrap">
+              <img src="assets/images/portfolio/NORTRADE_07_Lifestyle_Pool_Evening.webp" alt="Twilight" loading="lazy">
+            </div>
+            <div class="portfolio-content-v2">
+              <h3 class="portfolio-card-title-v2 text-black" data-fr="Lumières du crépuscule" data-en="Twilight">Lumières du crépuscule</h3>
+              <p class="portfolio-card-desc-v2"
+                 data-fr="Les espaces extérieurs prennent vie à mesure que la lumière évolue, prolongeant la continuité entre intérieur et extérieur."
+                 data-en="The exterior spaces come to life as the light evolves, extending the continuity between indoors and outdoors.">
+                Les espaces extérieurs prennent vie à mesure que la lumière évolue, prolongeant la continuité entre intérieur et extérieur.
+              </p>
+            </div>
           </div>
-          <div class="portfolio-content-v2">
-            <h3 class="portfolio-card-title-v2 text-black" data-fr="La Grande Pièce de Vie" data-en="The Great Room">La Grande Pièce de Vie</h3>
-            <p class="portfolio-card-desc-v2"
-               data-fr="Une pièce de vie ouverte, baignée de lumière naturelle, mettant en avant les volumes, les matériaux et la relation avec les espaces extérieurs."
-               data-en="An open living area bathed in natural light, highlighting the volumes, materials, and relationship with outdoor spaces.">
-              Une pièce de vie ouverte, baignée de lumière naturelle, mettant en avant les volumes, les matériaux et la relation avec les espaces extérieurs.
-            </p>
-          </div>
-        </div>
 
-        <!-- 6 -->
-        <div class="portfolio-card-v2 reveal-up" data-category="interior">
-          <div class="portfolio-img-wrap">
-            <img src="assets/images/portfolio/NORTRADE_05_Living_Room_Night.webp" alt="Nightfall" loading="lazy">
+          <!-- Visual 4: Main living area (Interactive Day/Night Card) -->
+          <div class="portfolio-card-v2 reveal-up" data-category="interiors">
+            <div class="portfolio-img-wrap day-night-card">
+              <div class="day-night-badge">
+                <span class="dn-day" data-fr="Jour" data-en="Day">Jour</span>
+                <span class="dn-sep">/</span>
+                <span class="dn-night" data-fr="Nuit" data-en="Night">Nuit</span>
+              </div>
+              <img src="assets/images/portfolio/NORTRADE_03_Living_Room_Dusk.webp" alt="The Heart of the Residence (Day)" class="img-day" loading="lazy">
+              <img src="assets/images/portfolio/NORTRADE_05_Living_Room_Night.webp" alt="The Heart of the Residence (Night)" class="img-night" loading="lazy">
+            </div>
+            <div class="portfolio-content-v2">
+              <h3 class="portfolio-card-title-v2 text-black" data-fr="Le Cœur de la résidence" data-en="The Heart of the Residence">Le Cœur de la résidence</h3>
+              <p class="portfolio-card-desc-v2"
+                 data-fr="Un espace ouvert où la lumière naturelle, les volumes et la relation avec le paysage composent une expérience fluide."
+                 data-en="An open space where natural light, volume and the relationship with the landscape create a seamless experience.">
+                Un espace ouvert où la lumière naturelle, les volumes et la relation avec le paysage composent une expérience fluide.
+              </p>
+            </div>
           </div>
-          <div class="portfolio-content-v2">
-            <h3 class="portfolio-card-title-v2 text-black" data-fr="Tombée de la Nuit" data-en="Nightfall">Tombée de la Nuit</h3>
-            <p class="portfolio-card-desc-v2"
-               data-fr="Une ambiance nocturne élégante où les jeux de lumière révèlent le caractère et l’atmosphère de la résidence."
-               data-en="An elegant nocturnal ambiance where the play of light reveals the character and atmosphere of the residence.">
-              Une ambiance nocturne élégante où les jeux de lumière révèlent le caractère et l’atmosphère de la résidence.
-            </p>
-          </div>
-        </div>
 
-        <!-- 7 -->
-        <div class="portfolio-card-v2 reveal-up" data-category="interior bedrooms">
-          <div class="portfolio-img-wrap">
-            <img src="assets/images/portfolio/NORTRADE_04_Master_Suite.webp" alt="The Master Suite" loading="lazy">
+          <!-- Visual 5: Main bedroom (Interactive Day/Night Card) -->
+          <div class="portfolio-card-v2 reveal-up" data-category="interiors">
+            <div class="portfolio-img-wrap day-night-card">
+              <div class="day-night-badge">
+                <span class="dn-day" data-fr="Jour" data-en="Day">Jour</span>
+                <span class="dn-sep">/</span>
+                <span class="dn-night" data-fr="Nuit" data-en="Night">Nuit</span>
+              </div>
+              <img src="assets/images/portfolio/NORTRADE_04_Master_Suite.webp" alt="The Primary Suite (Day)" class="img-day" loading="lazy">
+              <img src="assets/images/portfolio/NORTRADE_06_Master_Suite_Night.webp" alt="The Primary Suite (Night)" class="img-night" loading="lazy">
+            </div>
+            <div class="portfolio-content-v2">
+              <h3 class="portfolio-card-title-v2 text-black" data-fr="La Suite principale" data-en="The Primary Suite">La Suite principale</h3>
+              <p class="portfolio-card-desc-v2"
+                 data-fr="Une suite ouverte sur le paysage, conçue autour du calme, de la lumière et de la continuité entre intérieur et extérieur."
+                 data-en="A suite opening onto the landscape, shaped around calm, light and continuity between indoors and outdoors.">
+                Une suite ouverte sur le paysage, conçue autour du calme, de la lumière et de la continuité entre intérieur et extérieur.
+              </p>
+            </div>
           </div>
-          <div class="portfolio-content-v2">
-            <h3 class="portfolio-card-title-v2 text-black" data-fr="La Suite Parentale" data-en="The Master Suite">La Suite Parentale</h3>
-            <p class="portfolio-card-desc-v2"
-               data-fr="Une suite parentale contemporaine pensée pour offrir confort, élégance et ouverture sur le paysage."
-               data-en="A contemporary master suite designed to offer comfort, elegance, and openness to the landscape.">
-              Une suite parentale contemporaine pensée pour offrir confort, élégance et ouverture sur le paysage.
-            </p>
-          </div>
-        </div>
 
-        <!-- 8 -->
-        <div class="portfolio-card-v2 reveal-up" data-category="interior bedrooms">
-          <div class="portfolio-img-wrap">
-            <img src="assets/images/portfolio/NORTRADE_06_Master_Suite_Night.webp" alt="Rest" loading="lazy">
+          <!-- Visual 6: Material detail -->
+          <div class="portfolio-card-v2 reveal-up" data-category="interiors">
+            <div class="portfolio-img-wrap">
+              <img src="assets/images/portfolio/NORTRADE_09_Detail_Travertine_Bronze.webp" alt="Material & Light" loading="lazy">
+            </div>
+            <div class="portfolio-content-v2">
+              <h3 class="portfolio-card-title-v2 text-black" data-fr="Matière & lumière" data-en="Material & Light">Matière & lumière</h3>
+              <p class="portfolio-card-desc-v2"
+                 data-fr="Un cadrage rapproché révélant le travertin, les textures et les détails qui définissent l’identité du projet."
+                 data-en="A closer view revealing the travertine, textures and details that define the identity of the project.">
+                Un cadrage rapproché révélant le travertin, les textures et les détails qui définissent l’identité du projet.
+              </p>
+            </div>
           </div>
-          <div class="portfolio-content-v2">
-            <h3 class="portfolio-card-title-v2 text-black" data-fr="Espace de Repos" data-en="Rest">Espace de Repos</h3>
-            <p class="portfolio-card-desc-v2"
-               data-fr="Une chambre à coucher mise en scène dans une ambiance calme et raffinée, favorisant le bien-être et la sérénité."
-               data-en="A bedroom staged in a calm and refined atmosphere, promoting well-being and serenity.">
-              Une chambre à coucher mise en scène dans une ambiance calme et raffinée, favorisant le bien-être et la sérénité.
-            </p>
-          </div>
-        </div>
 
-        <!-- 9 -->
-        <div class="portfolio-card-v2 reveal-up" data-category="interior">
-          <div class="portfolio-img-wrap">
-            <img src="assets/images/portfolio/NORTRADE_09_Detail_Travertine_Bronze.webp" alt="Material Truth" loading="lazy">
-          </div>
-          <div class="portfolio-content-v2">
-            <h3 class="portfolio-card-title-v2 text-black" data-fr="Vérité des Matériaux" data-en="Material Truth">Vérité des Matériaux</h3>
-            <p class="portfolio-card-desc-v2"
-               data-fr="Une mise en valeur des matériaux, des textures et des détails architecturaux qui donnent toute son identité au projet."
-               data-en="A showcase of materials, textures, and architectural details that give the project its complete identity.">
-              Une mise en valeur des matériaux, des textures et des détails architecturaux qui donnent toute son identité au projet.
-            </p>
-          </div>
         </div>
-
-        <!-- 10 -->
-        <div class="portfolio-card-v2 virtual-staging-card reveal-up" data-category="interior">
-          <div class="portfolio-img-wrap">
-            <img src="assets/images/portfolio/NORTRADE_12_Virtual_Staging_Before.webp" alt="Before Staging" class="vs-before" loading="lazy">
-            <img src="assets/images/portfolio/NORTRADE_13_Virtual_Staging_After.webp" alt="After Staging" class="vs-after" loading="lazy">
-          </div>
-          <div class="portfolio-content-v2">
-            <h3 class="portfolio-card-title-v2 text-black" data-fr="Home Staging Virtuel – Résidence Léman" data-en="Virtual Staging – Résidence Léman">Home Staging Virtuel – Résidence Léman</h3>
-            <p class="portfolio-card-desc-v2"
-               data-fr="Démonstration de home staging virtuel illustrant la transformation d’un espace vide en un intérieur chaleureux et entièrement aménagé afin de faciliter la projection des futurs acquéreurs."
-               data-en="A virtual home staging demonstration illustrating the transformation of an empty space into a warm, fully furnished interior to help future buyers visualize the property.">
-              Démonstration de home staging virtuel illustrant la transformation d’un espace vide en un intérieur chaleureux et entièrement aménagé afin de faciliter la projection des futurs acquéreurs.
-            </p>
-          </div>
-        </div>
-
       </div>
+
+
+      <!-- 5. VIRTUAL HOME STAGING — RÉSIDENCE LÉMAN -->
+      <div class="portfolio-project-block reveal-up" style="margin-top: 6rem; margin-bottom: 6rem; padding-top: 4rem; border-top: 1px solid #eee;">
+        <div style="margin-bottom: 2.5rem; text-align: left;">
+          <span style="font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #888; display: block; margin-bottom: 0.5rem; font-weight: 500;"
+                data-fr="Transformation virtuelle d’un espace intérieur" data-en="Virtual Interior Transformation">Transformation virtuelle d’un espace intérieur</span>
+          <h2 style="font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 600; color: #000; letter-spacing: -0.02em; margin-bottom: 0.8rem;"
+              data-fr="Home Staging Virtuel — Résidence Léman" data-en="Virtual Home Staging — Résidence Léman">Home Staging Virtuel — Résidence Léman</h2>
+          <p style="font-size: 1rem; color: #555; max-width: 720px; line-height: 1.7; font-weight: 300; margin-bottom: 0.75rem;"
+             data-fr="Transformation d’un espace vide en un intérieur entièrement aménagé afin d’en révéler le potentiel, d’améliorer sa présentation commerciale et de faciliter la projection des futurs acquéreurs."
+             data-en="Transformation of an empty property into a fully furnished interior designed to reveal its potential, strengthen its commercial presentation and help prospective buyers visualise the space.">
+            Transformation d’un espace vide en un intérieur entièrement aménagé afin d’en révéler le potentiel, d’améliorer sa présentation commerciale et de faciliter la projection des futurs acquéreurs.
+          </p>
+          <p style="font-size: 0.82rem; color: #888; font-weight: 400; line-height: 1.6; max-width: 720px;"
+             data-fr="Étude de home staging virtuel développée pour illustrer la transformation et le potentiel commercial d’un espace vide."
+             data-en="Virtual home staging study developed to demonstrate the transformation and commercial potential of an empty space.">
+            Étude de home staging virtuel développée pour illustrer la transformation et le potentiel commercial d’un espace vide.
+          </p>
+        </div>
+
+        <div class="portfolio-grid-new" style="flex-wrap: wrap;">
+          <div class="portfolio-card-v2 reveal-up" style="width: 100%; grid-column: 1 / -1;" data-category="homestaging">
+            <div class="portfolio-img-wrap ba-slider-wrap">
+              <div class="ba-slider" id="portfolio-ba-slider">
+                <div class="ba-label ba-label-after" data-fr="Après" data-en="After">Après</div>
+                <img src="assets/images/portfolio/NORTRADE_13_Virtual_Staging_After.webp" alt="Virtual Home Staging (After)" class="ba-img-after" loading="lazy">
+                <div class="ba-img-before-wrap">
+                  <div class="ba-label ba-label-before" data-fr="Avant" data-en="Before">Avant</div>
+                  <img src="assets/images/portfolio/NORTRADE_12_Virtual_Staging_Before.webp" alt="Virtual Home Staging (Before)" class="ba-img-before" loading="lazy">
+                </div>
+                <div class="ba-handle">
+                  <div class="ba-line"></div>
+                  <div class="ba-button">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <polyline points="15 18 9 12 15 6"></polyline>
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </div>
+                  <div class="ba-line"></div>
+                </div>
+                <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Compare Before and After">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 6. ENVIRONMENT & LIFESTYLE -->
+      <div class="portfolio-project-block reveal-up" style="margin-top: 6rem; margin-bottom: 4rem; padding-top: 4rem; border-top: 1px solid #eee;">
+        <div style="margin-bottom: 2.5rem; text-align: left;">
+          <span style="font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #888; display: block; margin-bottom: 0.5rem; font-weight: 500;"
+                data-fr="Atmosphère & Cadre de Vie" data-en="Atmosphere & Living Environment">Atmosphère & Cadre de Vie</span>
+          <h2 style="font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 600; color: #000; letter-spacing: -0.02em; margin-bottom: 0.8rem;"
+              data-fr="Environnement & Lifestyle" data-en="Environment & Lifestyle">Environnement & Lifestyle</h2>
+          <p style="font-size: 1rem; color: #555; max-width: 720px; line-height: 1.7; font-weight: 300;"
+             data-fr="Une exploration complémentaire révélant l’atmosphère, la nature et le cadre de vie qui entourent et magnifient un projet architectural."
+             data-en="A complementary exploration revealing the atmosphere, nature, and living environment that surround and enhance an architectural project.">
+            Une exploration complémentaire révélant l’atmosphère, la nature et le cadre de vie qui entourent et magnifient un projet architectural.
+          </p>
+        </div>
+
+        <div class="portfolio-grid-new" style="flex-wrap: wrap;">
+
+          <!-- Visual 1: People -->
+          <div class="portfolio-card-v2 reveal-up" data-category="lifestyle">
+            <div class="portfolio-img-wrap">
+              <img src="assets/images/portfolio/Environment_Lifestyle_04.webp" alt="People" loading="lazy">
+            </div>
+            <div class="portfolio-content-v2">
+              <h3 class="portfolio-card-title-v2 text-black" data-fr="Présence Humaine" data-en="Human Presence">Présence Humaine</h3>
+              <p class="portfolio-card-desc-v2"
+                 data-fr="L'incarnation de la vie contemporaine et l'appropriation naturelle des espaces."
+                 data-en="The embodiment of contemporary life and natural appreciation of spatial design.">
+                L'incarnation de la vie contemporaine et l'appropriation naturelle des espaces.
+              </p>
+            </div>
+          </div>
+
+          <!-- Visual 2: Deer -->
+          <div class="portfolio-card-v2 reveal-up" data-category="lifestyle">
+            <div class="portfolio-img-wrap">
+              <img src="assets/images/portfolio/Environment_Lifestyle_02.webp" alt="Deer" loading="lazy">
+            </div>
+            <div class="portfolio-content-v2">
+              <h3 class="portfolio-card-title-v2 text-black" data-fr="Faune & Nature" data-en="Wildlife & Nature">Faune & Nature</h3>
+              <p class="portfolio-card-desc-v2"
+                 data-fr="L'harmonie sereine entre l'architecture contemporaine et son environnement naturel préservé."
+                 data-en="The serene harmony between contemporary architecture and its preserved natural surroundings.">
+                L'harmonie sereine entre l'architecture contemporaine et son environnement naturel préservé.
+              </p>
+            </div>
+          </div>
+
+          <!-- Visual 3: Butterfly -->
+          <div class="portfolio-card-v2 reveal-up" data-category="lifestyle">
+            <div class="portfolio-img-wrap">
+              <img src="assets/images/portfolio/Environment_Lifestyle_01.webp" alt="Butterfly" loading="lazy">
+            </div>
+            <div class="portfolio-content-v2">
+              <h3 class="portfolio-card-title-v2 text-black" data-fr="Détails Organiques" data-en="Organic Details">Détails Organiques</h3>
+              <p class="portfolio-card-desc-v2"
+                 data-fr="La poésie des détails naturels qui viennent sublimer les matières minérales."
+                 data-en="The poetry of natural details enhancing mineral and stone materials.">
+                La poésie des détails naturels qui viennent sublimer les matières minérales.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -374,15 +388,15 @@
           <div class="why-intro-pill" style="margin-bottom: 1.25rem; display: inline-block; border-color: rgba(255, 255, 255, 0.5); color: #ffffff; text-transform: none;">
             <span style="color: #ffffff !important;" data-en="Start a Project" data-fr="Démarrer un projet">Démarrer un projet</span>
           </div>
-          <h2 class="cta-heading" data-fr="Parlons de votre projet" data-en="Let's talk about your project">
-            Parlons de votre projet</h2>
+          <h2 class="cta-heading" data-fr="Échangeons sur votre projet" data-en="Let’s Discuss Your Project">
+            Échangeons sur votre projet</h2>
           <p class="cta-subheading"
-            data-fr="Notre calendrier d'accompagnement est soigneusement géré pour vous garantir une attention stratégique dédiée. Contactez-nous dès aujourd'hui pour planifier votre projet et bénéficier d'une prise en charge prioritaire."
-            data-en="Our advisory and engagement schedule is carefully managed to guarantee dedicated executive focus. Contact us to discuss your upcoming project timeline and secure priority onboarding.">
-            Notre calendrier d'accompagnement est soigneusement géré pour vous garantir une attention stratégique dédiée. Contactez-nous dès aujourd'hui pour planifier votre projet et bénéficier d'une prise en charge prioritaire.</p>
+            data-fr="Nous serons heureux d’échanger avec vous afin de comprendre votre projet et vous proposer une approche adaptée."
+            data-en="We’d be pleased to learn more about your project and discuss the most appropriate visual approach.">
+            Nous serons heureux d’échanger avec vous afin de comprendre votre projet et vous proposer une approche adaptée.</p>
           <div class="cta-buttons">
             <a href="index.html#contact-page" class="hover-scale cta-btn">
-              <span data-fr="DEMANDE DE DEVIS" data-en="QUOTE REQUEST FORM">DEMANDE DE DEVIS</span>
+              <span data-fr="Nous contacter" data-en="Contact Us">Nous contacter</span>
               <span class="cta-btn-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="cta-btn-svg">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -398,75 +412,74 @@
           <img src="assets/images/cta/luxury-villa-cta.webp" alt="Luxury modern villa architectural visualization by NORTRADE"
             class="cta-house-img">
         </div>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-<footer id="site-footer" class="footer">
-  <div class="footer-grid-container">
+  <footer id="site-footer" class="footer">
+    <div class="footer-grid-container">
 
-    <!-- Left Column: Tagline, Contact & Navigation -->
-    <div class="footer-left-content reveal-left">
-      <div class="footer-tagline-block">
-        <div style="margin-bottom: 1.5rem;">
-          <span class="why-intro-pill"
-            style="display: inline-block; white-space: nowrap; font-size: 0.75rem; padding: 0.4rem 1.1rem;">
-            <span data-fr="Conseil Suisse en Valorisation Immobilière"
-              data-en="Swiss Real Estate Enhancement Firm">Conseil Suisse en Valorisation Immobilière</span>
-          </span>
+      <!-- Left Column: Tagline, Contact & Navigation -->
+      <div class="footer-left-content reveal-left">
+        <div class="footer-tagline-block">
+          <div style="margin-bottom: 1.5rem;">
+            <span class="why-intro-pill"
+              style="display: inline-block; white-space: nowrap; font-size: 0.75rem; padding: 0.4rem 1.1rem;">
+              <span data-fr="Conseil Suisse en Valorisation Immobilière"
+                data-en="Swiss Real Estate Enhancement Firm">Conseil Suisse en Valorisation Immobilière</span>
+            </span>
+          </div>
+          <p class="footer-tagline-text"
+            data-fr="<strong>NORTRADE accompagne les professionnels de l'immobilier</strong> en Suisse et à l'international dans la <strong>valorisation et la commercialisation</strong> de leurs projets."
+            data-en="<strong>NORTRADE supports real estate professionals</strong> in Switzerland and internationally in <strong>enhancing and commercializing</strong> their projects.">
+            <strong>NORTRADE accompagne les professionnels de l'immobilier</strong> en Suisse et à l'international dans la <strong>valorisation et la commercialisation</strong> de leurs projets.</p>
+
+          <div class="footer-contact-block">
+            <p class="fcb-phone">+41 78 206 59 42</p>
+            <a href="mailto:contact@nortrade.ch" class="fcb-email">contact@nortrade.ch</a>
+          </div>
         </div>
-        <p class="footer-tagline-text"
-          data-fr="<strong>NORTRADE accompagne les professionnels de l'immobilier</strong> en Suisse et à l'international dans la <strong>valorisation et la commercialisation</strong> de leurs projets."
-          data-en="<strong>NORTRADE supports real estate professionals</strong> in Switzerland and internationally in <strong>enhancing and commercializing</strong> their projects.">
-          <strong>NORTRADE accompagne les professionnels de l'immobilier</strong> en Suisse et à l'international dans la <strong>valorisation et la commercialisation</strong> de leurs projets.</p>
 
-        <div class="footer-contact-block">
-          <p class="fcb-phone">+41 78 206 59 42</p>
-          <a href="mailto:contact@nortrade.ch" class="fcb-email">contact@nortrade.ch</a>
+        <div class="footer-nav-wrapper">
+          <div class="footer-nav-col">
+            <p class="footer-nav-label" data-fr="Navigation" data-en="Navigation">Navigation</p>
+            <a href="index.html#about" class="footer-nav-link" data-fr="À propos" data-en="About Us">À propos</a>
+            <a href="index.html#services" class="footer-nav-link" data-fr="Services" data-en="Services">Services</a>
+            <a href="portfolio.html" class="footer-nav-link" data-fr="Portfolio" data-en="Portfolio">Portfolio</a>
+            <a href="index.html#contact-page" class="footer-nav-link" data-fr="Contact" data-en="Contact">Contact</a>
+          </div>
+          <div class="footer-nav-col">
+            <p class="footer-nav-label" data-fr="Mentions légales & Social" data-en="Legal & Social">Mentions légales & Social</p>
+            <a href="https://wa.me/41782065942" target="_blank" rel="noopener" class="footer-nav-link">WhatsApp ↗</a>
+            <a href="privacy.html" class="footer-nav-link" data-fr="Politique de confidentialité"
+              data-en="Privacy Policy">Politique de confidentialité ↗</a>
+            <a href="legal.html" class="footer-nav-link" data-fr="Mentions Légales" data-en="Legal Notice">Mentions Légales ↗</a>
+            <a href="cgu.html" class="footer-nav-link" data-fr="CGU" data-en="Terms of Use">CGU ↗</a>
+          </div>
         </div>
       </div>
 
-      <div class="footer-nav-wrapper">
-        <div class="footer-nav-col">
-          <p class="footer-nav-label" data-fr="Navigation" data-en="Navigation">Navigation</p>
-          <a href="index.html#about" class="footer-nav-link" data-fr="À propos" data-en="About Us">À propos</a>
-          <a href="index.html#services" class="footer-nav-link" data-fr="Services" data-en="Services">Services</a>
-          <a href="index.html#process" class="footer-nav-link" data-fr="Notre Processus" data-en="Our Process">Notre Processus</a>
-          <a href="index.html#contact-page" class="footer-nav-link" data-fr="Contact" data-en="Contact">Contact</a>
-        </div>
-        <div class="footer-nav-col">
-          <p class="footer-nav-label" data-fr="Mentions légales & Social" data-en="Legal & Social">Mentions légales &
-            Social</p>
-          <a href="https://wa.me/41782065942" target="_blank" rel="noopener" class="footer-nav-link">WhatsApp ↗</a>
-          <a href="privacy.html" class="footer-nav-link" data-fr="Politique de confidentialité"
-            data-en="Privacy Policy">Politique de confidentialité ↗</a>
-          <a href="legal.html" class="footer-nav-link" data-fr="Mentions Légales" data-en="Legal Notice">Mentions Légales
-            ↗</a>
-          <a href="cgu.html" class="footer-nav-link" data-fr="CGU" data-en="Terms of Use">CGU ↗</a>
-        </div>
+      <!-- Right Column (Bottom Middle on Mobile): Architectural Logo Image -->
+      <div class="footer-logo-col reveal-right">
+        <img src="assets/logo/footer_logo_transparent.png" alt="NORTRADE Architectural Logo" class="footer-logo-img">
+      </div>
+
+    </div>
+
+    <!-- COPYRIGHT BAR (Black Bar) -->
+    <div class="footer-copyright-bar">
+      <div class="footer-copyright-inner">
+        <span class="footer-copyright-text" data-fr="&copy; NORTRADE. Tous droits réservés." data-en="&copy; NORTRADE. All Rights Reserved.">&copy;
+          NORTRADE. Tous droits réservés.</span>
+        <span class="footer-copyright-divider d-none-mobile">&nbsp;|&nbsp;</span>
+        <span class="footer-credits"><span data-fr="Design et Développement par"
+            data-en="Design &amp; Development by">Design et Développement par</span> <a
+            href="https://www.instagram.com/dreweb.io/" target="_blank" rel="noopener">dreweb.io</a></span>
       </div>
     </div>
 
-    <!-- Right Column (Bottom Middle on Mobile): Architectural Logo Image -->
-    <div class="footer-logo-col reveal-right">
-      <img src="assets/logo/footer_logo_transparent.png" alt="NORTRADE Architectural Logo" class="footer-logo-img">
-    </div>
-
-  </div>
-
-  <!-- COPYRIGHT BAR (Black Bar) -->
-  <div class="footer-copyright-bar">
-    <div class="footer-copyright-inner">
-      <span class="footer-copyright-text" data-fr="&copy; NORTRADE. Tous droits réservés." data-en="&copy; NORTRADE. All Rights Reserved.">&copy;
-        NORTRADE. Tous droits réservés.</span>
-      <span class="footer-copyright-divider d-none-mobile">&nbsp;|&nbsp;</span>
-      <span class="footer-credits"><span data-fr="Design et Développement par"
-          data-en="Design &amp; Development by">Design et Développement par</span> <a
-          href="https://www.instagram.com/dreweb.io/" target="_blank" rel="noopener">dreweb.io</a></span>
-    </div>
-  </div>
-
-</footer>
+  </footer>
 
   <!-- RIGHT EDGE BUTTONS -->
   <div class="right-edge-buttons">

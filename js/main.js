@@ -48,6 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initFAQ();
   initHeroVideoPlaylist();
   initEdgeButtonsVisibility();
+  initDayNightCards();
+  initBeforeAfterSliders();
 });
 
 function initSmoothScroll() {
@@ -269,16 +271,16 @@ function setupRevealText(el) {
 
   revealTimeline = gsap.timeline({
     scrollTrigger: {
-      trigger: el, // Use the text block itself instead of the entire section
-      start: 'top 85%',
-      end: 'bottom 65%', // Finishes revealing before it scrolls past the middle
-      scrub: 1.5, // Faster response to catch up before it scrolls away
+      trigger: el, // Use the text block itself
+      start: 'top 82%',
+      end: 'bottom 75%', // Finishes revealing while text is well centered in view
+      scrub: 0.5,        // Direct responsive scrubbing without long lag
     }
   });
 
   revealTimeline.to(el.querySelectorAll('span'), {
     color: 'var(--color-black)',
-    stagger: 0.1,
+    stagger: 0.05,
     ease: 'none'
   });
 }
@@ -1062,8 +1064,8 @@ function initAboutScroll() {
       scrollTrigger: {
         trigger: revealText,
         start: 'top 85%',   // Start earlier
-        end: 'bottom 45%',  // End later, creating a longer scroll distance
-        scrub: 2,           // Very smooth, interpolated scrubbing
+        end: 'bottom 75%',  // End later, creating a longer scroll distance
+        scrub: 0.5,           // Very smooth, interpolated scrubbing
       }
     }
   );
@@ -1319,4 +1321,127 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+});
+
+/* ── DAY / NIGHT CARD INTERACTION ── */
+function initDayNightCards() {
+  document.querySelectorAll('.day-night-card').forEach(card => {
+    let startX = 0, startY = 0, startTime = 0;
+
+    card.addEventListener('touchstart', (e) => {
+      if (e.touches.length > 0) {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        startTime = Date.now();
+      }
+    }, { passive: true });
+
+    card.addEventListener('touchend', (e) => {
+      if (e.changedTouches.length > 0) {
+        const distX = Math.abs(e.changedTouches[0].clientX - startX);
+        const distY = Math.abs(e.changedTouches[0].clientY - startY);
+        const timeElapsed = Date.now() - startTime;
+
+        if (distX < 12 && distY < 12 && timeElapsed < 350) {
+          card.classList.toggle('active-night');
+        }
+      }
+    }, { passive: true });
+  });
+}
+
+/* ── BEFORE / AFTER COMPARISON SLIDER ── */
+function initBeforeAfterSliders() {
+  document.querySelectorAll('.ba-slider').forEach(slider => {
+    const range = slider.querySelector('.ba-range');
+    const beforeWrap = slider.querySelector('.ba-img-before-wrap');
+    const beforeImg = slider.querySelector('.ba-img-before');
+    const handle = slider.querySelector('.ba-handle');
+    if (!beforeWrap || !handle) return;
+
+    function setPosition(percentage) {
+      const pct = Math.max(0, Math.min(100, percentage));
+      beforeWrap.style.width = pct + '%';
+      handle.style.left = pct + '%';
+      if (range) range.value = pct;
+      if (beforeImg) {
+        const sliderWidth = slider.offsetWidth || slider.clientWidth;
+        if (sliderWidth > 0) {
+          beforeImg.style.width = sliderWidth + 'px';
+        }
+      }
+    }
+
+    if (range) {
+      range.addEventListener('input', (e) => setPosition(parseFloat(e.target.value)));
+      range.addEventListener('change', (e) => setPosition(parseFloat(e.target.value)));
+    }
+
+    let isDragging = false;
+
+    function getPercentage(clientX) {
+      const rect = slider.getBoundingClientRect();
+      const x = clientX - rect.left;
+      return (x / rect.width) * 100;
+    }
+
+    slider.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      setPosition(getPercentage(e.clientX));
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (isDragging) {
+        setPosition(getPercentage(e.clientX));
+      }
+    });
+
+    window.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+    slider.addEventListener('touchstart', (e) => {
+      if (e.touches.length > 0) {
+        setPosition(getPercentage(e.touches[0].clientX));
+      }
+    }, { passive: true });
+
+    slider.addEventListener('touchmove', (e) => {
+      if (e.touches.length > 0) {
+        setPosition(getPercentage(e.touches[0].clientX));
+      }
+    }, { passive: true });
+
+    window.addEventListener('resize', () => {
+      const currentPct = range ? parseFloat(range.value) : 50;
+      setPosition(currentPct);
+    });
+
+    // Initialize at 50%
+    setPosition(50);
+    setTimeout(() => setPosition(50), 200);
+    setTimeout(() => setPosition(50), 600);
+  });
+}
+
+/* ── FILE UPLOAD INPUT LABEL HANDLER ── */
+function initFileUploadHandler() {
+  const fileInput = document.getElementById('file-upload');
+  if (!fileInput) return;
+
+  fileInput.addEventListener('change', function() {
+    const labelText = this.closest('.file-upload-box')?.querySelector('.file-label-text');
+    if (labelText) {
+      if (this.files && this.files.length > 0) {
+        labelText.textContent = this.files[0].name;
+      } else {
+        const lang = localStorage.getItem('nortrade-lang') || 'fr';
+        labelText.textContent = lang === 'en' ? 'Browse a file...' : 'Parcourir un fichier...';
+      }
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initFileUploadHandler();
 });

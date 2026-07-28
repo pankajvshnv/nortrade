@@ -3696,6 +3696,83 @@ body.is-loading { overflow: hidden; }
   border-bottom-color: #111111;
 }
 
+/* Minimalist Select Dropdown */
+.select-modern {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #e5e5e7;
+  border-radius: 0;
+  padding: 0.6rem 2rem 0.6rem 0;
+  font-family: var(--font-secondary);
+  font-size: 0.95rem;
+  color: #111111;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23111111' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") no-repeat right 4px center;
+  background-size: 14px 14px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.select-modern:focus {
+  border-bottom-color: #111111;
+}
+
+.select-modern option {
+  background: #ffffff;
+  color: #111111;
+  font-family: var(--font-secondary);
+  padding: 10px;
+}
+
+/* Minimalist Premium File Upload Box */
+.file-upload-box {
+  position: relative;
+  width: 100%;
+  border: 1px dashed #d1d1d6;
+  border-radius: 12px;
+  padding: 0.85rem 1.25rem;
+  background: #fafafa;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.35rem;
+}
+
+.file-upload-box:hover {
+  border-color: #111111;
+  background: #f4f4f6;
+}
+
+.file-upload-box input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.file-upload-content {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #555;
+  font-size: 0.9rem;
+  pointer-events: none;
+  font-weight: 400;
+}
+
+.file-upload-box:hover .file-upload-content {
+  color: #111;
+}
+
 .contact-submit-btn-new {
   background: #111111; /* Black button */
   color: #ffffff;
@@ -4556,6 +4633,213 @@ a.detail-value:hover {
 
 .portfolio-card-v2.hide {
   display: none !important;
+}
+
+/* ── DAY / NIGHT HOVER & TAP CARD ── */
+.day-night-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.day-night-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.day-night-card .img-night {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: none;
+}
+.day-night-card:hover .img-night,
+.day-night-card.active-night .img-night {
+  opacity: 1;
+}
+
+/* Day/Night Badge Indicator */
+.day-night-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  background: rgba(0, 0, 0, 0.75);
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 5px 14px;
+  z-index: 10;
+  pointer-events: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.3s ease;
+}
+
+.day-night-badge .dn-day,
+.day-night-badge .dn-night {
+  transition: color 0.3s ease, opacity 0.3s ease, font-weight 0.3s ease;
+  color: #ffffff;
+}
+
+/* Default state: Day is active */
+.day-night-card .day-night-badge .dn-day {
+  color: #ffffff;
+  font-weight: 600;
+  opacity: 1;
+}
+
+.day-night-card .day-night-badge .dn-night {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.day-night-card .day-night-badge .dn-sep {
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 1px;
+}
+
+/* Active Night state: Night is active (on hover or tap) */
+.day-night-card:hover .day-night-badge .dn-day,
+.day-night-card.active-night .day-night-badge .dn-day {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.day-night-card:hover .day-night-badge .dn-night,
+.day-night-card.active-night .day-night-badge .dn-night {
+  color: #ffffff;
+  font-weight: 600;
+  opacity: 1;
+}
+
+/* ── BEFORE / AFTER COMPARISON SLIDER ── */
+.ba-slider-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.ba-slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  user-select: none;
+  touch-action: pan-y;
+}
+.ba-slider .ba-img-after {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.ba-slider .ba-img-before-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  overflow: hidden;
+  z-index: 2;
+}
+.ba-slider .ba-img-before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+.ba-slider .ba-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateX(-50%);
+  z-index: 5;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ba-slider .ba-line {
+  flex: 1;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.9);
+}
+.ba-slider .ba-button {
+  width: 36px;
+  height: 36px;
+  background: #ffffff;
+  color: #000000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+}
+.ba-slider .ba-range {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 10;
+  margin: 0;
+}
+.ba-label {
+  position: absolute;
+  top: 16px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 999px;
+  z-index: 6;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+}
+.ba-label-before {
+  left: 16px;
+}
+.ba-label-after {
+  right: 16px;
+}
+
+/* ── PORTFOLIO BTN HOVER & SPACING ── */
+.portfolio-btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+.portfolio-btn:hover {
+  background-color: #2a2a2a;
 }
 
 /* ── PAGE TRANSITION (ENTER) ── */
