@@ -1381,36 +1381,31 @@ document.addEventListener("DOMContentLoaded", () => {
 /* ── DAY / NIGHT CARD INTERACTION ── */
 function initDayNightCards() {
   document.querySelectorAll('.day-night-card').forEach(card => {
-    let startX = 0, startY = 0, startTime = 0, isTouch = false;
+    let startX = 0, startY = 0, touchMoved = false;
 
     card.addEventListener('touchstart', (e) => {
-      isTouch = true;
+      touchMoved = false;
       if (e.touches.length > 0) {
         startX = e.touches[0].clientX;
         startY = e.touches[0].clientY;
-        startTime = Date.now();
       }
     }, { passive: true });
 
-    card.addEventListener('touchend', (e) => {
-      if (e.changedTouches.length > 0) {
-        const distX = Math.abs(e.changedTouches[0].clientX - startX);
-        const distY = Math.abs(e.changedTouches[0].clientY - startY);
-        const timeElapsed = Date.now() - startTime;
-
-        // Intentional tap (minimal movement & quick tap)
-        if (distX < 15 && distY < 15 && timeElapsed < 400) {
-          card.classList.toggle('active-night');
+    card.addEventListener('touchmove', (e) => {
+      if (e.touches.length > 0) {
+        const distX = Math.abs(e.touches[0].clientX - startX);
+        const distY = Math.abs(e.touches[0].clientY - startY);
+        if (distX > 8 || distY > 8) {
+          touchMoved = true;
         }
       }
-    });
+    }, { passive: true });
 
     card.addEventListener('click', (e) => {
-      // If it wasn't triggered by a touch gesture already
-      if (!isTouch) {
+      if (!touchMoved) {
         card.classList.toggle('active-night');
       }
-      isTouch = false;
+      touchMoved = false;
     });
   });
 }
@@ -1446,6 +1441,7 @@ function initBeforeAfterSliders() {
 
     function getPercentage(clientX) {
       const rect = slider.getBoundingClientRect();
+      if (!rect.width) return 50;
       const x = clientX - rect.left;
       return (x / rect.width) * 100;
     }
@@ -1465,17 +1461,28 @@ function initBeforeAfterSliders() {
       isDragging = false;
     });
 
+    let touchActive = false;
+
     slider.addEventListener('touchstart', (e) => {
       if (e.touches.length > 0) {
+        touchActive = true;
         setPosition(getPercentage(e.touches[0].clientX));
       }
     }, { passive: true });
 
     slider.addEventListener('touchmove', (e) => {
-      if (e.touches.length > 0) {
+      if (touchActive && e.touches.length > 0) {
         setPosition(getPercentage(e.touches[0].clientX));
       }
     }, { passive: true });
+
+    slider.addEventListener('touchend', () => {
+      touchActive = false;
+    });
+
+    slider.addEventListener('touchcancel', () => {
+      touchActive = false;
+    });
 
     window.addEventListener('resize', () => {
       const currentPct = range ? parseFloat(range.value) : 50;

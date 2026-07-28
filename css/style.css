@@ -4736,6 +4736,22 @@ a.detail-value:hover {
   opacity: 1;
 }
 
+/* ── PREVENT BLUE HIGHLIGHT & SELECTION OVERLAY ON MOBILE ── */
+.ba-slider-wrap,
+.ba-slider,
+.ba-range,
+.day-night-card,
+.ba-slider *,
+.day-night-card * {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  outline: none !important;
+}
+
 /* ── BEFORE / AFTER COMPARISON SLIDER ── */
 .ba-slider-wrap {
   position: relative;
@@ -4814,6 +4830,16 @@ a.detail-value:hover {
   cursor: ew-resize;
   z-index: 10;
   margin: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  background: transparent;
+}
+.ba-slider .ba-range:focus,
+.ba-slider .ba-range:active {
+  outline: none !important;
+  background: transparent !important;
 }
 .ba-label {
   position: absolute;
