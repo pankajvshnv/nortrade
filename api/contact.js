@@ -1,7 +1,28 @@
 const nodemailer = require('nodemailer');
 
+const projectTypeLabels = {
+  promotion: { fr: 'Promotion Immobilière', en: 'Property Development' },
+  architecture: { fr: 'Architecture', en: 'Architecture' },
+  renovation: { fr: 'Rénovation', en: 'Renovation' },
+  existing: { fr: 'Bien Existant', en: 'Existing Property' },
+  staging: { fr: 'Home Staging', en: 'Home Staging' },
+  hospitality: { fr: 'Hôtellerie & Restauration', en: 'Hospitality' },
+  other: { fr: 'Autre', en: 'Other' }
+};
+
+const requestedServiceLabels = {
+  interior: { fr: 'Rendus Intérieurs', en: 'Interior Renderings' },
+  exterior: { fr: 'Rendus Extérieurs', en: 'Exterior Renderings' },
+  staging: { fr: 'Home Staging Virtuel', en: 'Virtual Home Staging' },
+  animation: { fr: 'Animation Architecturale', en: 'Architectural Animation' },
+  tour: { fr: 'Visite Virtuelle', en: 'Virtual Tour' },
+  plans: { fr: 'Plans 3D', en: '3D Floor Plans' },
+  consulting: { fr: 'Conseil en Visualisation', en: 'Visualisation Consulting' },
+  multiple: { fr: 'Services Multiples', en: 'Multiple Services' },
+  unsure: { fr: 'Pas Encore Sûr', en: 'Not Sure Yet' }
+};
+
 export default async function handler(req, res) {
-  // CORS Headers for Vercel
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
@@ -10,26 +31,51 @@ export default async function handler(req, res) {
     'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
   );
 
-  // Handle OPTIONS request for CORS preflight
   if (req.method === 'OPTIONS') {
     res.status(200).end();
     return;
   }
 
-  // Only allow POST requests
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
   try {
-    const { name, email, company, service, budget, message, lang } = req.body;
-    const isFr = lang === 'fr';
+    const {
+      prenom = '',
+      nom = '',
+      name = '',
+      email = '',
+      company = '',
+      projectType = '',
+      project_type = '',
+      requestedService = '',
+      requested_service = '',
+      message = '',
+      fileData = null,
+      lang = 'fr'
+    } = req.body;
 
-    if (!name || !email || !message) {
-      return res.status(400).json({ error: isFr ? 'Les champs nom, e-mail et message sont requis.' : 'Name, email, and message are required fields.' });
+    const isFr = lang === 'fr';
+    const finalFirstName = prenom || name.split(' ')[0] || '';
+    const finalLastName = nom || name.split(' ').slice(1).join(' ') || '';
+    const fullName = `${finalFirstName} ${finalLastName}`.trim() || name || 'Client';
+
+    if (!email || !message) {
+      return res.status(400).json({
+        error: isFr ? 'L’adresse e-mail et les détails du projet sont requis.' : 'Email and project details are required.'
+      });
     }
 
-    // Fallback variables if Vercel environment variables are not set in dashboard yet
+    const rawProjectType = projectType || project_type;
+    const rawService = requestedService || requested_service;
+
+    const pTypeObj = projectTypeLabels[rawProjectType] || {};
+    const serviceObj = requestedServiceLabels[rawService] || {};
+
+    const pTypeLabel = isFr ? (pTypeObj.fr || rawProjectType || 'Non spécifié') : (pTypeObj.en || rawProjectType || 'Not specified');
+    const serviceLabel = isFr ? (serviceObj.fr || rawService || 'Non spécifié') : (serviceObj.en || rawService || 'Not specified');
+
     const smtpHost = process.env.SMTP_HOST || 'smtp.gmail.com';
     const smtpPort = parseInt(process.env.SMTP_PORT) || 587;
     const smtpUser = process.env.SMTP_USER || 'contact@nortrade.ch';
@@ -37,64 +83,85 @@ export default async function handler(req, res) {
     const fromEmail = process.env.FROM_EMAIL || 'contact@nortrade.ch';
     const recipientEmail = process.env.RECIPIENT_EMAIL || 'contact@nortrade.ch';
 
-    // Nodemailer Transporter Setup
     const transporter = nodemailer.createTransport({
       host: smtpHost,
       port: smtpPort,
-      secure: false, // true for 465, false for other ports
-      auth: {
-        user: smtpUser,
-        pass: smtpPass,
-      },
-      tls: {
-        rejectUnauthorized: false
-      }
+      secure: false,
+      auth: { user: smtpUser, pass: smtpPass },
+      tls: { rejectUnauthorized: false }
     });
 
-    // 1. Email notification to administrator
+    const mailAttachments = [];
+    let fileSummaryText = 'Aucun fichier joint / None';
+    let fileSummaryHtml = '<i>Aucun fichier / None</i>';
+
+    if (fileData && fileData.base64) {
+      const fileBuffer = Buffer.from(fileData.base64, 'base64');
+      const sizeMB = (fileData.size ? (fileData.size / (1024 * 1024)).toFixed(2) : '0');
+      mailAttachments.push({
+        filename: fileData.filename || 'attachment',
+        content: fileBuffer,
+        contentType: fileData.contentType || 'application/octet-stream'
+      });
+      fileSummaryText = `${fileData.filename || 'attachment'} (${sizeMB} MB)`;
+      fileSummaryHtml = `<strong>${fileData.filename || 'attachment'}</strong> (${sizeMB} MB)`;
+    }
+
     const adminMailOptions = {
       from: fromEmail,
       to: recipientEmail,
-      subject: `New Lead: ${name} - General Inquiry`,
+      subject: `Nouveau Lead: ${fullName} — ${pTypeLabel}`,
+      attachments: mailAttachments,
       text: `
-        You have received a new contact form submission from NORTRADE website:
-        
-        Name: ${name}
-        Email: ${email}
-        Company: ${company || 'N/A'}
-        Language: ${lang || 'fr'}
-        
-        Message:
+        Nouvelle demande reçue depuis le site NORTRADE :
+
+        - Prénom : ${finalFirstName}
+        - Nom de famille : ${finalLastName}
+        - E-mail : ${email}
+        - Entreprise : ${company || 'N/A'}
+        - Type de Projet : ${pTypeLabel}
+        - Service Souhaité : ${serviceLabel}
+        - Fichier Joint : ${fileSummaryText}
+
+        Détails du projet :
         ${message}
       `,
       html: `
-        <h3>New Contact Form Submission - NORTRADE</h3>
-        <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; border-color: #eee;">
-          <tr><td><strong>Name</strong></td><td>${name}</td></tr>
-          <tr><td><strong>Email</strong></td><td>${email}</td></tr>
-          <tr><td><strong>Company</strong></td><td>${company || 'N/A'}</td></tr>
-          <tr><td><strong>Language</strong></td><td>${lang || 'fr'}</td></tr>
-        </table>
-        <br/>
-        <h4>Message:</h4>
-        <p>${message.replace(/\n/g, '<br>')}</p>
+        <div style="font-family: Arial, sans-serif; max-width: 650px; margin: 0 auto; color: #111; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; background: #ffffff;">
+          <div style="background: #111111; color: #ffffff; padding: 24px 30px; text-align: left;">
+            <h2 style="margin: 0; font-size: 20px; font-weight: 600; letter-spacing: 0.05em;">N O R T R A D E</h2>
+            <p style="margin: 4px 0 0; font-size: 12px; color: #aaaaaa; text-transform: uppercase; letter-spacing: 0.1em;">Nouvelle Demande Client</p>
+          </div>
+          <div style="padding: 30px;">
+            <table cellpadding="10" cellspacing="0" style="width: 100%; border-collapse: collapse; font-size: 14px;">
+              <tr style="background: #f9f9fb;"><td style="width: 170px; font-weight: 600; border-bottom: 1px solid #eeeeee;">Prénom / First Name</td><td style="border-bottom: 1px solid #eeeeee;">${finalFirstName}</td></tr>
+              <tr><td style="font-weight: 600; border-bottom: 1px solid #eeeeee;">Nom / Last Name</td><td style="border-bottom: 1px solid #eeeeee;">${finalLastName}</td></tr>
+              <tr style="background: #f9f9fb;"><td style="font-weight: 600; border-bottom: 1px solid #eeeeee;">Adresse Email</td><td style="border-bottom: 1px solid #eeeeee;"><a href="mailto:${email}" style="color: #0066cc;">${email}</a></td></tr>
+              <tr><td style="font-weight: 600; border-bottom: 1px solid #eeeeee;">Entreprise / Company</td><td style="border-bottom: 1px solid #eeeeee;">${company || '<i>Non renseigné / N/A</i>'}</td></tr>
+              <tr style="background: #f9f9fb;"><td style="font-weight: 600; border-bottom: 1px solid #eeeeee;">Type de Projet</td><td style="border-bottom: 1px solid #eeeeee;">${pTypeLabel}</td></tr>
+              <tr><td style="font-weight: 600; border-bottom: 1px solid #eeeeee;">Service Souhaité</td><td style="border-bottom: 1px solid #eeeeee;">${serviceLabel}</td></tr>
+              <tr style="background: #f9f9fb;"><td style="font-weight: 600; border-bottom: 1px solid #eeeeee;">Fichier Joint / Attachment</td><td style="border-bottom: 1px solid #eeeeee;">${fileSummaryHtml}</td></tr>
+            </table>
+            <div style="margin-top: 24px;">
+              <h4 style="margin: 0 0 10px; font-size: 14px; font-weight: 600; color: #111;">Détails du projet / Project Details :</h4>
+              <div style="padding: 16px; background: #f4f4f6; border-left: 4px solid #111111; border-radius: 4px; font-size: 14px; line-height: 1.6; color: #333333;">
+                ${message.replace(/\n/g, '<br>')}
+              </div>
+            </div>
+          </div>
+        </div>
       `
     };
 
-    // 2. Confirmation copy email to the client (Bilingual)
-    const clientSubject = isFr ? 'NORTRADE | Confirmation de votre demande' : 'NORTRADE | Inquiry Confirmation';
-    const clientTitle = isFr ? 'Merci pour votre demande' : 'Thank you for your inquiry';
-    const clientGreeting = isFr ? `Bonjour ${name},` : `Dear ${name},`;
-    const clientBody = isFr 
-      ? `Merci d'avoir contacté <strong>NORTRADE</strong>. Nous avons bien reçu votre demande et notre équipe vous répondra dans un délai de 24 heures.`
-      : `Thank you for contacting <strong>NORTRADE</strong>. We have received your request and our team will get back to you within 24 hours.`;
-    const clientSummaryHead = isFr ? 'Récapitulatif de votre demande :' : 'Summary of your request:';
-    const labelName = isFr ? 'Nom' : 'Name';
-    const labelEmail = isFr ? 'E-mail' : 'Email';
-    const labelCompany = isFr ? 'Entreprise' : 'Company';
-    const labelMessage = isFr ? 'Message :' : 'Message:';
-    const clientSignoff = isFr ? 'Cordialement,<br>L\'équipe NORTRADE' : 'Best regards,<br>The NORTRADE Team';
-    const clientCopyright = isFr ? '&copy; NORTRADE. Tous droits réservés.' : '&copy; NORTRADE. All Rights Reserved.';
+    const clientSubject = isFr ? 'NORTRADE | Confirmation de votre demande de projet' : 'NORTRADE | Project Inquiry Confirmation';
+    const clientTitle = isFr ? 'Confirmation de votre demande' : 'Confirmation of your inquiry';
+    const clientGreeting = isFr ? `Bonjour ${finalFirstName},` : `Dear ${finalFirstName},`;
+    const clientMessageBody = isFr
+      ? `Nous vous remercions de l’intérêt que vous portez à <strong>NORTRADE</strong>. Nous avons bien reçu vos éléments d’information concernant votre projet.`
+      : `Thank you for your interest in <strong>NORTRADE</strong>. We have received your submission and project details.`;
+    const clientNextSteps = isFr
+      ? `Notre équipe étudie actuellement votre dossier et reviendra vers vous sous <strong>24 heures</strong> afin de vous proposer une approche visuelle sur mesure.`
+      : `Our executive team is reviewing your project requirements and will get back to you within <strong>24 hours</strong> to discuss a tailored approach.`;
 
     const clientMailOptions = {
       from: fromEmail,
@@ -103,45 +170,62 @@ export default async function handler(req, res) {
       text: `
         ${clientGreeting}
 
-        ${isFr ? 'Merci d\'avoir contacté NORTRADE. Nous avons bien reçu votre demande et notre équipe vous répondra dans un délai de 24h.' : 'Thank you for contacting NORTRADE. We have received your inquiry and our team will get back to you within 24 hours.'}
+        ${isFr ? 'Merci d\'avoir contacté NORTRADE. Nous avons bien reçu vos éléments et notre équipe reviendra vers vous sous 24h.' : 'Thank you for contacting NORTRADE. We have received your project details and will get back to you within 24 hours.'}
 
-        ${clientSummaryHead}
-        ---------------------------------------------
-        ${labelName}: ${name}
-        ${labelEmail}: ${email}
-        ${labelCompany}: ${company || 'N/A'}
-        
-        ${labelMessage}
+        Récapitulatif / Summary:
+        - ${isFr ? 'Prénom' : 'First Name'}: ${finalFirstName}
+        - ${isFr ? 'Nom' : 'Last Name'}: ${finalLastName}
+        - ${isFr ? 'Email' : 'Email'}: ${email}
+        - ${isFr ? 'Entreprise' : 'Company'}: ${company || 'N/A'}
+        - ${isFr ? 'Type de Projet' : 'Project Type'}: ${pTypeLabel}
+        - ${isFr ? 'Service Souhaité' : 'Requested Service'}: ${serviceLabel}
+        - ${isFr ? 'Fichier Joint' : 'Attached File'}: ${fileSummaryText}
+
+        ${isFr ? 'Détails du projet' : 'Project Details'}:
         ${message}
-        ---------------------------------------------
 
-        ${isFr ? 'Cordialement,\nL\'équipe NORTRADE' : 'Best regards,\nThe NORTRADE Team'}
+        Cordialement / Best regards,
+        L'équipe NORTRADE | Swiss Real Estate Enhancement Firm
       `,
       html: `
-        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #eee; padding: 25px; border-radius: 8px;">
-          <h2 style="color: #1A1A1A; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 0;">${clientTitle}</h2>
-          <p>${clientGreeting}</p>
-          <p>${clientBody}</p>
-          <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;" />
-          <h3 style="color: #555; margin-bottom: 10px;">${clientSummaryHead}</h3>
-          <table cellpadding="6" cellspacing="0" style="width: 100%; border-collapse: collapse;">
-            <tr style="background: #f9f9f9;"><td style="width: 120px; font-weight: bold; border: 1px solid #eee;">${labelName}</td><td style="border: 1px solid #eee;">${name}</td></tr>
-            <tr><td style="font-weight: bold; border: 1px solid #eee;">${labelEmail}</td><td style="border: 1px solid #eee;">${email}</td></tr>
-            <tr style="background: #f9f9f9;"><td style="font-weight: bold; border: 1px solid #eee;">${labelCompany}</td><td style="border: 1px solid #eee;">${company || 'N/A'}</td></tr>
-          </table>
-          <br/>
-          <strong>${labelMessage}</strong>
-          <blockquote style="margin: 10px 0; padding: 12px 15px; background: #f9f9f9; border-left: 4px solid #1A1A1A; color: #555; font-style: italic;">
-            ${message.replace(/\n/g, '<br>')}
-          </blockquote>
-          <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;" />
-          <p style="margin-bottom: 15px;">${clientSignoff}</p>
-          <p style="font-size: 0.85rem; color: #777; margin-bottom: 0;">${clientCopyright}</p>
+        <div style="font-family: Arial, sans-serif; max-width: 620px; margin: 0 auto; color: #222222; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; background: #ffffff;">
+          <div style="background: #111111; color: #ffffff; padding: 28px 32px; text-align: left;">
+            <h2 style="margin: 0; font-size: 20px; font-weight: 600; letter-spacing: 0.05em;">N O R T R A D E</h2>
+            <p style="margin: 6px 0 0; font-size: 11px; color: #aaaaaa; text-transform: uppercase; letter-spacing: 0.12em;">Conseil Suisse en Valorisation Immobilière</p>
+          </div>
+          <div style="padding: 32px;">
+            <h3 style="margin-top: 0; font-size: 18px; color: #111111; font-weight: 600;">${clientTitle}</h3>
+            <p style="font-size: 15px; line-height: 1.6; color: #333333;">${clientGreeting}</p>
+            <p style="font-size: 14px; line-height: 1.65; color: #444444;">${clientMessageBody}</p>
+            <p style="font-size: 14px; line-height: 1.65; color: #444444;">${clientNextSteps}</p>
+            
+            <div style="margin: 28px 0; padding: 20px; background: #f9f9fb; border-radius: 8px; border: 1px solid #eeeeee;">
+              <h4 style="margin: 0 0 14px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: #777777;">${isFr ? 'Récapitulatif de votre demande' : 'Summary of your submission'}</h4>
+              <table cellpadding="6" cellspacing="0" style="width: 100%; border-collapse: collapse; font-size: 13px; color: #333333;">
+                <tr><td style="width: 140px; font-weight: 600;">${isFr ? 'Nom complet' : 'Full Name'}</td><td>${fullName}</td></tr>
+                <tr><td style="font-weight: 600;">${isFr ? 'Adresse e-mail' : 'Email Address'}</td><td>${email}</td></tr>
+                <tr><td style="font-weight: 600;">${isFr ? 'Entreprise' : 'Company'}</td><td>${company || '<i>N/A</i>'}</td></tr>
+                <tr><td style="font-weight: 600;">${isFr ? 'Type de Projet' : 'Project Type'}</td><td>${pTypeLabel}</td></tr>
+                <tr><td style="font-weight: 600;">${isFr ? 'Service Souhaité' : 'Requested Service'}</td><td>${serviceLabel}</td></tr>
+                <tr><td style="font-weight: 600;">${isFr ? 'Fichier Joint' : 'Attached File'}</td><td>${fileSummaryHtml}</td></tr>
+              </table>
+              <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid #e5e5e5; font-size: 13px; line-height: 1.5; color: #555555;">
+                <strong>${isFr ? 'Détails' : 'Details'} :</strong> ${message.replace(/\n/g, '<br>')}
+              </div>
+            </div>
+
+            <p style="font-size: 14px; line-height: 1.6; color: #333333; margin-bottom: 4px;">${isFr ? 'Cordialement,' : 'Best regards,'}</p>
+            <p style="font-size: 14px; font-weight: 600; color: #111111; margin-top: 0;">L’équipe NORTRADE</p>
+
+            <div style="margin-top: 28px; padding-top: 18px; border-top: 1px solid #eeeeee; font-size: 12px; color: #888888; line-height: 1.5;">
+              <p style="margin: 0;">NORTRADE — Genève, Suisse | <a href="mailto:contact@nortrade.ch" style="color: #666666; text-decoration: underline;">contact@nortrade.ch</a> | +41 78 206 59 42</p>
+              <p style="margin: 4px 0 0;">&copy; NORTRADE. Tous droits réservés.</p>
+            </div>
+          </div>
         </div>
       `
     };
 
-    // Send both emails in parallel
     await Promise.all([
       transporter.sendMail(adminMailOptions),
       transporter.sendMail(clientMailOptions)
