@@ -78,10 +78,10 @@ export default async function handler(req, res) {
 
     const smtpHost = process.env.SMTP_HOST || 'smtp.gmail.com';
     const smtpPort = parseInt(process.env.SMTP_PORT) || 587;
-    const smtpUser = process.env.SMTP_USER || 'contact@nortrade.ch';
-    const smtpPass = process.env.SMTP_PASS || 'mwitouirmxrckcrr';
-    const fromEmail = process.env.FROM_EMAIL || 'contact@nortrade.ch';
-    const recipientEmail = process.env.RECIPIENT_EMAIL || 'contact@nortrade.ch';
+    const smtpUser = process.env.SMTP_USER;
+    const smtpPass = process.env.SMTP_PASS;
+    const fromEmail = process.env.FROM_EMAIL;
+    const recipientEmail = process.env.RECIPIENT_EMAIL;
 
     const transporter = nodemailer.createTransport({
       host: smtpHost,
