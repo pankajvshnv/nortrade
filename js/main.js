@@ -692,13 +692,53 @@ function initMainContactForm() {
       return;
     }
 
-    const prenom = prenomEl.value.trim();
-    const nom = nomEl.value.trim();
+    const prenom = prenomEl ? prenomEl.value.trim() : '';
+    const nom = nomEl ? nomEl.value.trim() : '';
     const name = `${prenom} ${nom}`.trim();
-    const email = emailEl.value.trim();
+    const email = emailEl ? emailEl.value.trim() : '';
     const companyEl = document.getElementById('company');
     const company = companyEl ? companyEl.value.trim() : '';
-    const message = messageEl.value.trim();
+    const projectTypeEl = document.getElementById('project-type');
+    const projectType = projectTypeEl ? projectTypeEl.value : '';
+    const requestedServiceEl = document.getElementById('requested-service');
+    const requestedService = requestedServiceEl ? requestedServiceEl.value : '';
+    const message = messageEl ? messageEl.value.trim() : '';
+    const fileInputEl = document.getElementById('file-upload');
+
+    let fileData = null;
+    if (fileInputEl && fileInputEl.files && fileInputEl.files.length > 0) {
+      const file = fileInputEl.files[0];
+      if (file.size > 50 * 1024 * 1024) { // 50 MB limit
+        if (errorMsg) {
+          const errText = currentLang === 'fr'
+            ? "La taille du fichier dépasse la limite de 50 Mo."
+            : "File size exceeds 50 MB limit.";
+          errorMsg.querySelector('p').textContent = errText;
+          errorMsg.classList.remove('hidden');
+        }
+        return;
+      }
+      try {
+        fileData = await new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => {
+            const result = reader.result || '';
+            const commaIdx = result.indexOf(',');
+            const base64 = commaIdx >= 0 ? result.slice(commaIdx + 1) : result;
+            resolve({
+              filename: file.name,
+              contentType: file.type || 'application/octet-stream',
+              size: file.size,
+              base64: base64
+            });
+          };
+          reader.onerror = (err) => reject(err);
+          reader.readAsDataURL(file);
+        });
+      } catch (fErr) {
+        console.error('Error reading file attachment:', fErr);
+      }
+    }
 
     if (submitBtn) {
       submitBtn.disabled = true;
@@ -709,7 +749,18 @@ function initMainContactForm() {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, company, message, lang: currentLang })
+        body: JSON.stringify({
+          prenom,
+          nom,
+          name,
+          email,
+          company,
+          projectType,
+          requestedService,
+          message,
+          fileData,
+          lang: currentLang
+        })
       });
 
       if (response.ok) {
@@ -717,6 +768,10 @@ function initMainContactForm() {
           successMsg.classList.remove('hidden');
         }
         form.reset();
+        const fileLabelText = form.querySelector('.file-label-text');
+        if (fileLabelText) {
+          fileLabelText.textContent = currentLang === 'en' ? 'Browse a file...' : 'Parcourir un fichier...';
+        }
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.textContent = currentLang === 'fr' ? 'Envoyer le formulaire' : 'Submit your form';
