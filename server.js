@@ -193,7 +193,7 @@ app.post('/api/contact', async (req, res) => {
         <div style="font-family: Arial, sans-serif; max-width: 620px; margin: 0 auto; color: #222222; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; background: #ffffff;">
           <div style="background: #111111; color: #ffffff; padding: 28px 32px; text-align: left;">
             <h2 style="margin: 0; font-size: 20px; font-weight: 600; letter-spacing: 0.05em;">N O R T R A D E</h2>
-            <p style="margin: 6px 0 0; font-size: 11px; color: #aaaaaa; text-transform: uppercase; letter-spacing: 0.12em;">Conseil Suisse en Valorisation Immobilière</p>
+            <p style="margin: 6px 0 0; font-size: 11px; color: #aaaaaa; text-transform: uppercase; letter-spacing: 0.12em;">Cabinet Suisse en Valorisation Immobilière</p>
           </div>
           <div style="padding: 32px;">
             <h3 style="margin-top: 0; font-size: 18px; color: #111111; font-weight: 600;">${clientTitle}</h3>
